@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Roadmap 2026 — بناء تطبيقات الذكاء الاصطناعي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #0a0a12;
+  --surface: #0f0f1e;
+  --surface2: #141428;
+  --surface3: #1a1a30;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.12);
+  --accent: #e94560;
+  --accent2: #0f3460;
+  --purple: #7c3aed;
+  --blue: #2563eb;
+  --teal: #06b6d4;
+  --green: #10b981;
+  --gold: #f59e0b;
+  --orange: #f97316;
+  --red: #ef4444;
+  --pink: #ec4899;
+  --text: #f0f0f8;
+  --muted: #94a3b8;
+  --white: #ffffff;
+}
+html{scroll-behavior:smooth;}
+.section{scroll-margin-top:60px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Cairo','Tajawal','Noto Naskh Arabic',sans-serif;background:var(--primary);color:var(--text);line-height:2.0;font-size:16px;}
+a{color:var(--teal);text-decoration:none;transition:color 0.2s;}
+a:hover{text-decoration:underline;color:#67e8f9;}
+
+/* ====== HERO ====== */
+.hero{
+  background:linear-gradient(135deg,#050510 0%,#0a0a1a 35%,#0d1535 70%,#0a0a1a 100%);
+  padding:110px 48px 88px;text-align:center;position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%,rgba(124,58,237,0.18) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 70%,rgba(233,69,96,0.15) 0%,transparent 55%),
+    radial-gradient(ellipse 40% 60% at 60% 90%,rgba(6,182,212,0.1) 0%,transparent 50%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.35);
+  color:#c4b5fd;font-size:15px;padding:9px 24px;border-radius:100px;
+  margin-bottom:32px;font-weight:700;letter-spacing:0.5px;position:relative;
+}
+.hero h1{
+  font-size:clamp(34px,5.5vw,64px);font-weight:900;line-height:1.3;
+  margin-bottom:24px;position:relative;
+  background:linear-gradient(135deg,#fff 0%,#c4b5fd 40%,#67e8f9 70%,#fbbf24 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{font-size:20px;color:rgba(255,255,255,0.65);max-width:780px;margin:0 auto 56px;position:relative;line-height:1.9;}
+.hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;position:relative;}
+.hero-stat .num{display:block;font-size:42px;font-weight:900;color:var(--gold);}
+.hero-stat .lbl{font-size:14px;color:rgba(255,255,255,0.5);font-weight:600;}
+.version-badge{
+  display:inline-block;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(6,182,212,0.2));
+  border:1px solid rgba(16,185,129,0.3);color:#6ee7b7;
+  font-size:13px;padding:5px 16px;border-radius:100px;margin-bottom:14px;font-weight:700;
+}
+
+/* ====== NAV ====== */
+.nav{
+  background:rgba(8,8,18,0.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:0 24px;position:sticky;top:0;z-index:200;overflow-x:auto;
+}
+.nav-inner{display:flex;gap:0;min-width:max-content;}
+.nav a{
+  display:block;padding:18px 18px;font-size:14px;font-weight:700;
+  color:rgba(255,255,255,0.5);text-decoration:none;
+  border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;
+}
+.nav a:hover{color:#fff;border-color:var(--purple);}
+
+/* ====== MAIN ====== */
+main{max-width:1200px;margin:0 auto;padding:0 32px 120px;}
+.section{padding:88px 0 72px;border-bottom:1px solid rgba(255,255,255,0.06);}
+.section-header{display:flex;align-items:center;gap:22px;margin-bottom:56px;}
+.section-icon{
+  width:64px;height:64px;border-radius:18px;
+  display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;
+}
+.section-title{font-size:32px;font-weight:900;letter-spacing:-0.3px;}
+.section-subtitle{font-size:16px;color:var(--muted);margin-top:7px;font-weight:500;}
+
+/* ====== INFO BOXES ====== */
+.info-box{
+  padding:20px 26px;border-radius:16px;font-size:16px;line-height:1.9;
+  margin:20px 0;
+}
+.info-box.tip{background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.25);color:rgba(255,255,255,0.85);}
+.info-box.warn{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:rgba(255,255,255,0.85);}
+.info-box.success{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);color:rgba(255,255,255,0.85);}
+.info-box.danger{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);color:rgba(255,255,255,0.85);}
+.info-box.purple{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.25);color:rgba(255,255,255,0.85);}
+
+/* ====== PHASE CARDS ====== */
+.phases-grid{display:grid;gap:24px;}
+.phase-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:24px;overflow:hidden;transition:border-color 0.2s, box-shadow 0.2s;
+}
+.phase-card:hover{border-color:var(--border2);box-shadow:0 4px 40px rgba(0,0,0,0.3);}
+.phase-header{padding:36px 40px 28px;display:flex;align-items:flex-start;gap:26px;}
+.phase-num{
+  width:68px;height:68px;border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;font-weight:900;flex-shrink:0;
+}
+.phase-meta{flex:1;}
+.phase-title{font-size:22px;font-weight:900;margin-bottom:10px;}
+.phase-duration{
+  display:inline-block;font-size:13px;font-weight:800;
+  padding:5px 16px;border-radius:100px;margin-bottom:14px;
+}
+.phase-desc{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.9;}
+.phase-body{padding:0 40px 36px;}
+.skills-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.skill-tag{
+  font-size:13px;font-weight:700;padding:7px 16px;border-radius:10px;
+  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.85);
+}
+.outcomes-list{list-style:none;margin-top:22px;}
+.outcomes-list li{
+  font-size:16px;color:rgba(255,255,255,0.75);
+  padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+  display:flex;gap:12px;line-height:1.8;
+}
+.outcomes-list li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;margin-top:2px;}
+.p1 .phase-num{background:rgba(124,58,237,0.2);color:#c4b5fd;}
+.p1 .phase-duration{background:rgba(124,58,237,0.15);color:#c4b5fd;border:1px solid rgba(124,58,237,0.3);}
+.p1{border-top:3px solid #7c3aed;}
+.p2 .phase-num{background:rgba(37,99,235,0.2);color:#93c5fd;}
+.p2 .phase-duration{background:rgba(37,99,235,0.15);color:#93c5fd;border:1px solid rgba(37,99,235,0.3);}
+.p2{border-top:3px solid #2563eb;}
+.p3 .phase-num{background:rgba(5,150,105,0.2);color:#6ee7b7;}
+.p3 .phase-duration{background:rgba(5,150,105,0.15);color:#6ee7b7;border:1px solid rgba(5,150,105,0.3);}
+.p3{border-top:3px solid #059669;}
+.p4 .phase-num{background:rgba(245,158,11,0.2);color:#fcd34d;}
+.p4 .phase-duration{background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);}
+.p4{border-top:3px solid #d97706;}
+.p5 .phase-num{background:rgba(239,68,68,0.2);color:#fca5a5;}
+.p5 .phase-duration{background:rgba(239,68,68,0.15);color:#fca5a5;border:1px solid rgba(239,68,68,0.3);}
+.p5{border-top:3px solid #ef4444;}
+
+/* ====== WEEKLY EXECUTION ====== */
+.week-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:20px;margin-bottom:28px;overflow:hidden;
+}
+.week-header{
+  padding:24px 32px;background:rgba(255,255,255,0.035);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.week-num{
+  font-size:14px;font-weight:900;padding:6px 18px;border-radius:100px;
+  background:rgba(124,58,237,0.15);color:#c4b5fd;border:1px solid rgba(124,58,237,0.3);
+  white-space:nowrap;
+}
+.week-title{font-size:19px;font-weight:800;}
+.week-body{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:0;
+}
+.week-col{
+  padding:22px 26px;border-left:1px solid rgba(255,255,255,0.06);
+}
+.week-col:last-child{border-left:none;}
+.week-col-title{
+  font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;
+  color:var(--muted);margin-bottom:12px;
+}
+.week-col-content{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.9;}
+.week-col-content strong{color:#fff;display:block;margin-bottom:5px;}
+.deliverable-tag{
+  display:inline-block;font-size:12px;font-weight:700;
+  padding:4px 13px;border-radius:7px;margin-top:8px;
+  background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);
+}
+.project-tag{
+  display:inline-block;font-size:12px;font-weight:700;
+  padding:4px 13px;border-radius:7px;margin-top:8px;
+  background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);
+}
+
+/* ====== MONTHLY REVIEW ====== */
+.review-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:20px;margin-bottom:24px;overflow:hidden;
+}
+.review-header{
+  padding:22px 30px;background:rgba(255,255,255,0.03);
+  border-bottom:1px solid var(--border);display:flex;align-items:center;gap:18px;
+}
+.review-month{
+  width:56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;font-weight:900;flex-shrink:0;
+}
+.review-body{padding:24px 30px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:20px;}
+.kpi-item{
+  padding:16px 20px;background:rgba(255,255,255,0.035);
+  border:1px solid rgba(255,255,255,0.07);border-radius:14px;
+}
+.kpi-label{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;}
+.kpi-value{font-size:16px;color:rgba(255,255,255,0.9);font-weight:700;}
+.ready-checks{margin-top:16px;}
+.ready-check{
+  font-size:15px;color:rgba(255,255,255,0.75);
+  padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+  display:flex;gap:12px;align-items:flex-start;
+}
+.ready-check::before{content:'□';color:var(--teal);font-size:18px;line-height:1;flex-shrink:0;}
+
+/* ====== RESOURCES ====== */
+.resource-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:20px;margin-bottom:28px;overflow:hidden;
+}
+.resource-header{
+  padding:22px 30px;display:flex;align-items:center;gap:18px;
+  border-bottom:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.025);
+}
+.resource-icon{
+  width:46px;height:46px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;
+}
+.resource-skill-name{font-size:19px;font-weight:900;}
+.resource-phase{font-size:13px;color:var(--muted);font-weight:600;margin-top:2px;}
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.resource-item{
+  padding:18px 24px;border-left:1px solid rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.resource-item:nth-child(odd){background:rgba(255,255,255,0.015);}
+.resource-type{
+  font-size:11px;font-weight:800;color:var(--teal);
+  text-transform:uppercase;letter-spacing:0.8px;margin-bottom:7px;
+}
+.resource-name{font-size:15px;color:rgba(255,255,255,0.9);margin-bottom:6px;font-weight:600;}
+.resource-link{font-size:13px;}
+.resource-link a{color:rgba(103,232,249,0.85);}
+.resource-link a:hover{color:var(--teal);}
+.resource-note{font-size:13px;color:var(--muted);margin-top:5px;font-style:italic;line-height:1.7;}
+
+/* ====== DASHBOARD ====== */
+.table-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:15px;}
+th{
+  background:rgba(255,255,255,0.05);padding:16px 20px;
+  text-align:right;font-weight:800;color:rgba(255,255,255,0.7);
+  font-size:13px;text-transform:uppercase;letter-spacing:0.5px;
+  border-bottom:1px solid var(--border);white-space:nowrap;
+}
+td{
+  padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.05);
+  color:rgba(255,255,255,0.85);vertical-align:top;line-height:1.8;
+}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,0.025);}
+.status-todo{color:#94a3b8;font-weight:700;}
+.status-active{color:#fcd34d;font-weight:700;}
+.status-done{color:#6ee7b7;font-weight:700;}
+.level-badge{
+  display:inline-block;font-size:12px;font-weight:800;
+  padding:4px 12px;border-radius:7px;
+}
+.level-0{background:rgba(100,116,139,0.2);color:#94a3b8;border:1px solid rgba(100,116,139,0.3);}
+.level-1{background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);}
+.level-2{background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.3);}
+.level-3{background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);}
+
+/* ====== TOOLS ====== */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.tool-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:20px;padding:28px;transition:border-color 0.2s;
+}
+.tool-card:hover{border-color:var(--border2);}
+.tool-header{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+.tool-icon{
+  width:54px;height:54px;border-radius:15px;
+  display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;
+}
+.tool-name{font-size:19px;font-weight:900;}
+.tool-purpose{font-size:13px;color:var(--muted);font-weight:600;margin-top:2px;}
+.tool-desc{font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;}
+.tool-when{font-size:13px;color:rgba(245,158,11,0.9);padding:12px 16px;background:rgba(245,158,11,0.08);border-radius:11px;border:1px solid rgba(245,158,11,0.2);}
+.tool-link{margin-top:14px;font-size:13px;}
+
+/* ====== PROJECTS MAP ====== */
+.profit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;}
+.profit-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:22px;padding:30px;position:relative;overflow:hidden;
+}
+.profit-type{
+  font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;
+  padding:5px 16px;border-radius:100px;display:inline-block;margin-bottom:16px;
+}
+.type-saas{background:rgba(124,58,237,0.15);color:#c4b5fd;border:1px solid rgba(124,58,237,0.3);}
+.type-freelance{background:rgba(37,99,235,0.15);color:#93c5fd;border:1px solid rgba(37,99,235,0.3);}
+.type-automation{background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);}
+.type-agent{background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);}
+.profit-title{font-size:20px;font-weight:900;margin-bottom:10px;}
+.profit-desc{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:20px;}
+.profit-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+.metric{text-align:center;padding:12px 8px;background:rgba(255,255,255,0.035);border-radius:12px;border:1px solid rgba(255,255,255,0.07);}
+.metric-val{font-size:16px;font-weight:900;color:var(--gold);display:block;margin-bottom:3px;}
+.metric-lbl{font-size:11px;color:var(--muted);font-weight:700;}
+.profit-tech{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
+.tech-tag{font-size:12px;padding:4px 11px;border-radius:7px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.75);}
+.profit-price{font-size:14px;color:var(--green);font-weight:700;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);}
+.best-start{
+  position:absolute;top:18px;left:18px;
+  background:linear-gradient(135deg,#f59e0b,#ef4444);
+  font-size:11px;font-weight:900;padding:4px 11px;border-radius:100px;color:#fff;
+}
+
+/* ====== MISTAKES ====== */
+.mistake-grid{display:grid;gap:16px;}
+.mistake-card{
+  background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.18);
+  border-radius:16px;padding:24px 28px;
+  display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;
+}
+.mistake-ico{
+  width:56px;height:56px;background:rgba(239,68,68,0.12);
+  border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;
+}
+.mistake-title{font-size:17px;font-weight:800;color:#fca5a5;margin-bottom:8px;}
+.mistake-desc{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;}
+.mistake-fix{font-size:14px;color:var(--green);margin-top:12px;font-weight:700;line-height:1.7;}
+
+/* ====== INCOME ====== */
+.income-steps{display:grid;gap:16px;}
+.income-step{
+  display:grid;grid-template-columns:100px 1fr;gap:24px;
+  padding:26px;background:var(--surface);
+  border:1px solid var(--border);border-radius:18px;
+}
+.income-period{text-align:center;}
+.income-month{font-size:26px;font-weight:900;color:var(--gold);}
+.income-period-lbl{font-size:12px;color:var(--muted);font-weight:700;margin-top:2px;}
+.income-title{font-size:18px;font-weight:800;margin-bottom:10px;}
+.income-desc{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:14px;}
+.income-actions{display:grid;gap:8px;}
+.income-action{
+  font-size:14px;padding:10px 14px;
+  background:rgba(255,255,255,0.035);border-radius:10px;
+  border:1px solid rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);line-height:1.7;
+}
+.income-action::before{content:'→ ';color:var(--teal);font-weight:700;}
+
+/* ====== ANTI-PROCRASTINATION ====== */
+.system-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;}
+.system-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:18px;padding:26px;
+}
+.system-icon{font-size:32px;margin-bottom:14px;}
+.system-title{font-size:18px;font-weight:800;margin-bottom:12px;}
+.system-items{display:grid;gap:10px;}
+.system-item{
+  font-size:15px;color:rgba(255,255,255,0.75);
+  padding:10px 14px;background:rgba(255,255,255,0.035);
+  border-radius:10px;border:1px solid rgba(255,255,255,0.06);line-height:1.75;
+}
+
+/* ====== DIVIDER ====== */
+.divider{height:1px;background:rgba(255,255,255,0.07);margin:44px 0;}
+
+/* ====== FOOTER ====== */
+.footer{text-align:center;padding:72px 0 52px;color:rgba(255,255,255,0.28);font-size:15px;line-height:2;}
+.footer-quote{
+  font-size:24px;font-weight:900;color:rgba(255,255,255,0.55);margin-bottom:14px;
+  background:linear-gradient(135deg,#c4b5fd,#67e8f9);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:768px){
+  .hero{padding:64px 20px 52px;}
+  .phase-header,.phase-body{padding-right:22px;padding-left:22px;}
+  .week-body{grid-template-columns:1fr;}
+  .income-step{grid-template-columns:1fr;}
+  .income-period{text-align:right;}
+  main{padding:0 18px 80px;}
+  .section{padding:64px 0 52px;}
+}
+@media(max-width:480px){
+  body{font-size:15px;}
+  .section-title{font-size:26px;}
+  .phase-title{font-size:19px;}
+}
+
+/* ====== PRINT STYLES ====== */
+@media print{
+  body{background:#fff!important;color:#111!important;font-size:13pt;line-height:1.8;}
+  .nav{display:none;}
+  .hero{background:#f8f9ff!important;border:none;padding:40px 32px;}
+  .hero h1{color:#1a1a2e!important;-webkit-text-fill-color:#1a1a2e!important;}
+  .hero-sub{color:#444!important;}
+  .hero-stat .num{color:#7c3aed!important;}
+  .section{padding:32px 0;border-bottom:1px solid #e2e8f0!important;}
+  .section-title{color:#1a1a2e!important;}
+  .section-subtitle{color:#64748b!important;}
+  .phase-card{background:#f8f9ff!important;border:1px solid #e2e8f0!important;break-inside:avoid;}
+  .phase-title{color:#1a1a2e!important;}
+  .phase-desc{color:#475569!important;}
+  .week-card{background:#f8f9ff!important;border:1px solid #e2e8f0!important;break-inside:avoid;}
+  .week-title{color:#1a1a2e!important;}
+  .week-col-content{color:#334155!important;}
+  .week-col-title{color:#64748b!important;}
+  .resource-card,.review-card,.tool-card,.profit-card,.mistake-card,.income-step,.system-card{
+    background:#f8f9ff!important;border:1px solid #e2e8f0!important;break-inside:avoid;
+  }
+  .info-box.tip{background:#eff6ff!important;border-color:#bfdbfe!important;color:#1e40af!important;}
+  .info-box.warn{background:#fffbeb!important;border-color:#fde68a!important;color:#92400e!important;}
+  .info-box.success{background:#f0fdf4!important;border-color:#bbf7d0!important;color:#166534!important;}
+  .info-box.danger{background:#fef2f2!important;border-color:#fecaca!important;color:#991b1b!important;}
+  .info-box.purple{background:#f5f3ff!important;border-color:#ddd6fe!important;color:#5b21b6!important;}
+  table{font-size:11pt!important;}
+  th{background:#f1f5f9!important;color:#334155!important;}
+  td{color:#334155!important;border-color:#e2e8f0!important;}
+  .skill-tag{background:#e2e8f0!important;color:#334155!important;border-color:#cbd5e1!important;}
+  a{color:#2563eb!important;}
+  .footer{color:#94a3b8!important;}
+  .footer-quote{color:#334155!important;-webkit-text-fill-color:#334155!important;}
+  .outcomes-list li{color:#334155!important;}
+  .ready-check{color:#334155!important;}
+  .kpi-value{color:#1a1a2e!important;}
+  .kpi-label{color:#64748b!important;}
+  .income-month{color:#d97706!important;}
+  .income-title{color:#1a1a2e!important;}
+  .income-desc{color:#475569!important;}
+  .income-action{background:#f1f5f9!important;border-color:#e2e8f0!important;color:#334155!important;}
+  .mistake-title{color:#991b1b!important;}
+  .mistake-desc{color:#475569!important;}
+  .mistake-fix{color:#166534!important;}
+  .resource-name{color:#1a1a2e!important;}
+  .resource-note{color:#64748b!important;}
+  .tool-desc{color:#475569!important;}
+  .profit-desc{color:#475569!important;}
+  .profit-price{color:#166534!important;}
+  .system-item{background:#f1f5f9!important;color:#334155!important;}
+  .hero-badge,.week-num,.phase-duration{print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<div class="hero">
+  <div class="version-badge">✦ النسخة المحدثة والمطورة — 2026</div>
+  <div class="hero-badge">🎯 Master Roadmap — AI Application Developer</div>
+  <h1>خطة تنفيذية احترافية شاملة<br>لبناء تطبيقات الذكاء الاصطناعي</h1>
+  <p class="hero-sub">ليست مجرد خطة — بل نظام تنفيذي كامل بروابط حقيقية، مشاريع قابلة للبيع، ونظام متابعة احترافي. كل ما تحتاجه في مكان واحد.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="num">18</span><span class="lbl">شهرًا للاحتراف</span></div>
+    <div class="hero-stat"><span class="num">5</span><span class="lbl">مراحل تدريجية</span></div>
+    <div class="hero-stat"><span class="num">15+</span><span class="lbl">مهارة محددة</span></div>
+    <div class="hero-stat"><span class="num">3</span><span class="lbl">ساعات يوميًا</span></div>
+    <div class="hero-stat"><span class="num">50+</span><span class="lbl">رابط حقيقي مباشر</span></div>
+  </div>
+</div>
+
+<!-- ====== NAV ====== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#phases">📍 المراحل</a>
+    <a href="#execution">⚡ النظام التنفيذي</a>
+    <a href="#review">📊 نظام المراجعة</a>
+    <a href="#resources">📚 المصادر + الروابط</a>
+    <a href="#dashboard">🗂 لوحة المتابعة</a>
+    <a href="#tools">🛠 بيئة التعلم</a>
+    <a href="#profit">💎 المشاريع الربحية</a>
+    <a href="#antisocial">🧠 منع التسويف</a>
+    <a href="#mistakes">⚠️ أخطاء المبتدئين</a>
+    <a href="#income">💰 خطة الدخل</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ====== SECTION 1: PHASES ====== -->
+<section class="section" id="phases">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(124,58,237,0.2);">📍</div>
+    <div>
+      <div class="section-title">أولًا: خريطة المراحل الكاملة</div>
+      <div class="section-subtitle">5 مراحل تدريجية — من الصفر إلى مطور AI يكسب دخلًا حقيقيًا</div>
+    </div>
+  </div>
+
+  <div class="info-box purple">
+    🔑 <strong>مبدأ هذا المسار:</strong> أنت لا تبني نموذج ذكاء اصطناعي — أنت تبني <strong>تطبيقات تستخدم نماذج جاهزة</strong>. هذا يعني أنك لا تحتاج رياضيات معقدة أو دكتوراه. تحتاج Python + APIs + LLMs + Build. المسار: <strong>أسس → AI → أنظمة ذكية → بناء → دخل.</strong>
+  </div>
+
+  <div class="phases-grid" style="margin-top:32px;">
+
+    <!-- Phase 1 -->
+    <div class="phase-card p1">
+      <div class="phase-header">
+        <div class="phase-num">١</div>
+        <div class="phase-meta">
+          <div class="phase-title">التأسيس التقني — بناء الأدوات الأساسية</div>
+          <span class="phase-duration">الشهر ١ — ٣ · ١٢ أسبوعًا</span>
+          <p class="phase-desc">الأساس الذي يبنى عليه كل شيء. بدون هذا الأساس ستقع في Tutorial Hell. لا تتجاوز هذه المرحلة حتى تُتقن كل نقطة فيها.</p>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="info-box tip">🎯 <strong>الهدف النهائي:</strong> كتابة سكريبت Python يستدعي API خارجي، يعالج JSON، ويُرفع على GitHub مع Documentation واضح.</div>
+        <div class="skills-list">
+          <span class="skill-tag">Python الأساسيات</span>
+          <span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">Terminal / CLI</span>
+          <span class="skill-tag">HTTP & REST APIs</span>
+          <span class="skill-tag">JSON</span>
+          <span class="skill-tag">VS Code + Extensions</span>
+          <span class="skill-tag">Virtual Environments</span>
+          <span class="skill-tag">Error Handling</span>
+        </div>
+        <ul class="outcomes-list">
+          <li>كتابة Functions, Classes, Loops, Files بـ Python بثقة</li>
+          <li>استخدام Git يوميًا: commit, push, pull, branches</li>
+          <li>استدعاء أي REST API وتحليل الـ JSON Response</li>
+          <li>قراءة التوثيق الرسمي بشكل مستقل</li>
+          <li>مشروع أول منشور على GitHub مع README احترافي</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase-card p2">
+      <div class="phase-header">
+        <div class="phase-num">٢</div>
+        <div class="phase-meta">
+          <div class="phase-title">الدخول لعالم AI — تطبيقات الذكاء الاصطناعي الأساسية</div>
+          <span class="phase-duration">الشهر ٤ — ٧ · ١٦ أسبوعًا</span>
+          <p class="phase-desc">البداية الحقيقية. هنا تبني أول تطبيق AI يعمل فعلًا، وتفهم كيف تتحكم في النماذج وتُدار التكاليف.</p>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="info-box tip">🎯 <strong>الهدف النهائي:</strong> بناء Chatbot متخصص بـ FastAPI + OpenAI API، مع إدارة المحادثة وضبط الشخصية، منشور على Railway.</div>
+        <div class="skills-list">
+          <span class="skill-tag">OpenAI API</span>
+          <span class="skill-tag">Prompt Engineering</span>
+          <span class="skill-tag">LLMs المفاهيم</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">SQLite / PostgreSQL</span>
+          <span class="skill-tag">n8n Automation</span>
+          <span class="skill-tag">Anthropic / Gemini API</span>
+          <span class="skill-tag">Token Management</span>
+        </div>
+        <ul class="outcomes-list">
+          <li>بناء Chatbot يتذكر المحادثة ويستجيب بشخصية مخصصة</li>
+          <li>إنشاء REST API بـ FastAPI يخدم تطبيق AI</li>
+          <li>ربط خدمات مختلفة بـ n8n بدون كود</li>
+          <li>حساب التكاليف وإدارة Tokens بكفاءة</li>
+          <li>نشر أول API على الإنترنت (Railway)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase-card p3">
+      <div class="phase-header">
+        <div class="phase-num">٣</div>
+        <div class="phase-meta">
+          <div class="phase-title">الأنظمة الذكية — RAG & AI Agents</div>
+          <span class="phase-duration">الشهر ٨ — ١٢ · ٢٠ أسبوعًا</span>
+          <p class="phase-desc">هذه هي المهارة الأكثر طلبًا في 2026. بناء أنظمة تعمل مع بيانات خاصة، وتنفذ مهام معقدة باستقلالية.</p>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="info-box tip">🎯 <strong>الهدف النهائي:</strong> نظام RAG كامل لشركة — يقرأ PDF وDocuments ويجيب على أسئلة الموظفين بدقة. مع AI Agent يستطيع البحث والكتابة والإرسال.</div>
+        <div class="skills-list">
+          <span class="skill-tag">LangChain / LangGraph</span>
+          <span class="skill-tag">Vector Databases</span>
+          <span class="skill-tag">RAG Systems</span>
+          <span class="skill-tag">Embeddings</span>
+          <span class="skill-tag">AI Agents & Tools</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Streamlit / Gradio</span>
+          <span class="skill-tag">Chroma / Pinecone</span>
+        </div>
+        <ul class="outcomes-list">
+          <li>بناء نظام RAG يقرأ PDFs ويجيب بدقة مع مراجع</li>
+          <li>AI Agent قادر على البحث وكتابة تقارير وإرسال إيميلات</li>
+          <li>نشر تطبيقات بـ Docker على أي سيرفر</li>
+          <li>واجهة مستخدم بـ Streamlit لعرض المشاريع</li>
+          <li>أول مشروع قابل للبيع للشركات</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="phase-card p4">
+      <div class="phase-header">
+        <div class="phase-num">٤</div>
+        <div class="phase-meta">
+          <div class="phase-title">بناء المنتجات الحقيقية</div>
+          <span class="phase-duration">الشهر ١٣ — ١٦ · ١٦ أسبوعًا</span>
+          <p class="phase-desc">تحويل المهارات إلى منتجات كاملة: Full-stack AI Apps, SaaS, APIs قابلة للبيع للعملاء.</p>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="info-box tip">🎯 <strong>الهدف النهائي:</strong> 3 مشاريع Portfolio كاملة + أول عميل مدفوع + SaaS بسيط يجمع اشتراكات شهرية.</div>
+        <div class="skills-list">
+          <span class="skill-tag">React أو Next.js أساسيات</span>
+          <span class="skill-tag">Auth (Supabase/Clerk)</span>
+          <span class="skill-tag">Stripe Payments</span>
+          <span class="skill-tag">SaaS Architecture</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">CI/CD أساسيات</span>
+        </div>
+        <ul class="outcomes-list">
+          <li>Full-stack AI App من Frontend لـ Backend لـ Database</li>
+          <li>نظام Auth + Billing (اشتراكات شهرية)</li>
+          <li>أول عميل حقيقي مدفوع من خدمة AI</li>
+          <li>Portfolio احترافي على GitHub و LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="phase-card p5">
+      <div class="phase-header">
+        <div class="phase-num">٥</div>
+        <div class="phase-meta">
+          <div class="phase-title">الاستقلالية والتوسع</div>
+          <span class="phase-duration">الشهر ١٧ — ١٨+ · مفتوح</span>
+          <p class="phase-desc">تحويل المهارات لدخل مستدام: عمل حر + SaaS + استشارات + تدريب. هذه المرحلة لا نهاية لها.</p>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="info-box success">🎯 <strong>الهدف:</strong> دخل شهري 1000$–5000$ من مصادر متعددة. القرار: هل تستمر في الوظيفة + العمل الحر، أم تستقل كليًا؟</div>
+        <div class="skills-list">
+          <span class="skill-tag">Product Launch</span>
+          <span class="skill-tag">Content Marketing</span>
+          <span class="skill-tag">Pricing Strategy</span>
+          <span class="skill-tag">Client Management</span>
+          <span class="skill-tag">Personal Brand</span>
+          <span class="skill-tag">Teaching / Consulting</span>
+        </div>
+        <ul class="outcomes-list">
+          <li>دخل متكرر من SaaS أو عملاء ثابتين</li>
+          <li>قدرة على بناء وإطلاق منتج جديد في أسابيع</li>
+          <li>شبكة علاقات مهنية وحضور رقمي قوي</li>
+          <li>إمكانية الاستقلال الكامل إذا أردت</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ====== SECTION 2: WEEKLY EXECUTION ====== -->
+<section class="section" id="execution">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(245,158,11,0.2);">⚡</div>
+    <div>
+      <div class="section-title">ثانيًا: النظام التنفيذي الأسبوعي</div>
+      <div class="section-subtitle">ماذا تدرس؟ ماذا تطبق؟ ما الـ Deliverable؟ — لكل أسبوع خطة واضحة</div>
+    </div>
+  </div>
+
+  <div class="info-box warn">
+    ⚡ <strong>قاعدة 30/70:</strong> 30% دراسة نظرية + 70% تطبيق عملي. بعد كل فيديو أو مقال، اغلقه واكتب الكود من الذاكرة. الكود المكتوب من الذاكرة = تعلم حقيقي.
+  </div>
+
+  <!-- PHASE 1 WEEKS -->
+  <div style="font-size:20px;font-weight:800;margin:44px 0 24px;color:#c4b5fd;display:flex;align-items:center;gap:12px;">
+    <span style="width:9px;height:9px;background:#7c3aed;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+    المرحلة الأولى — التأسيس التقني (الشهر ١-٣)
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ١-٢</span>
+      <span class="week-title">Python الأساسيات — المتغيرات، الدوال، القوائم، الملفات</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Variables, Data Types, Functions, Loops, Lists, Dicts, File I/O, Error Handling
+          <br><br>مصدرك: <a href="https://www.youtube.com/c/ElzeroInfo" target="_blank">Elzero Web School</a> + <a href="https://docs.python.org/3/tutorial" target="_blank">Python Docs الرسمي</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          بعد كل مفهوم: 5 تمارين على <a href="https://exercism.org/tracks/python" target="_blank">Exercism.org</a>
+          <br>واكتب كل الأمثلة بنفسك في VS Code — لا نسخ ولصق
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ سكريبت Expense Tracker</span><br>
+          يقرأ ويكتب مصاريف من JSON، يحسب مجموع يومي وشهري، يعرض تقريرًا نصيًا
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          اكتب دالة من الذاكرة تقرأ ملف JSON، تصفي البيانات، وتعيد قائمة مرتبة — بدون فتح أي مرجع
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٣-٤</span>
+      <span class="week-title">Git & GitHub — حفظ العمل ونشره احترافيًا</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          init, add, commit, push, pull, branches, merge, .gitignore, README.md
+          <br><br>مصدرك: <a href="https://learngitbranching.js.org" target="_blank">learngitbranching.js.org</a> (تفاعلي ممتاز)
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ارفع مشروع الأسبوع السابق على GitHub مع README احترافي يشرح: ما هو المشروع؟ كيف تشغله؟ لقطة شاشة.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ أول Repo على GitHub</span><br>
+          مشروع Expense Tracker محمل مع README + .gitignore صحيح
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          أنشئ branch جديد، عدّل ملف، commit، ثم merge مع main — بدون استخدام GitHub Desktop
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٥-٨</span>
+      <span class="week-title">APIs & HTTP & JSON — كيف تتواصل البرامج مع العالم</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          HTTP Methods, Status Codes, Headers, Authentication (API Keys, Bearer Tokens), JSON parsing, requests library
+          <br><br>مصدرك: <a href="https://learning.postman.com/docs/getting-started/overview/" target="_blank">Postman Learning Center</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          جرّب 3 APIs مختلفة من <a href="https://publicapis.dev" target="_blank">publicapis.dev</a> باستخدام Postman أولًا، ثم Python. الغرض: تعتاد على قراءة Documentation.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Weather Dashboard</span><br>
+          سكريبت يسحب طقس 5 مدن من <a href="https://openweathermap.org/api" target="_blank">OpenWeather API</a> ويعرض تقريرًا جميلًا
+          <span class="project-tag">📌 مشروع GitHub</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          اقرأ documentation لـ API جديد لأول مرة واستخدمه في 30 دقيقة بدون مساعدة
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 WEEKS -->
+  <div style="font-size:20px;font-weight:800;margin:52px 0 24px;color:#93c5fd;display:flex;align-items:center;gap:12px;">
+    <span style="width:9px;height:9px;background:#2563eb;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+    المرحلة الثانية — الذكاء الاصطناعي الأساسي (الشهر ٤-٧)
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٩-١٠</span>
+      <span class="week-title">Prompt Engineering — فن التحكم في سلوك النماذج</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          System Prompts, Few-shot, Chain of Thought, Role Playing, Output Formatting, Temperature, Max Tokens
+          <br><br>مصدرك: <a href="https://www.promptingguide.ai/ar" target="_blank">PromptingGuide.ai (عربي)</a> + <a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank">DeepLearning.AI (مجاني)</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          استخدم <a href="https://platform.openai.com/playground" target="_blank">OpenAI Playground</a> أو <a href="https://console.anthropic.com" target="_blank">Anthropic Console</a> وجرّب 10 prompts مختلفة لنفس المهمة — لاحظ الفرق في النتائج.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Prompt Library</span><br>
+          Notion أو GitHub Repo فيه 20+ prompt مُختبر لحالات استخدام مختلفة (تلخيص، كتابة، تحليل، ترجمة)
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          اكتب prompt يجعل النموذج يرفض أي سؤال خارج موضوع محدد — ويرد بأسلوب معين
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ١١-١٥</span>
+      <span class="week-title">OpenAI API + FastAPI — بناء أول تطبيق AI حقيقي</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Chat Completions API, Streaming, Function Calling, FastAPI basics, Pydantic Models, Async/Await, CORS
+          <br><br>مصادر: <a href="https://platform.openai.com/docs" target="_blank">OpenAI Docs</a> · <a href="https://fastapi.tiangolo.com" target="_blank">FastAPI Docs</a> · <a href="https://www.youtube.com/@TechWithTim" target="_blank">@TechWithTim</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ابنِ API endpoint يقبل رسالة ويعيد رد من GPT. ثم أضف Conversation History. ثم أضف System Prompt. كل خطوة = Commit منفصل.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Chatbot API حقيقي</span><br>
+          FastAPI + OpenAI + Memory + Personality. منشور على <a href="https://railway.app" target="_blank">Railway.app</a> مجانًا.
+          <span class="project-tag">📌 Portfolio Project</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          أضف endpoint جديد للـ API يلخص أي نص بـ 3 نقاط — بدون الرجوع للـ tutorial
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ١٦-٢٠</span>
+      <span class="week-title">n8n Automation — بناء أنظمة تعمل وحدها</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Nodes, Workflows, Triggers, Webhooks, HTTP Request Node, OpenAI Node, Expressions, Error Handling
+          <br><br>مصادر: <a href="https://docs.n8n.io" target="_blank">n8n Docs</a> · <a href="https://www.youtube.com/@NetworkChuck" target="_blank">@NetworkChuck</a> · <a href="https://n8n.io/workflows/" target="_blank">n8n Templates</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ابدأ بـ <a href="https://app.n8n.cloud" target="_blank">n8n Cloud</a> مجانًا. ابنِ 5 workflows: 1) إرسال بريد تلقائي، 2) توليد محتوى بـ AI، 3) نشر على تويتر، 4) جمع بيانات من موقع، 5) إشعار تلقائي على WhatsApp.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Content Automation Pipeline</span><br>
+          يولد موضوعًا كل يوم بالـ AI ثم ينشره تلقائيًا. Workflow كامل يعمل وحده.
+          <span class="project-tag">💰 قابل للبيع: 150$-300$</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          ابنِ Workflow يقرأ بريد وارد، يلخصه بـ AI، ويرسل ملخصًا يوميًا على تيليغرام — من الصفر
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 WEEKS -->
+  <div style="font-size:20px;font-weight:800;margin:52px 0 24px;color:#6ee7b7;display:flex;align-items:center;gap:12px;">
+    <span style="width:9px;height:9px;background:#059669;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+    المرحلة الثالثة — RAG & AI Agents (الشهر ٨-١٢)
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٢١-٢٥</span>
+      <span class="week-title">LangChain & Vector Databases — أنظمة الذاكرة الذكية</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Embeddings, Similarity Search, ChromaDB, Pinecone, Document Loaders, Text Splitters, LangChain Chains
+          <br><br>مصادر: <a href="https://python.langchain.com/docs/get_started/introduction" target="_blank">LangChain Docs</a> · <a href="https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/" target="_blank">DeepLearning.AI LangChain</a> · <a href="https://docs.trychroma.com" target="_blank">Chroma Docs</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ابنِ نظامًا يقرأ 5 PDFs، يحولها لـ vectors في ChromaDB، ثم يجيب على أسئلة من محتواها بدقة مع إظهار المصدر.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Chat With Your Docs</span><br>
+          نظام RAG كامل: Upload PDF → Vectorize → Ask → Answer with Source
+          <span class="project-tag">💰 قابل للبيع: 500$-2000$</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          أضف لقاعدة البيانات مستنداً جديدًا بدون حذف القديم، وتأكد من أن النظام يبحث في الاثنين
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٢٦-٣٢</span>
+      <span class="week-title">AI Agents & Tool Calling — وكلاء يعملون باستقلالية</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Function Calling, Tool Use, ReAct Pattern, LangGraph, Multi-Agent Systems, Memory Types
+          <br><br>مصادر: <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a> · <a href="https://langchain-ai.github.io/langgraph/" target="_blank">LangGraph Docs</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ابنِ Agent يملك 3 tools: بحث على الإنترنت، قراءة ملف، حفظ ملاحظات. ثم أعطه مهمة: "ابحث عن أحدث أخبار AI واكتب ملخصًا وحفظه".
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ AI Research Agent</span><br>
+          Agent يبحث في الإنترنت ويكتب تقريرًا كاملًا من 5 مصادر — تشغيله بأمر واحد
+          <span class="project-tag">📌 Portfolio Project</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          أضف Tool جديد للـ Agent يرسل إيميل — الـ Agent يقرر متى يستخدمه بنفسه
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box success">
+    🎯 <strong>الجدول اليومي الثابت للمراحل الجميع:</strong><br>
+    <strong>5:00–6:30 صباحًا:</strong> تعلم نظري — فيديو أو قراءة docs أو كورس &nbsp;|&nbsp;
+    <strong>3:00–4:30 مساءً:</strong> تطبيق عملي — كود أو مشروع أو تمارين &nbsp;|&nbsp;
+    <strong>الجمعة عصرًا:</strong> راحة تامة — لا دراسة مهما حدث
+  </div>
+</section>
+
+
+<!-- ====== SECTION 3: MONTHLY REVIEW ====== -->
+<section class="section" id="review">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(6,182,212,0.2);">📊</div>
+    <div>
+      <div class="section-title">ثالثًا: نظام المراجعة الشهرية</div>
+      <div class="section-subtitle">كيف تقيس تقدمك؟ متى تنتقل للمرحلة التالية؟ ما مؤشرات النجاح؟</div>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-month" style="background:rgba(124,58,237,0.2);color:#c4b5fd;">١-٣</div>
+      <div>
+        <div style="font-size:19px;font-weight:800;">مراجعة نهاية المرحلة الأولى</div>
+        <div style="font-size:15px;color:var(--muted);">الشهر الثالث — هل أنت جاهز للمرحلة الثانية؟</div>
+      </div>
+    </div>
+    <div class="review-body">
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="kpi-label">المشاريع المنجزة</div><div class="kpi-value">٣+ مشاريع على GitHub</div></div>
+        <div class="kpi-item"><div class="kpi-label">التمارين المكتملة</div><div class="kpi-value">٥٠+ تمرين Python</div></div>
+        <div class="kpi-item"><div class="kpi-label">المنتظم على GitHub</div><div class="kpi-value">Commit كل يوم عمل</div></div>
+        <div class="kpi-item"><div class="kpi-label">APIs استخدمتها</div><div class="kpi-value">٣+ APIs مختلفة</div></div>
+      </div>
+      <div class="ready-checks">
+        <div class="ready-check">أستطيع كتابة Function كاملة بـ Error Handling بدون مرجع</div>
+        <div class="ready-check">أستطيع استدعاء أي API وتحليل الـ Response خلال 20 دقيقة</div>
+        <div class="ready-check">لدي مشروع على GitHub بـ README واضح يشرح المشروع بالكامل</div>
+        <div class="ready-check">أفهم الفرق بين GET و POST و PUT و DELETE بشكل عملي</div>
+        <div class="ready-check">أستطيع قراءة أي error في Python وإيجاد الحل مستقلًا</div>
+      </div>
+      <div class="info-box warn" style="margin-top:14px;">
+        ⚠️ <strong>اختبار الانتقال:</strong> ابنِ "أداة بحث عن وظائف" تستدعي API، تفلتر النتائج، وتحفظها في JSON — في 3 ساعات. إذا أنجزتها: تقدّم. إذا لا: أسبوع آخر للتدريب.
+      </div>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-month" style="background:rgba(37,99,235,0.2);color:#93c5fd;">٤-٧</div>
+      <div>
+        <div style="font-size:19px;font-weight:800;">مراجعة نهاية المرحلة الثانية</div>
+        <div style="font-size:15px;color:var(--muted);">الشهر السابع — هل أول AI App حقيقي جاهز؟</div>
+      </div>
+    </div>
+    <div class="review-body">
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="kpi-label">Chatbots بُنيت</div><div class="kpi-value">٢+ chatbots مختلفة</div></div>
+        <div class="kpi-item"><div class="kpi-label">APIs نشرت</div><div class="kpi-value">١+ API على Railway</div></div>
+        <div class="kpi-item"><div class="kpi-label">n8n Workflows</div><div class="kpi-value">٥+ workflows تعمل</div></div>
+        <div class="kpi-item"><div class="kpi-label">DeepLearning كورسات</div><div class="kpi-value">٣+ short courses</div></div>
+      </div>
+      <div class="ready-checks">
+        <div class="ready-check">أستطيع بناء Chatbot API كامل بـ FastAPI في يوم واحد</div>
+        <div class="ready-check">أفهم كيف أدير Conversation History وأتجنب تجاوز الـ Token Limit</div>
+        <div class="ready-check">بنيت workflow n8n يعمل تلقائيًا وحده دون تدخل</div>
+        <div class="ready-check">جربت Gemini أو Claude API كبديل لـ OpenAI</div>
+        <div class="ready-check">API الخاص بي يعمل على الإنترنت ويمكن أي شخص استخدامه</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-month" style="background:rgba(5,150,105,0.2);color:#6ee7b7;">٨-١٢</div>
+      <div>
+        <div style="font-size:19px;font-weight:800;">مراجعة نهاية المرحلة الثالثة</div>
+        <div style="font-size:15px;color:var(--muted);">الشهر الثاني عشر — هل أنت جاهز للبيع الحقيقي؟</div>
+      </div>
+    </div>
+    <div class="review-body">
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="kpi-label">RAG Systems</div><div class="kpi-value">١+ نظام كامل يعمل</div></div>
+        <div class="kpi-item"><div class="kpi-label">AI Agents</div><div class="kpi-value">١+ agent مع tools</div></div>
+        <div class="kpi-item"><div class="kpi-label">Docker Images</div><div class="kpi-value">نشرت app بـ Docker</div></div>
+        <div class="kpi-item"><div class="kpi-label">عملاء محتملون</div><div class="kpi-value">٣+ محادثات</div></div>
+      </div>
+      <div class="ready-checks">
+        <div class="ready-check">أستطيع بناء نظام RAG لأي بيانات خلال يومين</div>
+        <div class="ready-check">مشروعي الاحترافي موجود على GitHub بـ Demo وكل التفاصيل</div>
+        <div class="ready-check">نشرت مشروعًا على الإنترنت وشاركت رابطه مع ٣ أشخاص يحتاجونه</div>
+        <div class="ready-check">لدي Case Study واحدة على الأقل لعميل أو مستخدم حقيقي</div>
+      </div>
+      <div class="info-box success" style="margin-top:14px;">
+        🏆 <strong>مؤشر جاهزية للبيع:</strong> إذا استطعت شرح مشروعك لشخص عادي (غير تقني) وهو يفهم القيمة خلال 3 دقائق — أنت جاهز لكسب أول عميل.
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box tip">
+    📅 <strong>نظام المراجعة الأسبوعية (كل جمعة صباحًا — 30 دقيقة):</strong><br>
+    1. ما الذي تعلمته هذا الأسبوع فعليًا؟ (اكتبه بكلامك)<br>
+    2. ما الذي طبقته؟ هل كتبت كودًا؟<br>
+    3. ما الـ Deliverable الذي أنجزته؟<br>
+    4. ما العائق الرئيسي؟ ما الحل المقترح للأسبوع القادم؟<br>
+    5. هل أنجزت ما خططت له؟ نعم / لا — ولماذا؟
+  </div>
+</section>
+
+
+<!-- ====== SECTION 4: RESOURCES WITH REAL LINKS ====== -->
+<section class="section" id="resources">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(16,185,129,0.2);">📚</div>
+    <div>
+      <div class="section-title">رابعًا: المصادر الكاملة — روابط حقيقية مباشرة</div>
+      <div class="section-subtitle">لكل مهارة: أفضل كورس مجاني + يوتيوب + تطبيق عملي + مشروع</div>
+    </div>
+  </div>
+
+  <!-- Python -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(124,58,237,0.2);">🐍</div>
+      <div>
+        <div class="resource-skill-name">Python — اللغة الأساسية</div>
+        <div class="resource-phase">المرحلة ١ · الأولوية القصوى · ٣-٤ أسابيع</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🇸🇦 يوتيوب عربي #١</div>
+        <div class="resource-name">Elzero Web School — Python</div>
+        <div class="resource-link"><a href="https://www.youtube.com/c/ElzeroInfo" target="_blank">youtube.com/c/ElzeroInfo</a></div>
+        <div class="resource-note">أفضل قناة عربية للمبتدئين — شرح واضح ومنظم</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب أجنبي #١</div>
+        <div class="resource-name">Tech With Tim — Python Full Course</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@TechWithTim" target="_blank">youtube.com/@TechWithTim</a></div>
+        <div class="resource-note">مشاريع عملية — يبني أشياء حقيقية مع كل شرح</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني معتمد</div>
+        <div class="resource-name">freeCodeCamp — Scientific Computing Python</div>
+        <div class="resource-link"><a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" target="_blank">freecodecamp.org/learn</a></div>
+        <div class="resource-note">شهادة مجانية + مشاريع عملية خمسة</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">Python.org Official Tutorial</div>
+        <div class="resource-link"><a href="https://docs.python.org/3/tutorial/index.html" target="_blank">docs.python.org/3/tutorial</a></div>
+        <div class="resource-note">اعتد على قراءة الـ Docs الرسمي — مهارة المحترفين</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">⚡ تمارين تفاعلية</div>
+        <div class="resource-name">Exercism — Python Track</div>
+        <div class="resource-link"><a href="https://exercism.org/tracks/python" target="_blank">exercism.org/tracks/python</a></div>
+        <div class="resource-note">١٣٠+ تمرين مع mentorship مجاني</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 بيئة تطبيق مجانية</div>
+        <div class="resource-name">Google Colab</div>
+        <div class="resource-link"><a href="https://colab.research.google.com" target="_blank">colab.research.google.com</a></div>
+        <div class="resource-note">لا تنصيب — Python جاهز فورًا في المتصفح</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Git -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(245,158,11,0.2);">🌿</div>
+      <div>
+        <div class="resource-skill-name">Git & GitHub — حفظ العمل ونشره</div>
+        <div class="resource-phase">المرحلة ١ · أولوية عالية · أسبوع واحد</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🇸🇦 يوتيوب عربي</div>
+        <div class="resource-name">Elzero — Git & GitHub بالعربي</div>
+        <div class="resource-link"><a href="https://www.youtube.com/playlist?list=PLDoPjvoNmBAw4eOj58MZPakHjaO3frVMF" target="_blank">playlist Git عربي</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب أجنبي</div>
+        <div class="resource-name">Fireship — Git in 100 Seconds</div>
+        <div class="resource-link"><a href="https://www.youtube.com/watch?v=hwP7WQkmECE" target="_blank">youtu.be/hwP7WQkmECE</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">⚡ تعلم تفاعلي (الأفضل)</div>
+        <div class="resource-name">Learn Git Branching</div>
+        <div class="resource-link"><a href="https://learngitbranching.js.org/?locale=ar" target="_blank">learngitbranching.js.org</a></div>
+        <div class="resource-note">تعلّم بالبصريات — الأفضل لفهم البراننشات</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 مرجع شامل مجاني</div>
+        <div class="resource-name">Pro Git Book</div>
+        <div class="resource-link"><a href="https://git-scm.com/book/en/v2" target="_blank">git-scm.com/book/en/v2</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس Microsoft</div>
+        <div class="resource-name">Microsoft Learn — Intro to Git</div>
+        <div class="resource-link"><a href="https://learn.microsoft.com/en-us/training/modules/intro-to-git/" target="_blank">learn.microsoft.com</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📚 GitHub Skills</div>
+        <div class="resource-name">GitHub Skills — Interactive Learning</div>
+        <div class="resource-link"><a href="https://skills.github.com" target="_blank">skills.github.com</a></div>
+        <div class="resource-note">تعلّم GitHub مباشرة من GitHub</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APIs -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(6,182,212,0.2);">🔗</div>
+      <div>
+        <div class="resource-skill-name">APIs & HTTP & REST — كيف تتحدث البرامج</div>
+        <div class="resource-phase">المرحلة ١ · أساسي جدًا · أسبوعان</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🇸🇦 يوتيوب عربي</div>
+        <div class="resource-name">Codezilla — شرح APIs بالعربي</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@Codezilla" target="_blank">youtube.com/@Codezilla</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب أجنبي</div>
+        <div class="resource-name">Traversy Media — REST APIs Crash Course</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@TraversyMedia" target="_blank">youtube.com/@TraversyMedia</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني</div>
+        <div class="resource-name">Postman Learning Center</div>
+        <div class="resource-link"><a href="https://learning.postman.com/docs/getting-started/overview/" target="_blank">learning.postman.com</a></div>
+        <div class="resource-note">تعلم APIs ورات باستخدام أحسن أداة</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">⚡ ممارسة عملية</div>
+        <div class="resource-name">Public APIs Directory</div>
+        <div class="resource-link"><a href="https://publicapis.dev" target="_blank">publicapis.dev</a></div>
+        <div class="resource-note">مئات APIs مجانية لاختبار ما تعلمته</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 Sandbox تجريبي</div>
+        <div class="resource-name">Reqres.in — Fake REST API</div>
+        <div class="resource-link"><a href="https://reqres.in" target="_blank">reqres.in</a></div>
+        <div class="resource-note">API جاهز للتدريب — لا تسجيل مطلوب</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 مرجع HTTP</div>
+        <div class="resource-name">MDN HTTP Reference</div>
+        <div class="resource-link"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank">developer.mozilla.org</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prompt Engineering -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(233,69,96,0.2);">💬</div>
+      <div>
+        <div class="resource-skill-name">Prompt Engineering — فن التحدث مع النماذج</div>
+        <div class="resource-phase">المرحلة ٢ · مهارة مستقلة · أسبوعان</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني — الأفضل</div>
+        <div class="resource-name">DeepLearning.AI — ChatGPT Prompt Engineering</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank">deeplearning.ai → Short Courses</a></div>
+        <div class="resource-note">بـ Andrew Ng — مجاني وممتاز للمطورين</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 دليل شامل (عربي ✓)</div>
+        <div class="resource-name">PromptingGuide.ai</div>
+        <div class="resource-link"><a href="https://www.promptingguide.ai/ar" target="_blank">promptingguide.ai/ar</a></div>
+        <div class="resource-note">نسخة عربية كاملة — Chain of Thought, Few-shot, RAG</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 دليل Anthropic</div>
+        <div class="resource-name">Anthropic Prompt Engineering Guide</div>
+        <div class="resource-link"><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank">docs.anthropic.com</a></div>
+        <div class="resource-note">أفضل توثيق للـ prompting — من صانعي Claude</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">⚡ تطبيق عملي</div>
+        <div class="resource-name">OpenAI Playground</div>
+        <div class="resource-link"><a href="https://platform.openai.com/playground" target="_blank">platform.openai.com/playground</a></div>
+        <div class="resource-note">جرّب Prompts تفاعليًا — مباشرة</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">AI Jason — Prompt Engineering</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@AIJasonZ" target="_blank">youtube.com/@AIJasonZ</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📚 مكتبة Prompts</div>
+        <div class="resource-name">Awesome Prompts — GitHub</div>
+        <div class="resource-link"><a href="https://github.com/f/awesome-chatgpt-prompts" target="_blank">github.com/f/awesome-chatgpt-prompts</a></div>
+        <div class="resource-note">١٠٠+ prompt جاهز للاستلهام</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OpenAI API -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(16,185,129,0.2);">🤖</div>
+      <div>
+        <div class="resource-skill-name">OpenAI API & LLMs — قلب تطبيقات AI</div>
+        <div class="resource-phase">المرحلة ٢ · جوهري · شهر كامل</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">OpenAI API Documentation</div>
+        <div class="resource-link"><a href="https://platform.openai.com/docs/overview" target="_blank">platform.openai.com/docs</a></div>
+        <div class="resource-note">المصدر الأول والأهم — اقرأه كاملًا</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني</div>
+        <div class="resource-name">DeepLearning.AI — Building LLM Apps</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/" target="_blank">deeplearning.ai → Building Systems</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">Sentdex — Python + OpenAI</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@sentdex" target="_blank">youtube.com/@sentdex</a></div>
+        <div class="resource-note">مشاريع Python + AI من مبتدئ لمتقدم</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 Anthropic Claude API</div>
+        <div class="resource-name">Anthropic API Docs</div>
+        <div class="resource-link"><a href="https://docs.anthropic.com/en/api/getting-started" target="_blank">docs.anthropic.com/en/api</a></div>
+        <div class="resource-note">تعلّم أكثر من API — زيادة في خياراتك</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">💡 Google Gemini API</div>
+        <div class="resource-name">Google AI Studio + Gemini Docs</div>
+        <div class="resource-link"><a href="https://ai.google.dev/gemini-api/docs" target="_blank">ai.google.dev/gemini-api</a></div>
+        <div class="resource-note">مجاني جدًا للتجريب — Gemini 1.5 Flash</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 Hugging Face</div>
+        <div class="resource-name">Hugging Face Inference API</div>
+        <div class="resource-link"><a href="https://huggingface.co/inference-api" target="_blank">huggingface.co/inference-api</a></div>
+        <div class="resource-note">مئات النماذج المجانية — بديل ممتاز</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FastAPI -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(6,182,212,0.2);">⚡</div>
+      <div>
+        <div class="resource-skill-name">FastAPI — بناء Backend APIs بـ Python</div>
+        <div class="resource-phase">المرحلة ٢ · أساسي للـ Production · أسبوعان</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي (الأفضل)</div>
+        <div class="resource-name">FastAPI Official Documentation</div>
+        <div class="resource-link"><a href="https://fastapi.tiangolo.com" target="_blank">fastapi.tiangolo.com</a></div>
+        <div class="resource-note">توثيق رائع بأمثلة عملية — يكفي وحده</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">Amigoscode — FastAPI Crash Course</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@amigoscode" target="_blank">youtube.com/@amigoscode</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني</div>
+        <div class="resource-name">TestDriven.io — FastAPI Tutorial</div>
+        <div class="resource-link"><a href="https://testdriven.io/blog/fastapi-crud/" target="_blank">testdriven.io/blog/fastapi</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 بيئة تجريب</div>
+        <div class="resource-name">Replit — Python/FastAPI online</div>
+        <div class="resource-link"><a href="https://replit.com/languages/python3" target="_blank">replit.com</a></div>
+        <div class="resource-note">شغّل FastAPI مباشرة في المتصفح</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- n8n -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(245,158,11,0.2);">⚙️</div>
+      <div>
+        <div class="resource-skill-name">n8n Automation — أتمتة كل شيء</div>
+        <div class="resource-phase">المرحلة ٢ · فرصة دخل مبكرة · ٣ أسابيع</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">n8n Official Docs</div>
+        <div class="resource-link"><a href="https://docs.n8n.io" target="_blank">docs.n8n.io</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🚀 ابدأ مجانًا الآن</div>
+        <div class="resource-name">n8n Cloud — Free Trial</div>
+        <div class="resource-link"><a href="https://app.n8n.cloud/register" target="_blank">app.n8n.cloud/register</a></div>
+        <div class="resource-note">لا تنصيب — ابدأ فورًا</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📚 Templates جاهزة</div>
+        <div class="resource-name">n8n Workflow Templates</div>
+        <div class="resource-link"><a href="https://n8n.io/workflows/" target="_blank">n8n.io/workflows</a></div>
+        <div class="resource-note">مئات workflows جاهزة للتعديل والاستخدام</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">NetworkChuck — n8n AI Automation</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@NetworkChuck" target="_blank">youtube.com/@NetworkChuck</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">💬 مجتمع</div>
+        <div class="resource-name">n8n Community Forum</div>
+        <div class="resource-link"><a href="https://community.n8n.io" target="_blank">community.n8n.io</a></div>
+        <div class="resource-note">اسأل أي سؤال — الناس متجاوبون جدًا</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 Self-hosted مجاني</div>
+        <div class="resource-name">n8n على Railway.app</div>
+        <div class="resource-link"><a href="https://railway.app/template/n8n" target="_blank">railway.app/template/n8n</a></div>
+        <div class="resource-note">Deploy n8n مجانًا على سيرفرك</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LangChain & RAG -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(83,52,131,0.3);">⛓️</div>
+      <div>
+        <div class="resource-skill-name">LangChain & RAG Systems — المنتج الأكثر طلبًا</div>
+        <div class="resource-phase">المرحلة ٣ · ذهب خالص · شهر ونصف</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">LangChain Python Docs</div>
+        <div class="resource-link"><a href="https://python.langchain.com/docs/introduction/" target="_blank">python.langchain.com/docs</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني (ذهبي)</div>
+        <div class="resource-name">DeepLearning.AI — LangChain for LLM Dev</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/" target="_blank">deeplearning.ai</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس RAG</div>
+        <div class="resource-name">DeepLearning.AI — Building RAG Apps</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/building-and-evaluating-advanced-rag/" target="_blank">deeplearning.ai → RAG</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">💾 Vector DB — مجاني سهل</div>
+        <div class="resource-name">Chroma DB Documentation</div>
+        <div class="resource-link"><a href="https://docs.trychroma.com" target="_blank">docs.trychroma.com</a></div>
+        <div class="resource-note">أبسط Vector DB للبدء — local و cloud</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">💾 Vector DB — Production</div>
+        <div class="resource-name">Pinecone — Free Tier</div>
+        <div class="resource-link"><a href="https://docs.pinecone.io/guides/get-started/quickstart" target="_blank">docs.pinecone.io</a></div>
+        <div class="resource-note">Production-ready — الأفضل للعملاء الحقيقيين</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">Rabbitmetrics — RAG Full Tutorial</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@rabbitmetrics" target="_blank">youtube.com/@rabbitmetrics</a></div>
+        <div class="resource-note">مشاريع RAG كاملة من البداية للنهاية</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Agents -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(245,158,11,0.2);">🕵️</div>
+      <div>
+        <div class="resource-skill-name">AI Agents & Tool Calling — مستقبل الصناعة</div>
+        <div class="resource-phase">المرحلة ٣ · الأكثر طلبًا في 2026 · شهر كامل</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني</div>
+        <div class="resource-name">DeepLearning.AI — AI Agents in LangGraph</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">deeplearning.ai → AI Agents</a></div>
+        <div class="resource-note">الكورس الأفضل لـ Agents في 2026</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 LangGraph Docs</div>
+        <div class="resource-name">LangGraph Official Documentation</div>
+        <div class="resource-link"><a href="https://langchain-ai.github.io/langgraph/" target="_blank">langchain-ai.github.io/langgraph</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 Multi-Agent</div>
+        <div class="resource-name">DeepLearning.AI — Multi AI Agent Systems</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/" target="_blank">deeplearning.ai → CrewAI</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">Andrej Karpathy — AI Agents Explained</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@AndrejKarpathy" target="_blank">youtube.com/@AndrejKarpathy</a></div>
+        <div class="resource-note">أعمق فهم للـ AI — للمتحمسين</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 تطبيق عملي</div>
+        <div class="resource-name">Hugging Face Spaces — Agent Demos</div>
+        <div class="resource-link"><a href="https://huggingface.co/spaces" target="_blank">huggingface.co/spaces</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🔧 أداة جاهزة</div>
+        <div class="resource-name">CrewAI Framework</div>
+        <div class="resource-link"><a href="https://docs.crewai.com" target="_blank">docs.crewai.com</a></div>
+        <div class="resource-note">بناء Multi-Agent Teams بسهولة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Docker & Deployment -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(37,99,235,0.2);">🐳</div>
+      <div>
+        <div class="resource-skill-name">Docker & Deployment — نشر تطبيقاتك للعالم</div>
+        <div class="resource-phase">المرحلة ٣ · لازم للتسليم · أسبوعان</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">Docker Get Started Guide</div>
+        <div class="resource-link"><a href="https://docs.docker.com/get-started/" target="_blank">docs.docker.com/get-started</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">TechWorld with Nana — Docker Tutorial</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@TechWorldwithNana" target="_blank">youtube.com/@TechWorldwithNana</a></div>
+        <div class="resource-note">أفضل شرح Docker من الصفر للإتقان</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🚀 نشر مجاني (الأفضل)</div>
+        <div class="resource-name">Railway.app</div>
+        <div class="resource-link"><a href="https://railway.app" target="_blank">railway.app</a></div>
+        <div class="resource-note">أسهل طريقة لنشر Python APIs مجانًا</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌐 Frontend مجاني</div>
+        <div class="resource-name">Vercel</div>
+        <div class="resource-link"><a href="https://vercel.com" target="_blank">vercel.com</a></div>
+        <div class="resource-note">أفضل لنشر Frontend — سريع ومجاني</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">☁️ بديل قوي</div>
+        <div class="resource-name">Render.com</div>
+        <div class="resource-link"><a href="https://render.com" target="_blank">render.com</a></div>
+        <div class="resource-note">مجاني + Docker support + databases</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 GitHub Codespaces</div>
+        <div class="resource-name">GitHub Codespaces — Dev Environment</div>
+        <div class="resource-link"><a href="https://github.com/features/codespaces" target="_blank">github.com/features/codespaces</a></div>
+        <div class="resource-note">بيئة تطوير كاملة في المتصفح</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box success" style="margin-top:8px;">
+    🏆 <strong>المصدر الذهبي الوحيد الذي يكفي للنسف: </strong>
+    <a href="https://www.deeplearning.ai/short-courses/" target="_blank">DeepLearning.AI Short Courses</a> — 
+    أكثر من 60 كورس مجاني قصير من Andrew Ng وخبراء الصناعة. يغطي 70% من الخطة. الأول الذي تفتحه.
+  </div>
+</section>
+
+
+<!-- ====== SECTION 5: DASHBOARD ====== -->
+<section class="section" id="dashboard">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(124,58,237,0.2);">🗂</div>
+    <div>
+      <div class="section-title">خامسًا: لوحة متابعة التقدم</div>
+      <div class="section-subtitle">نسخ هذا الجدول في Notion أو Obsidian وتحديثه أسبوعيًا</div>
+    </div>
+  </div>
+
+  <div class="info-box tip">
+    📋 <strong>طريقة الاستخدام:</strong> انسخ هذا الجدول في Notion أو Obsidian. كل أسبوع: حدّث نسبة الإنجاز، المشروع المرتبط، ومستوى الإتقان. إذا رأيت نسبة إنجاز 0% لأسبوعين متتاليين — هذا إنذار خطر.
+  </div>
+
+  <div class="table-wrap" style="margin-top:20px;">
+    <table>
+      <tr>
+        <th>المهارة</th>
+        <th>الأولوية</th>
+        <th>% الإنجاز</th>
+        <th>مستوى الإتقان</th>
+        <th>المشروع المرتبط</th>
+        <th>الحالة</th>
+        <th>المشكلة الحالية</th>
+      </tr>
+      <tr><td><strong>Python أساسيات</strong></td><td>🔴 قصوى</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Expense Tracker</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>Git & GitHub</strong></td><td>🔴 قصوى</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>أول Repo</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>APIs & HTTP</strong></td><td>🔴 عالية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Weather Dashboard</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>Prompt Engineering</strong></td><td>🟡 عالية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Prompt Library</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>OpenAI API</strong></td><td>🔴 جوهرية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Chatbot API</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>FastAPI</strong></td><td>🔴 جوهرية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>AI REST API</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>n8n Automation</strong></td><td>🟡 عالية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Content Pipeline</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>LangChain</strong></td><td>🔴 جوهرية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Chat with Docs</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>Vector DB / RAG</strong></td><td>🔴 جوهرية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>RAG System</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>AI Agents</strong></td><td>🔴 جوهرية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Research Agent</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>Docker</strong></td><td>🟡 عالية</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Deployed App</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>Streamlit / UI</strong></td><td>🟢 متوسطة</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>Demo App</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+      <tr><td><strong>SaaS Architecture</strong></td><td>🟡 مرحلة ٤</td><td>___%</td><td><span class="level-badge level-0">لم أبدأ</span></td><td>SaaS MVP</td><td class="status-todo">⬜ قيد الانتظار</td><td>—</td></tr>
+    </table>
+  </div>
+
+  <div class="info-box warn" style="margin-top:16px;">
+    🔴 <strong>مستوى الإتقان يُعبأ هكذا:</strong>
+    <span class="level-badge level-0" style="margin:0 6px;">لم أبدأ</span>
+    <span class="level-badge level-1" style="margin:0 6px;">مبتدئ — فهمت المفهوم</span>
+    <span class="level-badge level-2" style="margin:0 6px;">متوسط — طبّقت مشاريع</span>
+    <span class="level-badge level-3" style="margin:0 6px;">متقدم — أُعلّم وأحل مشاكل</span>
+  </div>
+</section>
+
+
+<!-- ====== SECTION 6: LEARNING ENVIRONMENT ====== -->
+<section class="section" id="tools">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(16,185,129,0.2);">🛠</div>
+    <div>
+      <div class="section-title">سادسًا: بيئة التعلم الاحترافية</div>
+      <div class="section-subtitle">الأدوات الصحيحة تضاعف كفاءة تعلمك — لماذا كل أداة ومتى تستخدمها</div>
+    </div>
+  </div>
+
+  <div class="tools-grid">
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:rgba(124,58,237,0.2);">🗂</div>
+        <div>
+          <div class="tool-name">Obsidian</div>
+          <div class="tool-purpose">لبناء قاعدة معرفة شخصية</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        نظام ملاحظات مبني على Markdown يعيش على جهازك. فيه تربط الأفكار ببعضها مثل شبكة عصبية. كلما تعلمت شيئًا — دوّنه هنا بكلماتك الخاصة.
+      </div>
+      <div class="tool-when">🕐 متى تستخدمه: بعد كل جلسة تعلم — سجّل ملخصًا بكلماتك في 3 دقائق</div>
+      <div class="tool-link"><a href="https://obsidian.md" target="_blank">obsidian.md — مجاني تمامًا</a></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:rgba(6,182,212,0.2);">📋</div>
+        <div>
+          <div class="tool-name">Notion</div>
+          <div class="tool-purpose">لتتبع الخطة ولوحة المتابعة</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        الأنسب لمتابعة تقدمك في الخطة، حفظ الروابط والمصادر، وإنشاء لوحة الـ Dashboard الأسبوعية. أقل عمقًا من Obsidian لكن أسهل للجداول والمتابعة.
+      </div>
+      <div class="tool-when">🕐 متى تستخدمه: لتحديث لوحة المتابعة الأسبوعية وحفظ خطة الأسبوع القادم</div>
+      <div class="tool-link"><a href="https://notion.so" target="_blank">notion.so — مجاني للاستخدام الفردي</a></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:rgba(245,158,11,0.2);">🎴</div>
+        <div>
+          <div class="tool-name">Anki</div>
+          <div class="tool-purpose">لحفظ المعلومات والأوامر البرمجية</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        أداة Spaced Repetition تعتمد على علم النسيان. كل مفهوم أو أمر برمجي تتعلمه — أضفه كـ Flashcard. Anki سيعيد تذكيرك به في اللحظة التي أنت على وشك نسيانه.
+      </div>
+      <div class="tool-when">🕐 متى تستخدمه: 10 دقائق كل صباح قبل جلسة الدراسة — مراجعة الكروت القديمة</div>
+      <div class="tool-link"><a href="https://apps.ankiweb.net" target="_blank">apps.ankiweb.net — مجاني كامل</a></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:rgba(16,185,129,0.2);">🐙</div>
+        <div>
+          <div class="tool-name">GitHub</div>
+          <div class="tool-purpose">Portfolio + Code Storage + Collaboration</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        ليس فقط لحفظ الكود — هو Portfolio تقني حي. كل مشروع مع README جيد هو إعلان عن مهاراتك. Activity graph الأخضر هو أقوى CV تقني.
+      </div>
+      <div class="tool-when">🕐 متى تستخدمه: يوميًا — كل كود تكتبه يذهب لـ GitHub. اجعل Activity graph أخضر باستمرار.</div>
+      <div class="tool-link"><a href="https://github.com" target="_blank">github.com — مجاني للـ Public repos</a></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:rgba(233,69,96,0.2);">⏱</div>
+        <div>
+          <div class="tool-name">Toggl Track</div>
+          <div class="tool-purpose">تتبع وقت الدراسة الفعلي</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        تتبع كم ساعة درست فعليًا كل يوم وعلى أي موضوع. الأشخاص يبالغون في تقدير وقتهم — هذه الأداة تُريك الحقيقة. الوعي بالوقت يُحسّن الإنتاجية.
+      </div>
+      <div class="tool-when">🕐 متى تستخدمه: شغّله عند بداية كل جلسة دراسة، أوقفه عند النهاية — لا تخترعها</div>
+      <div class="tool-link"><a href="https://toggl.com/track/" target="_blank">toggl.com/track — مجاني</a></div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div class="tool-icon" style="background:rgba(37,99,235,0.2);">🖥</div>
+        <div>
+          <div class="tool-name">VS Code</div>
+          <div class="tool-purpose">بيئة التطوير الاحترافية</div>
+        </div>
+      </div>
+      <div class="tool-desc">
+        المحرر الأفضل لـ Python وكل التقنيات في هذا المسار. ثبّت هذه الإضافات: Python Extension, Pylance, GitLens, GitHub Copilot (مجاني للطلاب), REST Client.
+      </div>
+      <div class="tool-when">🕐 متى تستخدمه: كل وقت تكتب فيه كود — لا تستخدم أي محرر آخر لكي تتعود</div>
+      <div class="tool-link"><a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com — مجاني كامل</a></div>
+    </div>
+
+  </div>
+
+  <div class="info-box tip" style="margin-top:20px;">
+    💡 <strong>ترتيب الأولويات:</strong> ابدأ بـ <strong>VS Code</strong> يوم ١، ثم <strong>GitHub</strong> يوم ٣، ثم <strong>Obsidian</strong> للملاحظات من الأسبوع الأول. <strong>Anki</strong> من الشهر الثاني. <strong>Toggl</strong> إذا حسست أنك تضيع وقتك.
+  </div>
+</section>
+
+
+<!-- ====== SECTION 7: PROFITABLE PROJECTS ====== -->
+<section class="section" id="profit">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(245,158,11,0.2);">💎</div>
+    <div>
+      <div class="section-title">سابعًا: خارطة المشاريع الربحية</div>
+      <div class="section-subtitle">مشاريع SaaS + Freelancing + Automation + AI Agents — مع مستوى الصعوبة واحتمالية البيع</div>
+    </div>
+  </div>
+
+  <div class="info-box purple">
+    🎯 <strong>المبدأ:</strong> ابنِ المشروع أولًا لنفسك أو لشخص تعرفه مجانًا. احصل على Feedback. ثم بيعه للتالي بسعر منخفض. ثم ارفع السعر مع كل عميل. هذا هو المسار الواقعي.
+  </div>
+
+  <!-- SaaS Projects -->
+  <div style="font-size:19px;font-weight:800;margin:36px 0 20px;color:rgba(255,255,255,0.6);">🚀 مشاريع SaaS — اشتراكات شهرية متكررة</div>
+  <div class="profit-grid">
+
+    <div class="profit-card">
+      <div class="best-start">⭐ ابدأ بهذا</div>
+      <span class="profit-type type-saas">SaaS</span>
+      <div class="profit-title">أداة توليد محتوى تسويقي بالـ AI</div>
+      <div class="profit-desc">المستخدم يدخل اسم المنتج والجمهور المستهدف، الأداة تولّد: Caption، منشور LinkedIn، بريد تسويقي، توصيف منتج — كل شيء في ثوانٍ.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">95%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">2 أسابيع</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">FastAPI</span><span class="tech-tag">OpenAI API</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Stripe</span>
+      </div>
+      <div class="profit-price">💰 السعر: 9$–29$/شهر · هدف: 50 مشترك = 500-1500$/شهر</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-saas">SaaS</span>
+      <div class="profit-title">AI Chatbot Builder بدون كود</div>
+      <div class="profit-desc">منصة تمكّن أصحاب المتاجر والعيادات من رفع ملفاتهم وبناء Chatbot AI لموقعهم — بدون أي خبرة تقنية. هم يرفعون، أنت تعالج، الـ Chatbot يعمل على موقعهم.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">90%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">شهر</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangChain</span><span class="tech-tag">RAG</span><span class="tech-tag">Multi-tenant</span><span class="tech-tag">React</span>
+      </div>
+      <div class="profit-price">💰 السعر: 29$–99$/شهر · هدف: 30 عميل = 870-3000$/شهر</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-saas">SaaS</span>
+      <div class="profit-title">مساعد قانوني / طبي / تعليمي AI</div>
+      <div class="profit-desc">RAG system متخصص لمجال محدد: محامٍ يسأل عن قانون، طبيب عن دواء، طالب عن مادة. النموذج مدرّب على قاعدة بيانات متخصصة ويجيب بدقة مع المصدر.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">85%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">٦ أسابيع</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">RAG</span><span class="tech-tag">Domain Data</span><span class="tech-tag">FastAPI</span>
+      </div>
+      <div class="profit-price">💰 السعر: 49$–199$/شهر للمؤسسات · B2B = دخل أعلى</div>
+    </div>
+
+  </div>
+
+  <!-- Freelance Projects -->
+  <div style="font-size:19px;font-weight:800;margin:36px 0 20px;color:rgba(255,255,255,0.6);">🎯 مشاريع Freelancing — دخل فوري من الشهر الرابع</div>
+  <div class="profit-grid">
+
+    <div class="profit-card">
+      <span class="profit-type type-freelance">Freelance</span>
+      <div class="profit-title">Chatbot خدمة عملاء للشركات</div>
+      <div class="profit-desc">كل شركة لديها موقع ويحتاج Chatbot يجيب على أسئلة العملاء المتكررة. أنت تأخذ بيانات الشركة (PDFs، FAQs)، تبني RAG System، وتثبّته على موقعهم.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البيع</span></div>
+        <div class="metric"><span class="metric-val">300$–800$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">أسبوعان</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangChain</span><span class="tech-tag">ChromaDB</span><span class="tech-tag">FastAPI</span>
+      </div>
+      <div class="profit-price">💰 + صيانة شهرية: 50$-100$/شهر = دخل متكرر</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-freelance">Freelance</span>
+      <div class="profit-title">نظام RAG للمعرفة الداخلية للشركات</div>
+      <div class="profit-desc">شركة لديها مئات الوثائق والسياسات — موظفوها يضيعون وقتًا في البحث. أنت تبني نظامًا يتحدث مع وثائقهم ويجيب الموظفين فورًا. هذا مطلوب جدًا.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البيع</span></div>
+        <div class="metric"><span class="metric-val">500$–2500$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">٣-٤ أسابيع</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">RAG</span><span class="tech-tag">Pinecone</span><span class="tech-tag">LangChain</span><span class="tech-tag">React UI</span>
+      </div>
+      <div class="profit-price">💰 الذهب الحقيقي — الشركات تدفع بدون تردد</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-freelance">Freelance</span>
+      <div class="profit-title">إنشاء Portfolio AI لأصحاب الأعمال</div>
+      <div class="profit-desc">موقع بسيط يشرح عمل صاحب المهنة مع Chatbot يجيب على الزوار — يحجز مواعيد، يجيب على الأسئلة، يرسل معلومات. مطعم، عيادة، محل، فريلانسر.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البيع</span></div>
+        <div class="metric"><span class="metric-val">200$–500$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">أسبوع</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">OpenAI</span><span class="tech-tag">Next.js</span><span class="tech-tag">Vercel</span>
+      </div>
+      <div class="profit-price">💰 سهل البيع — كل عمل صغير يحتاجه</div>
+    </div>
+
+  </div>
+
+  <!-- Automation Projects -->
+  <div style="font-size:19px;font-weight:800;margin:36px 0 20px;color:rgba(255,255,255,0.6);">⚙️ مشاريع Automation — قابلة للبيع من الشهر الرابع</div>
+  <div class="profit-grid">
+
+    <div class="profit-card">
+      <span class="profit-type type-automation">Automation</span>
+      <div class="profit-title">أتمتة نشر محتوى السوشيال بالـ AI</div>
+      <div class="profit-desc">Workflow يولّد محتوى بالـ AI كل يوم ثم ينشره تلقائيًا على Instagram, Twitter, LinkedIn, Facebook. صاحب العمل يحدد الموضوعات فقط.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">150$-500$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">أسبوع</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">n8n</span><span class="tech-tag">OpenAI</span><span class="tech-tag">Buffer API</span>
+      </div>
+      <div class="profit-price">💰 + صيانة شهرية: 100$/شهر — سهل جدًا البناء والبيع</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-automation">Automation</span>
+      <div class="profit-title">نظام تلخيص ومعالجة الإيميلات</div>
+      <div class="profit-desc">يقرأ الإيميلات الواردة، يصنّفها، يلخّصها، يرسل إشعارات للـ priority emails، ويرد تلقائيًا على الأسئلة المتكررة. يوفر ساعتين يوميًا لأصحاب الأعمال.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">200$-600$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">أسبوعان</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">n8n</span><span class="tech-tag">Gmail API</span><span class="tech-tag">OpenAI</span>
+      </div>
+      <div class="profit-price">💰 كل صاحب عمل يحتاجه — ألمهم الكبير</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-automation">Automation</span>
+      <div class="profit-title">أتمتة كتابة تقارير البيانات</div>
+      <div class="profit-desc">يستقبل بيانات من Excel أو قاعدة بيانات، يحللها بالـ AI، ويكتب تقريرًا مكتوبًا بالكامل بالعربي أو الإنجليزي — تلقائيًا كل أسبوع أو شهر.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">300$-1000$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">٣ أسابيع</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">OpenAI</span><span class="tech-tag">n8n</span>
+      </div>
+      <div class="profit-price">💰 الشركات المتوسطة تدفع جيدًا — B2B</div>
+    </div>
+
+  </div>
+
+  <!-- AI Agents -->
+  <div style="font-size:19px;font-weight:800;margin:36px 0 20px;color:rgba(255,255,255,0.6);">🕵️ مشاريع AI Agents — الأعلى سعرًا في 2026</div>
+  <div class="profit-grid">
+
+    <div class="profit-card">
+      <span class="profit-type type-agent">AI Agent</span>
+      <div class="profit-title">AI Sales Prospecting Agent</div>
+      <div class="profit-desc">Agent يبحث في LinkedIn والإنترنت عن عملاء محتملين، يجمع معلوماتهم، يكتب رسائل تواصل مخصصة لكل شخص، ويرسلها تلقائيًا. يوفر 80% من وقت المبيعات.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">98%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">شهر</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangGraph</span><span class="tech-tag">Browser Tools</span><span class="tech-tag">OpenAI</span>
+      </div>
+      <div class="profit-price">💰 سعر المشروع: 500$-2000$ · أو اشتراك: 100$+/شهر</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-agent">AI Agent</span>
+      <div class="profit-title">Market Research Agent</div>
+      <div class="profit-desc">Agent متخصص في البحث: يدخل موضوعًا، يبحث في عشرات المصادر، يقرأ المقالات، يحلل المنافسين، ويكتب تقريرًا شاملًا في 10 دقائق. يستبدل ساعات من البحث اليدوي.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">90%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">٣ أسابيع</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangChain</span><span class="tech-tag">Web Search</span><span class="tech-tag">Tavily</span>
+      </div>
+      <div class="profit-price">💰 للشركات والاستشاريين: 300$-1500$ للمشروع</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-agent">AI Agent</span>
+      <div class="profit-title">Customer Support Agent كامل</div>
+      <div class="profit-desc">Agent يدير دعم العملاء: يقرأ التذاكر، يبحث في قاعدة المعرفة، يرد تلقائيًا، يُصعّد ما لا يستطيع حله للإنسان، ويتعلم من الإجابات الجديدة.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">95%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">٦ أسابيع</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangGraph</span><span class="tech-tag">RAG</span><span class="tech-tag">Memory</span><span class="tech-tag">APIs</span>
+      </div>
+      <div class="profit-price">💰 للشركات المتوسطة: 1000$-3000$ + صيانة شهرية</div>
+    </div>
+
+  </div>
+
+  <div class="info-box success" style="margin-top:16px;">
+    🏆 <strong>أفضل مشروع للبدء إطلاقًا:</strong> "أداة توليد محتوى تسويقي" — يمكن بناؤها بـ FastAPI + OpenAI في أسبوعين، قابلة للعرض كـ Demo فوري، ولديها سوق ضخم (كل صاحب متجر). هذا أول مشروع مثالي للـ Portfolio والدخل.
+  </div>
+</section>
+
+
+<!-- ====== SECTION 8: ANTI-PROCRASTINATION ====== -->
+<section class="section" id="antisocial">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(239,68,68,0.2);">🧠</div>
+    <div>
+      <div class="section-title">ثامنًا: نظام منع التسويف والتشتت</div>
+      <div class="section-subtitle">المشكلة ليست المعلومات — المشكلة هي الاستمرارية. هذا النظام يحلها.</div>
+    </div>
+  </div>
+
+  <div class="system-grid">
+
+    <div class="system-card">
+      <div class="system-icon">🔒</div>
+      <div class="system-title">نظام منع التسويف</div>
+      <div class="system-items">
+        <div class="system-item">قاعدة 2 دقيقة: إذا كان المهمة تستغرق أقل من دقيقتين — افعلها الآن</div>
+        <div class="system-item">ابدأ بمهمة مضمونة: "افتح VS Code واكتب سطر واحد" — الشروع في الفعل يكسر الجمود</div>
+        <div class="system-item">Commitment Device: أخبر شخصًا محددًا بما ستنجزه اليوم — الضغط الاجتماعي يعمل</div>
+        <div class="system-item">لا تنتظر الحماس — الانتظام أقوى من الحماس. التزم بالوقت حتى حين لا تريد</div>
+        <div class="system-item">قاعدة "لا تكسر السلسلة" — GitHub streak يومي ولو commit واحد</div>
+      </div>
+    </div>
+
+    <div class="system-card">
+      <div class="system-icon">🎯</div>
+      <div class="system-title">نظام منع التشتت</div>
+      <div class="system-items">
+        <div class="system-item">قاعدة المسار الواحد: لا تتعلم تقنية جديدة قبل إنهاء المرحلة الحالية كاملًا</div>
+        <div class="system-item">Shiny Object Filter: كل تقنية جديدة تسمع عنها — ضعها في قائمة "لاحقًا" ولا تتوقف</div>
+        <div class="system-item">Pomodoro: 25 دقيقة دراسة كاملة + 5 دقائق راحة. الهاتف في الغرفة الثانية.</div>
+        <div class="system-item">مجلد "مشتتات مؤجلة": مقالات مثيرة، كورسات جديدة — احفظها للجمعة الساعة ٨ مساء</div>
+        <div class="system-item">قرار المرحلة الواحدة: أنا في المرحلة X والمرحلة X فقط حتى أنهيها</div>
+      </div>
+    </div>
+
+    <div class="system-card">
+      <div class="system-icon">📒</div>
+      <div class="system-title">نظام المحاسبة الذاتية</div>
+      <div class="system-items">
+        <div class="system-item">سجل "3 أشياء حققتها اليوم" كل مساء — مهما كانت صغيرة</div>
+        <div class="system-item">مراجعة أسبوعية كل جمعة صباحًا — أسئلة محددة موثقة في Notion</div>
+        <div class="system-item">مراجعة شهرية نهاية كل شهر — قياس التقدم مقارنة بالـ KPIs</div>
+        <div class="system-item">اعترف بالفشل مبكرًا — "هذا الأسبوع كان ضعيفًا بسبب X، سأعدّل Y"</div>
+        <div class="system-item">Accountability Partner: شخص واحد تُرسل له تقريرًا أسبوعيًا</div>
+      </div>
+    </div>
+
+    <div class="system-card">
+      <div class="system-icon">⚡</div>
+      <div class="system-title">نظام طاقة التعلم</div>
+      <div class="system-items">
+        <div class="system-item">النوم أولًا — الدماغ المتعب لا يتعلم. 7 ساعات لا تفاوض فيها</div>
+        <div class="system-item">لا تدرس بعد الأكل مباشرة — انتظر 30 دقيقة أو اشرب قهوة</div>
+        <div class="system-item">Celebration صغيرة مع كل Deliverable منجز — مكافأة نفسك حقيقية</div>
+        <div class="system-item">إذا لم تستطع التركيز: 5 دقائق مشي، ثم ارجع. لا تتابع هاتفك</div>
+        <div class="system-item">أوقف الدراسة وأنت لا تزال تريد الاستمرار — يجعلك متحمسًا للغد</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="info-box danger" style="margin-top:16px;">
+    🚨 <strong>إنذار خطر — متى تعرف أنك في طريق الفشل:</strong><br>
+    • لم تكتب كودًا منذ أكثر من 4 أيام متتالية<br>
+    • تتعلم تقنية ثالثة دون إنهاء الأولى والثانية<br>
+    • تشاهد 3+ ساعات فيديو يوميًا دون تطبيق<br>
+    • لم ترفع على GitHub منذ أسبوع<br>
+    <strong>الحل الفوري:</strong> أغلق كل شيء، افتح VS Code، واكتب 10 سطور من الكود الآن.
+  </div>
+</section>
+
+
+<!-- ====== SECTION 9: MISTAKES ====== -->
+<section class="section" id="mistakes">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(239,68,68,0.2);">⚠️</div>
+    <div>
+      <div class="section-title">تاسعًا: أخطاء المبتدئين التي تُضيّع السنوات</div>
+      <div class="section-subtitle">احفظ هذه الأخطاء — تجنّبها يوفر 12 شهرًا من حياتك</div>
+    </div>
+  </div>
+  <div class="mistake-grid">
+    <div class="mistake-card">
+      <div class="mistake-ico">🌊</div>
+      <div>
+        <div class="mistake-title">التشتت بين التقنيات</div>
+        <div class="mistake-desc">Python أسبوع، JavaScript أسبوع، LangChain بدون أسس. النتيجة: لا تتقن شيئًا بعد سنة.</div>
+        <div class="mistake-fix">✅ الحل: قاعدة التقنية الواحدة — أُتقن ما أنا فيه قبل النظر لأي شيء جديد. الخطة هي المرجع.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">📺</div>
+      <div>
+        <div class="mistake-title">إدمان المشاهدة بدون تطبيق "Tutorial Hell"</div>
+        <div class="mistake-desc">تشاهد ساعات وتشعر بالتقدم، لكن لو أُغلق الفيديو لن تكتب سطرًا واحدًا.</div>
+        <div class="mistake-fix">✅ قاعدة 30/70: 30% مشاهدة + 70% كود. بعد كل 10 دقائق: اغلق الفيديو واكتب من الذاكرة.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">🏃</div>
+      <div>
+        <div class="mistake-title">القفز لـ AI بدون أسس Python</div>
+        <div class="mistake-desc">ترى "Chatbot في 5 دقائق" وتقفز. تنسخ الكود ويعمل، لكن لا تفهم ما يحدث. أي خطأ يوقفك.</div>
+        <div class="mistake-fix">✅ الحل: شهر واحد على Python الأساسيات قبل لمس أي LLM. يجعل كل ما يليه أسهل 10 مرات.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">📖</div>
+      <div>
+        <div class="mistake-title">تجنب التوثيق الرسمي والبحث عن شرح عربي فقط</div>
+        <div class="mistake-desc">تبقى تعتمد على شروح الآخرين — تصبح متعلمًا دائمًا لا محترفًا مستقلًا.</div>
+        <div class="mistake-fix">✅ الحل: من الأسبوع الأول، تدرّب على قراءة Docs الرسمية. هذه مهارة المحترف الحقيقي.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">⏰</div>
+      <div>
+        <div class="mistake-title">الدراسة العشوائية بلا انتظام</div>
+        <div class="mistake-desc">3 ساعات يومًا، يومان غياب، أسبوع كامل بلا دراسة. لا تبني مهارة حقيقية.</div>
+        <div class="mistake-fix">✅ 3 ساعات منتظمة كل يوم أفضل من 20 ساعة متقطعة. الانتظام هو السر الوحيد.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">🏗</div>
+      <div>
+        <div class="mistake-title">تأجيل بناء المشاريع "حتى أصبح جاهزًا"</div>
+        <div class="mistake-desc">لن تصبح جاهزًا أبدًا بهذا المنطق. الجاهزية تأتي من بناء المشاريع، لا من انتظارها.</div>
+        <div class="mistake-fix">✅ ابنِ مشروعًا كسيرًا من الأسبوع الأول. المشاريع الصغيرة العاملة أفضل من التكامل المؤجل.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">🤖</div>
+      <div>
+        <div class="mistake-title">الاعتماد الكامل على ChatGPT لكتابة الكود</div>
+        <div class="mistake-desc">تنسخ كل كود من GPT بدون فهم. عند أول مشكلة حقيقية تقف عاجزًا لأنك لا تفهم ما أمامك.</div>
+        <div class="mistake-fix">✅ استخدم AI كـ Mentor لا كـ Copy Machine. اكتب الكود بنفسك أولًا، ثم استخدم AI للمراجعة والتحسين.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====== SECTION 10: INCOME ====== -->
+<section class="section" id="income">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(16,185,129,0.2);">💰</div>
+    <div>
+      <div class="section-title">عاشرًا: خطة الوصول إلى أول دخل</div>
+      <div class="section-subtitle">متى وكيف وكم — خارطة دقيقة لتحويل مهاراتك إلى دخل حقيقي</div>
+    </div>
+  </div>
+
+  <div class="info-box success">
+    💡 <strong>مبدأ أساسي:</strong> ابدأ ببناء الحضور الرقمي من الشهر الأول — GitHub Activity + LinkedIn Posts. هذا يختصر 6 أشهر من وقت الحصول على عملاء.
+  </div>
+
+  <div class="income-steps" style="margin-top:24px;">
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">١-٣</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">📚 مرحلة الاستثمار — بناء الحضور الرقمي</div>
+        <div class="income-desc">لا تفكر في الدخل الآن — استثمر كل دقيقة في التعلم والبناء. لكن ابدأ بوضع اللبنات الأساسية لمستقبلك المهني.</div>
+        <div class="income-actions">
+          <div class="income-action">أنشئ GitHub وارفع كل مشروع صغير مع README احترافي</div>
+          <div class="income-action">أنشئ LinkedIn: "AI Application Developer — Building & Learning" — انشر تقدمك أسبوعيًا</div>
+          <div class="income-action">تعلّم n8n بجدية — هي أسرع طريق للدخل في الأشهر القادمة</div>
+          <div class="income-action">شارك 1 Post أسبوعيًا عما تتعلمه — يبني الجمهور قبل أن تحتاجه</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">٤-٦</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">🎯 خدمات n8n Automation — أول دخل حقيقي</div>
+        <div class="income-desc">n8n لا تحتاج كودًا معقدًا — تعلمتها في أسابيع ويمكن بيعها الآن. هذا أسرع دخل في المسار كله.</div>
+        <div class="income-actions">
+          <div class="income-action">أنشئ حساب Upwork + Mostaql تخصص "AI Workflow Automation"</div>
+          <div class="income-action">اعرض خدمة أتمتة السوشيال بـ AI: 150$-300$ للمشروع</div>
+          <div class="income-action">تواصل مع أصحاب المتاجر المحلية — مشكلتهم في إنشاء المحتوى اليومي</div>
+          <div class="income-action">الهدف: أول عميل ولو بـ 50$ لبناء الثقة والمراجعة الأولى</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">٧-١٠</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">🤖 خدمات Chatbot ومحتوى AI — ارتفاع الأسعار</div>
+        <div class="income-desc">الآن لديك Chatbot APIs وقاعدة RAG. هذه منتجات تدفع عليها الشركات بسعر حقيقي.</div>
+        <div class="income-actions">
+          <div class="income-action">اعرض خدمة "Chatbot لخدمة عملاء موقعك": 300$-800$ + 50$/شهر صيانة</div>
+          <div class="income-action">اعرض خدمة "أتمتة توليد محتوى تسويقي": 200$-500$/شهر</div>
+          <div class="income-action">استهدف العيادات، المطاعم، المتاجر الإلكترونية — حاجتهم واضحة</div>
+          <div class="income-action">منصات عربية: <a href="https://khamsat.com" target="_blank">Khamsat.com</a> · <a href="https://mostaql.com" target="_blank">Mostaql.com</a> · LinkedIn عربي</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">١١-١٤</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">🏆 خدمات RAG للشركات — الدخل الجدي</div>
+        <div class="income-desc">هذا هو الذهب الحقيقي. RAG Systems للشركات يدفعون من 500$ إلى 3000$. وهم يدفعون بسعادة لأنهم يرون القيمة فورًا.</div>
+        <div class="income-actions">
+          <div class="income-action">استهدف الشركات المتوسطة: عيادات، مكاتب محاسبة، شركات توزيع، شركات تدريب</div>
+          <div class="income-action">اعرض حلًا متكاملًا: RAG + واجهة + تدريب فريق + دعم = 1000$-2500$</div>
+          <div class="income-action">أنشئ Case Study لكل مشروع منجز: المشكلة + الحل + النتيجة + الوقت المُوفَّر</div>
+          <div class="income-action">منصة دولية: <a href="https://www.upwork.com" target="_blank">Upwork.com</a> · <a href="https://www.toptal.com" target="_blank">Toptal.com</a> للخبراء</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">١٥-١٨</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">🚀 إطلاق SaaS أو عمل مستقل كامل</div>
+        <div class="income-desc">الآن لديك: المهارة + Portfolio + عملاء سابقون + شبكة علاقات. الخطوة الكبيرة: SaaS بسيط أو Retainer clients.</div>
+        <div class="income-actions">
+          <div class="income-action">أطلق SaaS بسيط: أداة توليد محتوى AI بـ 19$-29$/شهر على <a href="https://www.producthunt.com" target="_blank">ProductHunt</a></div>
+          <div class="income-action">استهدف Retainer Clients: 3-5 شركات بـ 300$-500$/شهر صيانة ودعم = 1500$+ ثابت</div>
+          <div class="income-action">قرر المسار: وظيفة + عمل حر؟ أم استقلال كامل؟ الأرقام الآن تُجيب</div>
+          <div class="income-action">بنِ قائمة بريدية من العملاء السابقين للإطلاق القادم</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="font-size:22px;font-weight:900;margin-bottom:24px;">كيف تبني Portfolio يجذب العملاء</div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>العنصر</th><th>الوصف الاحترافي</th><th>لماذا مهم</th><th>متى تبدأ</th></tr>
+      <tr><td><strong>GitHub منظم</strong></td><td>4-6 مشاريع + README احترافي + Demo link</td><td>أول ما يراه العميل التقني</td><td>الشهر الأول</td></tr>
+      <tr><td><strong>موقع Portfolio</strong></td><td>من أنا + خدماتي + مشاريعي + تواصل</td><td>يعطي مصداقية فورية</td><td>الشهر السادس</td></tr>
+      <tr><td><strong>LinkedIn نشط</strong></td><td>Post أسبوعي عن مشاريعك وتعلّمك</td><td>معظم العملاء يأتون منه</td><td>الشهر الأول</td></tr>
+      <tr><td><strong>Case Studies</strong></td><td>المشكلة + الحل + النتيجة + التقنيات</td><td>هذا ما يُقنع بالدفع</td><td>من أول عميل</td></tr>
+      <tr><td><strong>Demo Videos</strong></td><td>2-3 دقائق لكل مشروع وهو يعمل فعلًا</td><td>العميل يريد يرى لا يقرأ</td><td>مع كل مشروع</td></tr>
+      <tr><td><strong>شهادات معتمدة</strong></td><td><a href="https://www.deeplearning.ai" target="_blank">DeepLearning.AI</a> · Google AI · Coursera</td><td>تضيف مصداقية أكاديمية</td><td>الشهر الرابع</td></tr>
+    </table>
+  </div>
+
+</section>
+
+
+<!-- ====== FOOTER ====== -->
+<div class="footer">
+  <div style="font-size:48px;margin-bottom:20px;">🎯</div>
+  <div class="footer-quote">الانتظام × الصبر × التطبيق = الاحتراف</div>
+  <div style="margin-bottom:8px;">3 ساعات يوميًا × 18 شهرًا = مسيرة مهنية كاملة في الذكاء الاصطناعي</div>
+  <div style="margin-bottom:16px;color:rgba(255,255,255,0.3);">كل مبرمج محترف اليوم كان مبتدئًا خائفًا في يوم ما. الفرق الوحيد: استمر.</div>
+  <div style="font-size:14px;color:rgba(255,255,255,0.2);">Master Roadmap 2026 · AI Application Developer · الإصدار المطور</div>
+</div>
+
+</main>
+</body>
+</html>
