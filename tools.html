@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأدوات الداعمة — Micro SaaS Stack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #16a34a;
+  --surface: #15803d;
+  --surface2: #166534;
+  --surface3: #14532d;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.12);
+  --purple: #7c3aed;
+  --blue: #2563eb;
+  --teal: #06b6d4;
+  --green: #10b981;
+  --gold: #f59e0b;
+  --orange: #f97316;
+  --red: #ef4444;
+  --pink: #ec4899;
+  --text: #ffffff;
+  --muted: #94a3b8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Cairo','Tajawal',sans-serif;
+  background:var(--primary);
+  color:var(--text);
+  line-height:1.9;
+  font-size:16px;
+  min-height:100vh;
+}
+a{color:var(--teal);text-decoration:none;transition:color 0.2s;}
+a:hover{text-decoration:underline;color:#67e8f9;}
+
+/* ====== TOP BAR ====== */
+.top-bar{
+  background:var(--surface3);
+  border-bottom:1px solid var(--border2);
+  padding:14px 32px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid var(--border2);
+  color:var(--text);padding:8px 18px;border-radius:8px;
+  font-family:'Cairo',sans-serif;font-size:14px;font-weight:600;
+  cursor:pointer;transition:background 0.2s;text-decoration:none;
+}
+.back-btn:hover{background:rgba(255,255,255,0.15);text-decoration:none;color:var(--text);}
+.top-bar-title{
+  font-size:18px;font-weight:800;
+  background:linear-gradient(135deg,#86efac,#4ade80);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.top-bar-badge{
+  margin-right:auto;
+  background:rgba(16,185,129,0.15);
+  border:1px solid rgba(16,185,129,0.35);
+  color:#6ee7b7;
+  padding:5px 14px;border-radius:100px;
+  font-size:13px;font-weight:700;
+}
+
+/* ====== HERO ====== */
+.hero{
+  background:linear-gradient(135deg,#16a34a 0%,#15803d 35%,#166534 70%,#14532d 100%);
+  padding:80px 48px 64px;text-align:center;position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%,rgba(124,58,237,0.18) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 70%,rgba(6,182,212,0.15) 0%,transparent 55%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.35);
+  color:#6ee7b7;font-size:15px;padding:9px 24px;border-radius:100px;
+  margin-bottom:28px;font-weight:700;position:relative;
+}
+.hero h1{
+  font-size:clamp(30px,5vw,56px);font-weight:900;line-height:1.35;
+  margin-bottom:16px;position:relative;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,#86efac,#4ade80,#22d3ee);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  font-size:18px;color:rgba(255,255,255,0.75);max-width:680px;
+  margin:0 auto 40px;line-height:1.8;position:relative;
+}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;position:relative;}
+.hero-stat{text-align:center;}
+.hero-stat .num{display:block;font-size:32px;font-weight:900;color:#86efac;}
+.hero-stat .lbl{font-size:13px;color:var(--muted);font-weight:600;}
+
+/* ====== CATEGORY NAV ====== */
+.cat-nav{
+  background:var(--surface3);
+  border-bottom:1px solid var(--border);
+  padding:12px 32px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  position:sticky;top:57px;z-index:90;
+  overflow-x:auto;
+}
+.cat-nav a{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 16px;border-radius:8px;
+  font-size:13px;font-weight:700;
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--border);
+  color:var(--muted);
+  white-space:nowrap;
+  transition:all 0.2s;
+  text-decoration:none;
+}
+.cat-nav a:hover{background:rgba(255,255,255,0.12);color:var(--text);text-decoration:none;}
+
+/* ====== MAIN CONTENT ====== */
+.container{max-width:1200px;margin:0 auto;padding:48px 32px;}
+
+/* ====== CATEGORY SECTION ====== */
+.cat-section{margin-bottom:64px;}
+.cat-header{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:28px;
+  padding-bottom:16px;
+  border-bottom:2px solid var(--border2);
+}
+.cat-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;flex-shrink:0;
+}
+.cat-title{font-size:22px;font-weight:900;}
+.cat-subtitle{font-size:14px;color:var(--muted);margin-top:3px;}
+.cat-count{
+  margin-right:auto;
+  padding:4px 14px;border-radius:100px;
+  font-size:13px;font-weight:800;
+}
+
+/* ====== TOOL CARDS GRID ====== */
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:20px;
+}
+
+/* ====== TOOL CARD ====== */
+.tool-card{
+  background:var(--surface2);
+  border:1px solid var(--border2);
+  border-radius:16px;
+  padding:24px;
+  transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;
+  position:relative;
+  overflow:hidden;
+}
+.tool-card::before{
+  content:'';position:absolute;top:0;right:0;
+  width:80px;height:80px;border-radius:0 16px 0 100%;
+  opacity:0.07;
+}
+.tool-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+}
+.tool-card-top{
+  display:flex;align-items:flex-start;gap:14px;
+  margin-bottom:14px;
+}
+.tool-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.tool-info{flex:1;}
+.tool-name{font-size:17px;font-weight:800;margin-bottom:4px;}
+.tool-type{
+  display:inline-block;
+  font-size:11px;font-weight:700;letter-spacing:0.5px;
+  padding:2px 10px;border-radius:100px;
+  text-transform:uppercase;
+}
+.tool-desc{
+  font-size:14px;color:rgba(255,255,255,0.78);
+  line-height:1.75;margin-bottom:16px;
+}
+.tool-features{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;
+}
+.feature-tag{
+  font-size:12px;font-weight:600;
+  padding:4px 12px;border-radius:100px;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.8);
+}
+.tool-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:700;
+  padding:8px 18px;border-radius:8px;
+  border:1px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.07);
+  color:var(--text);
+  transition:all 0.2s;
+  text-decoration:none;
+}
+.tool-link:hover{
+  background:rgba(255,255,255,0.14);
+  text-decoration:none;color:var(--text);
+}
+
+/* ====== STACK SUMMARY ====== */
+.stack-summary{
+  background:var(--surface3);
+  border:1px solid var(--border2);
+  border-radius:20px;
+  padding:36px 40px;
+  margin-bottom:56px;
+  position:relative;
+  overflow:hidden;
+}
+.stack-summary::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 70% at 90% 50%,rgba(16,185,129,0.12) 0%,transparent 60%);
+  pointer-events:none;
+}
+.stack-summary-title{
+  font-size:20px;font-weight:900;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.stack-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.stack-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:100px;
+  font-size:14px;font-weight:700;
+  background:rgba(16,185,129,0.12);
+  border:1px solid rgba(16,185,129,0.3);
+  color:#86efac;
+}
+
+/* ====== FOOTER ====== */
+footer{
+  text-align:center;
+  padding:40px 32px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ====== COLOR VARIANTS ====== */
+/* Category 1 — Must Have (green) */
+.cat-1 .cat-icon{background:rgba(16,185,129,0.15);}
+.cat-1 .cat-title{color:#6ee7b7;}
+.cat-1 .cat-count{background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);}
+.cat-1 .tool-card:hover{border-color:rgba(16,185,129,0.4);}
+.cat-1 .tool-icon{background:rgba(16,185,129,0.15);}
+.cat-1 .tool-type{background:rgba(16,185,129,0.15);color:#6ee7b7;}
+.cat-1 .tool-card::before{background:#10b981;}
+
+/* Category 2 — Payment (gold) */
+.cat-2 .cat-icon{background:rgba(245,158,11,0.15);}
+.cat-2 .cat-title{color:#fcd34d;}
+.cat-2 .cat-count{background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);}
+.cat-2 .tool-card:hover{border-color:rgba(245,158,11,0.4);}
+.cat-2 .tool-icon{background:rgba(245,158,11,0.15);}
+.cat-2 .tool-type{background:rgba(245,158,11,0.15);color:#fcd34d;}
+.cat-2 .tool-card::before{background:#f59e0b;}
+
+/* Category 3 — Infrastructure (blue) */
+.cat-3 .cat-icon{background:rgba(37,99,235,0.2);}
+.cat-3 .cat-title{color:#93c5fd;}
+.cat-3 .cat-count{background:rgba(37,99,235,0.15);color:#93c5fd;border:1px solid rgba(37,99,235,0.3);}
+.cat-3 .tool-card:hover{border-color:rgba(37,99,235,0.4);}
+.cat-3 .tool-icon{background:rgba(37,99,235,0.15);}
+.cat-3 .tool-type{background:rgba(37,99,235,0.15);color:#93c5fd;}
+.cat-3 .tool-card::before{background:#2563eb;}
+
+/* Category 4 — Project Mgmt (purple) */
+.cat-4 .cat-icon{background:rgba(124,58,237,0.2);}
+.cat-4 .cat-title{color:#c4b5fd;}
+.cat-4 .cat-count{background:rgba(124,58,237,0.15);color:#c4b5fd;border:1px solid rgba(124,58,237,0.3);}
+.cat-4 .tool-card:hover{border-color:rgba(124,58,237,0.4);}
+.cat-4 .tool-icon{background:rgba(124,58,237,0.15);}
+.cat-4 .tool-type{background:rgba(124,58,237,0.15);color:#c4b5fd;}
+.cat-4 .tool-card::before{background:#7c3aed;}
+
+/* Category 5 — Alternatives (teal) */
+.cat-5 .cat-icon{background:rgba(6,182,212,0.15);}
+.cat-5 .cat-title{color:#67e8f9;}
+.cat-5 .cat-count{background:rgba(6,182,212,0.15);color:#67e8f9;border:1px solid rgba(6,182,212,0.3);}
+.cat-5 .tool-card:hover{border-color:rgba(6,182,212,0.4);}
+.cat-5 .tool-icon{background:rgba(6,182,212,0.15);}
+.cat-5 .tool-type{background:rgba(6,182,212,0.15);color:#67e8f9;}
+.cat-5 .tool-card::before{background:#06b6d4;}
+
+/* Category 6 — Boilerplates (pink) */
+.cat-6 .cat-icon{background:rgba(236,72,153,0.15);}
+.cat-6 .cat-title{color:#f9a8d4;}
+.cat-6 .cat-count{background:rgba(236,72,153,0.15);color:#f9a8d4;border:1px solid rgba(236,72,153,0.3);}
+.cat-6 .tool-card:hover{border-color:rgba(236,72,153,0.4);}
+.cat-6 .tool-icon{background:rgba(236,72,153,0.15);}
+.cat-6 .tool-type{background:rgba(236,72,153,0.15);color:#f9a8d4;}
+.cat-6 .tool-card::before{background:#ec4899;}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:768px){
+  .hero{padding:56px 20px 48px;}
+  .container{padding:32px 16px;}
+  .tools-grid{grid-template-columns:1fr;}
+  .top-bar{padding:12px 16px;}
+  .stack-summary{padding:24px 20px;}
+  .cat-nav{padding:10px 16px;}
+  .hero-stats{gap:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== TOP BAR ====== -->
+<div class="top-bar">
+  <a href="index.html" class="back-btn">&#8592; الرئيسية</a>
+  <span class="top-bar-title">🛠 الأدوات الداعمة</span>
+  <span class="top-bar-badge">25 أداة</span>
+</div>
+
+<!-- ====== HERO ====== -->
+<div class="hero">
+  <div class="hero-badge">🚀 Micro SaaS Full Stack</div>
+  <h1>الأدوات الداعمة<br><span>لبناء Micro SaaS احترافي</span></h1>
+  <p class="hero-sub">
+    كل أداة تحتاجها لإطلاق مشروع SaaS حقيقي — من الكود إلى الدفع إلى السيرفر إلى إدارة المشروع.
+    هذه هي نفس الأدوات التي يستخدمها المطورون المحترفون اليوم.
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="num">8</span><span class="lbl">أداة أساسية</span></div>
+    <div class="hero-stat"><span class="num">6</span><span class="lbl">تصنيف</span></div>
+    <div class="hero-stat"><span class="num">25</span><span class="lbl">أداة إجمالاً</span></div>
+    <div class="hero-stat"><span class="num">100%</span><span class="lbl">مجرّبة وموثوقة</span></div>
+  </div>
+</div>
+
+<!-- ====== CATEGORY NAV ====== -->
+<nav class="cat-nav">
+  <a href="#must-have">✅ الأساسية</a>
+  <a href="#payment">💳 الدفع</a>
+  <a href="#infrastructure">🖥 السيرفر</a>
+  <a href="#project-mgmt">📋 إدارة المشروع</a>
+  <a href="#alternatives">🔄 البدائل</a>
+  <a href="#boilerplates">⚡ بويلربليتس</a>
+</nav>
+
+<div class="container">
+
+  <!-- ====== STACK SUMMARY ====== -->
+  <div class="stack-summary">
+    <div class="stack-summary-title">⚡ الـ Core Stack — الحد الأدنى لبناء Micro SaaS احترافي</div>
+    <div class="stack-chips">
+      <span class="stack-chip">🤖 Claude Code</span>
+      <span class="stack-chip">🐙 GitHub</span>
+      <span class="stack-chip">🔥 Supabase</span>
+      <span class="stack-chip">🚂 Railway / Contabo</span>
+      <span class="stack-chip">💳 Stripe</span>
+      <span class="stack-chip">📧 Resend</span>
+      <span class="stack-chip">⚙️ n8n</span>
+      <span class="stack-chip">📋 Linear</span>
+    </div>
+  </div>
+
+  <!-- ====== CATEGORY 1: MUST HAVE ====== -->
+  <section class="cat-section cat-1" id="must-have">
+    <div class="cat-header">
+      <div class="cat-icon">✅</div>
+      <div>
+        <div class="cat-title">أولًا: الأدوات الأساسية (Must Have)</div>
+        <div class="cat-subtitle">لا يمكن بناء Micro SaaS احترافي بدون هذه الأدوات</div>
+      </div>
+      <div class="cat-count">8 أدوات</div>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🤖</div>
+          <div class="tool-info">
+            <div class="tool-name">Claude + Claude Code</div>
+            <div class="tool-type">AI Development</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          الأداة الأساسية للتطوير وكتابة الكود وإدارة المشروع. Claude هو الـ LLM، وClaude Code هو الـ CLI الذي يسمح لك بالتحدث مع الكود مباشرة من Terminal.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">كتابة كود</span>
+          <span class="feature-tag">مراجعة كود</span>
+          <span class="feature-tag">CLI</span>
+          <span class="feature-tag">إدارة مشروع</span>
+        </div>
+        <a href="https://claude.ai" target="_blank" class="tool-link">🔗 claude.ai</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🐙</div>
+          <div class="tool-info">
+            <div class="tool-name">GitHub</div>
+            <div class="tool-type">Version Control</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          لإدارة الكود، النسخ الاحتياطي، الـ Version Control، والـ Repository. كل مشروع SaaS يبدأ من هنا. يدعم CI/CD وGitHub Actions للـ deployment التلقائي.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Git</span>
+          <span class="feature-tag">Repositories</span>
+          <span class="feature-tag">CI/CD</span>
+          <span class="feature-tag">Collaboration</span>
+        </div>
+        <a href="https://github.com" target="_blank" class="tool-link">🔗 github.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🔥</div>
+          <div class="tool-info">
+            <div class="tool-name">Supabase</div>
+            <div class="tool-type">Backend as a Service</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          قاعدة البيانات (PostgreSQL) + Authentication + Edge Functions + API + Storage — كل شيء في مكان واحد. أسرع طريقة لبناء Backend احترافي بدون تعقيد.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">PostgreSQL</span>
+          <span class="feature-tag">Auth</span>
+          <span class="feature-tag">Edge Functions</span>
+          <span class="feature-tag">Storage</span>
+          <span class="feature-tag">REST API</span>
+        </div>
+        <a href="https://supabase.com" target="_blank" class="tool-link">🔗 supabase.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🚂</div>
+          <div class="tool-info">
+            <div class="tool-name">Railway</div>
+            <div class="tool-type">Cloud Hosting</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          استضافة التطبيقات (Hosting) بشكل سهل وسريع. يدعم Deploy مباشرة من GitHub. مثالي لبداية المشروع حيث لا تريد الانشغال بإعداد السيرفر.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Auto Deploy</span>
+          <span class="feature-tag">GitHub Integration</span>
+          <span class="feature-tag">Containers</span>
+          <span class="feature-tag">سهل الاستخدام</span>
+        </div>
+        <a href="https://railway.app" target="_blank" class="tool-link">🔗 railway.app</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🖥</div>
+          <div class="tool-info">
+            <div class="tool-name">Contabo</div>
+            <div class="tool-type">VPS Hosting</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          VPS / Server Hosting مع تحكم أكبر وتكلفة أقل. عندما ينمو المشروع ويحتاج سيرفر مخصص. أسعاره تنافسية جداً مقارنة بـ AWS وAzure.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">VPS</span>
+          <span class="feature-tag">تكلفة منخفضة</span>
+          <span class="feature-tag">تحكم كامل</span>
+          <span class="feature-tag">Linux</span>
+        </div>
+        <a href="https://contabo.com" target="_blank" class="tool-link">🔗 contabo.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">💳</div>
+          <div class="tool-info">
+            <div class="tool-name">Stripe</div>
+            <div class="tool-type">Payment Gateway</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          Payment Gateway الأول عالمياً لاستقبال المدفوعات. يدعم الاشتراكات (Subscriptions)، الدفع المرة الواحدة، والـ Webhooks. مطلوب لأي SaaS حقيقي.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Subscriptions</span>
+          <span class="feature-tag">One-time Payments</span>
+          <span class="feature-tag">Webhooks</span>
+          <span class="feature-tag">Dashboard</span>
+        </div>
+        <a href="https://stripe.com" target="_blank" class="tool-link">🔗 stripe.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">📧</div>
+          <div class="tool-info">
+            <div class="tool-name">Resend</div>
+            <div class="tool-type">Email Service</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          خدمة إرسال الإيميلات الأحدث والأسهل. API بسيط جداً، Transactional Emails احترافية. مثالي للمبتدئين الذين يريدون إرسال إيميلات بسرعة.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Transactional</span>
+          <span class="feature-tag">API بسيط</span>
+          <span class="feature-tag">React Email</span>
+          <span class="feature-tag">Analytics</span>
+        </div>
+        <a href="https://resend.com" target="_blank" class="tool-link">🔗 resend.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">📬</div>
+          <div class="tool-info">
+            <div class="tool-name">Mailgun</div>
+            <div class="tool-type">Email Service</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          خدمة بديلة لإرسال الإيميلات. أكثر خبرة في السوق من Resend، يدعم حجم كبير من الإيميلات وLog تفصيلي. خيار قوي للمشاريع الأكبر.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Bulk Email</span>
+          <span class="feature-tag">Logs</span>
+          <span class="feature-tag">SMTP</span>
+          <span class="feature-tag">بديل Resend</span>
+        </div>
+        <a href="https://mailgun.com" target="_blank" class="tool-link">🔗 mailgun.com</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CATEGORY 2: PAYMENT ====== -->
+  <section class="cat-section cat-2" id="payment">
+    <div class="cat-header">
+      <div class="cat-icon">💳</div>
+      <div>
+        <div class="cat-title">ثانيًا: أدوات الدفع البديلة</div>
+        <div class="cat-subtitle">بوابات دفع مناسبة لمنطقة الخليج والعالم العربي</div>
+      </div>
+      <div class="cat-count">2 أدوات</div>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">💰</div>
+          <div class="tool-info">
+            <div class="tool-name">HyperPay</div>
+            <div class="tool-type">Payment Gateway</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          بوابة دفع بديلة تعمل في منطقة الشرق الأوسط. تدعم البطاقات المحلية والإقليمية. خيار جيد إذا كانت قاعدة عملائك عربية ولا تقبل Stripe.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">MENA Region</span>
+          <span class="feature-tag">بطاقات محلية</span>
+          <span class="feature-tag">بديل Stripe</span>
+        </div>
+        <a href="https://www.hyperpay.com" target="_blank" class="tool-link">🔗 hyperpay.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🌙</div>
+          <div class="tool-info">
+            <div class="tool-name">Tap Payments</div>
+            <div class="tool-type">Payment Gateway</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          بوابة دفع خاصة بالخليج. تدعم مدى، Visa، Mastercard، وخيارات الدفع الخليجية. واجهة API احترافية وتجربة مستخدم جيدة للعملاء الخليجيين.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Gulf Region</span>
+          <span class="feature-tag">مدى</span>
+          <span class="feature-tag">KNET</span>
+          <span class="feature-tag">Apple Pay</span>
+        </div>
+        <a href="https://www.tap.company" target="_blank" class="tool-link">🔗 tap.company</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CATEGORY 3: INFRASTRUCTURE ====== -->
+  <section class="cat-section cat-3" id="infrastructure">
+    <div class="cat-header">
+      <div class="cat-icon">🖥</div>
+      <div>
+        <div class="cat-title">ثالثًا: أدوات السيرفر والبنية التحتية</div>
+        <div class="cat-subtitle">إدارة السيرفر، الـ Containers، والـ Automation</div>
+      </div>
+      <div class="cat-count">3 أدوات</div>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">⚡</div>
+          <div class="tool-info">
+            <div class="tool-name">Nginx</div>
+            <div class="tool-type">Web Server</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          Web Server + Reverse Proxy + SSL. يوجّه الطلبات بين الـ Services، يدير الـ SSL Certificates، ويحسّن الأداء. أساسي لأي VPS Setup احترافي.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Reverse Proxy</span>
+          <span class="feature-tag">SSL/TLS</span>
+          <span class="feature-tag">Load Balancing</span>
+          <span class="feature-tag">Static Files</span>
+        </div>
+        <a href="https://nginx.org" target="_blank" class="tool-link">🔗 nginx.org</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🐳</div>
+          <div class="tool-info">
+            <div class="tool-name">Coolify</div>
+            <div class="tool-type">Self-hosted PaaS</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          لإدارة الـ Containers والـ Dockerization والسيرفر. بديل Self-hosted لـ Heroku وRailway — تثبّته على VPS خاص بك وتدير كل تطبيقاتك منه بواجهة بسيطة.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Docker</span>
+          <span class="feature-tag">Self-hosted</span>
+          <span class="feature-tag">بديل Railway</span>
+          <span class="feature-tag">Auto SSL</span>
+        </div>
+        <a href="https://coolify.io" target="_blank" class="tool-link">🔗 coolify.io</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">⚙️</div>
+          <div class="tool-info">
+            <div class="tool-name">n8n</div>
+            <div class="tool-type">Workflow Automation</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          Workflow Automation + MCP + Integrations. يربط أدواتك ببعض بدون كود معقد. يمكنك أتمتة أي عملية: إرسال إيميلات، تحديث قاعدة بيانات، إشعارات Slack وغيرها.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">No-code Automation</span>
+          <span class="feature-tag">MCP</span>
+          <span class="feature-tag">Webhooks</span>
+          <span class="feature-tag">Self-hosted</span>
+        </div>
+        <a href="https://n8n.io" target="_blank" class="tool-link">🔗 n8n.io</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CATEGORY 4: PROJECT MANAGEMENT ====== -->
+  <section class="cat-section cat-4" id="project-mgmt">
+    <div class="cat-header">
+      <div class="cat-icon">📋</div>
+      <div>
+        <div class="cat-title">رابعًا: أدوات إدارة المشروع والتنظيم</div>
+        <div class="cat-subtitle">تنظيم العمل، تتبع المهام، وتوثيق القرارات</div>
+      </div>
+      <div class="cat-count">3 أدوات</div>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">📋</div>
+          <div class="tool-info">
+            <div class="tool-name">Linear</div>
+            <div class="tool-type">Project Management</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          Project Management + Task Tracking + Tickets. أسرع وأجمل أداة لإدارة المهام للمطورين. تدعم Sprints، Cycles، ومتكاملة مع GitHub لربط الـ Issues بالـ PRs.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Issues</span>
+          <span class="feature-tag">Sprints</span>
+          <span class="feature-tag">GitHub Sync</span>
+          <span class="feature-tag">Roadmap</span>
+        </div>
+        <a href="https://linear.app" target="_blank" class="tool-link">🔗 linear.app</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">📐</div>
+          <div class="tool-info">
+            <div class="tool-name">ADR — Architecture Decision Record</div>
+            <div class="tool-type">Documentation</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          توثيق القرارات المعمارية للمشروع. كل قرار تقني مهم (لماذا اخترنا Supabase؟ لماذا لا نستخدم Redis؟) يُوثَّق في ملف Markdown بسيط داخل الـ Repository.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Markdown</span>
+          <span class="feature-tag">توثيق</span>
+          <span class="feature-tag">قرارات تقنية</span>
+          <span class="feature-tag">بدون أداة خاصة</span>
+        </div>
+        <a href="https://adr.github.io" target="_blank" class="tool-link">🔗 adr.github.io</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">📄</div>
+          <div class="tool-info">
+            <div class="tool-name">PRD — Product Requirements Document</div>
+            <div class="tool-type">Documentation</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          مستند متطلبات المنتج قبل التطوير. يحدد ما سيُبنى ولماذا وكيف يُقاس النجاح. يمنع مشكلة "نبني ثم نعيد كتابة كل شيء" الشائعة عند المبتدئين.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Requirements</span>
+          <span class="feature-tag">User Stories</span>
+          <span class="feature-tag">Success Metrics</span>
+          <span class="feature-tag">بدون أداة خاصة</span>
+        </div>
+        <a href="https://www.notion.so" target="_blank" class="tool-link">🔗 Notion (لكتابته)</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CATEGORY 5: ALTERNATIVES ====== -->
+  <section class="cat-section cat-5" id="alternatives">
+    <div class="cat-header">
+      <div class="cat-icon">🔄</div>
+      <div>
+        <div class="cat-title">خامسًا: أدوات مذكورة كمقارنات أو خيارات أخرى</div>
+        <div class="cat-subtitle">تعرّف عليها لكن لا تتشتت — الـ Core Stack يكفيك في البداية</div>
+      </div>
+      <div class="cat-count">7 أدوات</div>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">☁️</div>
+          <div class="tool-info">
+            <div class="tool-name">Microsoft Azure</div>
+            <div class="tool-type">Cloud Platform</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          منصة سحابة Microsoft. قوية جداً للمؤسسات والشركات الكبيرة. معقدة ومكلفة للمشاريع الصغيرة. ذكرها كمقارنة مع الحلول الأبسط مثل Railway وContabo.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Enterprise</span>
+          <span class="feature-tag">Complex</span>
+          <span class="feature-tag">غير موصى للمبتدئ</span>
+        </div>
+        <a href="https://azure.microsoft.com" target="_blank" class="tool-link">🔗 azure.microsoft.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🌩</div>
+          <div class="tool-info">
+            <div class="tool-name">Amazon Web Services (AWS)</div>
+            <div class="tool-type">Cloud Platform</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          أكبر منصة سحابة في العالم. تحتوي على مئات الخدمات. مثالية للمشاريع الضخمة لكن تعلّمها يأخذ وقتاً طويلاً. ذكرها كمقارنة — ليست الأولوية الآن.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Enterprise</span>
+          <span class="feature-tag">Complex Setup</span>
+          <span class="feature-tag">Expensive Learning Curve</span>
+        </div>
+        <a href="https://aws.amazon.com" target="_blank" class="tool-link">🔗 aws.amazon.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🏛</div>
+          <div class="tool-info">
+            <div class="tool-name">Oracle Cloud</div>
+            <div class="tool-type">Cloud Platform</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          منصة سحابة Oracle. لها Free Tier سخي نسبياً. ذكرها كمقارنة في سياق خيارات الـ Hosting. غير شائعة في مجتمع Micro SaaS مقارنة بالبدائل الأخرى.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Free Tier</span>
+          <span class="feature-tag">مقارنة فقط</span>
+          <span class="feature-tag">Enterprise</span>
+        </div>
+        <a href="https://www.oracle.com/cloud" target="_blank" class="tool-link">🔗 oracle.com/cloud</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🌐</div>
+          <div class="tool-info">
+            <div class="tool-name">Netlify</div>
+            <div class="tool-type">Static Hosting</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          استضافة الـ Static Sites والـ Frontend بشكل مجاني وسريع. مثالية للـ Landing Pages وتطبيقات React/Next.js. Free Tier سخي جداً للبداية.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Static Sites</span>
+          <span class="feature-tag">Free Tier</span>
+          <span class="feature-tag">CDN</span>
+          <span class="feature-tag">Forms</span>
+        </div>
+        <a href="https://netlify.com" target="_blank" class="tool-link">🔗 netlify.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">▲</div>
+          <div class="tool-info">
+            <div class="tool-name">Vercel</div>
+            <div class="tool-type">Frontend Hosting</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          استضافة Frontend متخصصة لـ Next.js من الشركة التي صنعته. أسرع Deploy وأفضل Developer Experience. بديل قوي لـ Netlify خصوصاً مع مشاريع Next.js.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Next.js</span>
+          <span class="feature-tag">Edge Functions</span>
+          <span class="feature-tag">Analytics</span>
+          <span class="feature-tag">Free Tier</span>
+        </div>
+        <a href="https://vercel.com" target="_blank" class="tool-link">🔗 vercel.com</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🐘</div>
+          <div class="tool-info">
+            <div class="tool-name">PostgreSQL</div>
+            <div class="tool-type">Database</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          قاعدة البيانات الأصلية التي يعتمد عليها Supabase. Relational Database مفتوحة المصدر وقوية جداً. عند استخدام Supabase أنت تستخدم PostgreSQL تحت الغطاء.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Relational DB</span>
+          <span class="feature-tag">Open Source</span>
+          <span class="feature-tag">داخل Supabase</span>
+          <span class="feature-tag">SQL</span>
+        </div>
+        <a href="https://www.postgresql.org" target="_blank" class="tool-link">🔗 postgresql.org</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🐳</div>
+          <div class="tool-info">
+            <div class="tool-name">Docker</div>
+            <div class="tool-type">Containerization</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          إدارة وتشغيل الـ Containers. يضمن أن التطبيق يعمل بنفس الطريقة في أي بيئة. يستخدمه Coolify وRailway تحت الغطاء. تعلّمه مفيد لفهم البنية التحتية.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Containers</span>
+          <span class="feature-tag">Dockerfile</span>
+          <span class="feature-tag">Docker Compose</span>
+          <span class="feature-tag">Portability</span>
+        </div>
+        <a href="https://www.docker.com" target="_blank" class="tool-link">🔗 docker.com</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CATEGORY 6: BOILERPLATES ====== -->
+  <section class="cat-section cat-6" id="boilerplates">
+    <div class="cat-header">
+      <div class="cat-icon">⚡</div>
+      <div>
+        <div class="cat-title">سادسًا: Boilerplates — قوالب جاهزة للانطلاق</div>
+        <div class="cat-subtitle">وفّر أسابيع من العمل بقالب SaaS جاهز مع كل الميزات الأساسية</div>
+      </div>
+      <div class="cat-count">2 أدوات</div>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🚀</div>
+          <div class="tool-info">
+            <div class="tool-name">SaaS Fast</div>
+            <div class="tool-type">Boilerplate</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          Boilerplate جاهز لبناء Micro SaaS بسرعة. يأتي مع Auth، Stripe، Email، Dashboard — جاهز للتعديل والإضافة. يوفر أسابيع من العمل على الـ Setup الأولي.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Auth جاهز</span>
+          <span class="feature-tag">Stripe جاهز</span>
+          <span class="feature-tag">Dashboard</span>
+          <span class="feature-tag">وقت توفير كبير</span>
+        </div>
+        <a href="https://saasfast.dev" target="_blank" class="tool-link">🔗 saasfast.dev</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-top">
+          <div class="tool-icon">🛳</div>
+          <div class="tool-info">
+            <div class="tool-name">ShipFast</div>
+            <div class="tool-type">Boilerplate</div>
+          </div>
+        </div>
+        <div class="tool-desc">
+          النموذج الأصلي الذي استلهم منه SaaS Fast. من أشهر الـ Boilerplates في مجتمع Indie Hackers. يعتمد على Next.js + Supabase/MongoDB + Stripe. مدفوع لكن يوفر وقتاً هائلاً.
+        </div>
+        <div class="tool-features">
+          <span class="feature-tag">Next.js</span>
+          <span class="feature-tag">Stripe</span>
+          <span class="feature-tag">SEO</span>
+          <span class="feature-tag">Indie Hackers فضّله</span>
+        </div>
+        <a href="https://shipfa.st" target="_blank" class="tool-link">🔗 shipfa.st</a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div style="font-size:15px;font-weight:700;margin-bottom:8px;color:rgba(255,255,255,0.6);">
+    🛠 الأدوات الداعمة — Micro SaaS Stack 2026
+  </div>
+  <div>جزء من <a href="index.html">Master Roadmap 2026 — بناء تطبيقات الذكاء الاصطناعي</a></div>
+</footer>
+
+</body>
+</html>
