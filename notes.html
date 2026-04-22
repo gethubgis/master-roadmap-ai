@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملاحظاتي الدراسية — Master Roadmap 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ====== CSS VARIABLES — matching main roadmap palette ====== */
+:root {
+  --primary: #ea580c;
+  --surface: #c2410c;
+  --surface2: #9a3412;
+  --surface3: #7c2d12;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.15);
+  --purple: #7c3aed;
+  --blue: #2563eb;
+  --teal: #06b6d4;
+  --green: #10b981;
+  --gold: #f59e0b;
+  --red: #ef4444;
+  --text: #f0f0f8;
+  --muted: #94a3b8;
+  --panel-bg: rgba(0,0,0,0.18);
+  --input-bg: rgba(0,0,0,0.22);
+  --hover-bg: rgba(255,255,255,0.045);
+  --selected-bg: rgba(124,58,237,0.15);
+  --selected-border: rgba(124,58,237,0.42);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+body {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  background: linear-gradient(160deg, #ea580c 0%, #9a3412 55%, #7c2d12 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ====== SCROLLBAR ====== */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.13); border-radius: 3px; }
+
+/* ====== TOP BAR ====== */
+.topbar {
+  background: rgba(194,65,12,0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+  flex-shrink: 0;
+  z-index: 100;
+  gap: 16px;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.back-btn:hover {
+  color: #fff;
+  background: var(--hover-bg);
+  border-color: var(--border2);
+  text-decoration: none;
+}
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.topbar-brand .brand-icon { font-size: 22px; flex-shrink: 0; }
+.topbar-brand .brand-title {
+  font-size: 18px;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.notes-count-badge {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 11px;
+  border-radius: 100px;
+  background: rgba(124,58,237,0.2);
+  border: 1px solid rgba(124,58,237,0.38);
+  color: #c4b5fd;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.save-status {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.save-status.saved  { color: var(--green); }
+.save-status.saving { color: var(--gold); }
+.save-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+.new-note-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 9px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.new-note-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(124,58,237,0.45);
+}
+.new-note-btn:active { transform: translateY(0); }
+
+/* ====== APP LAYOUT ====== */
+.app-layout {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  background: var(--panel-bg);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+.sidebar-header {
+  padding: 16px 14px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.search-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+.search-wrap .search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  pointer-events: none;
+  color: var(--muted);
+}
+.search-input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 9px 36px 9px 12px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  direction: rtl;
+}
+.search-input:focus {
+  border-color: rgba(124,58,237,0.5);
+  background: rgba(0,0,0,0.28);
+}
+.search-input::placeholder { color: var(--muted); opacity: 0.7; }
+
+.filter-tabs {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.filter-tab {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 11px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.filter-tab:hover { color: #fff; border-color: var(--border2); }
+.filter-tab.active { color: #fff; }
+.filter-tab[data-cat="all"].active    { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.filter-tab[data-cat="phase1"].active { background: rgba(124,58,237,0.2); border-color: rgba(124,58,237,0.42); color: #c4b5fd; }
+.filter-tab[data-cat="phase2"].active { background: rgba(37,99,235,0.2);  border-color: rgba(37,99,235,0.42);  color: #93c5fd; }
+.filter-tab[data-cat="phase3"].active { background: rgba(5,150,105,0.2);  border-color: rgba(5,150,105,0.42);  color: #6ee7b7; }
+.filter-tab[data-cat="phase4"].active { background: rgba(245,158,11,0.2); border-color: rgba(245,158,11,0.42); color: #fcd34d; }
+.filter-tab[data-cat="phase5"].active { background: rgba(239,68,68,0.2);  border-color: rgba(239,68,68,0.42);  color: #fca5a5; }
+.filter-tab[data-cat="general"].active{ background: rgba(6,182,212,0.2);  border-color: rgba(6,182,212,0.42);  color: #67e8f9; }
+
+/* ====== NOTES LIST ====== */
+.notes-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+  min-height: 0;
+}
+.note-card {
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.18s;
+  margin-bottom: 5px;
+  position: relative;
+}
+.note-card:hover { background: var(--hover-bg); border-color: var(--border); }
+.note-card.active {
+  background: var(--selected-bg);
+  border-color: var(--selected-border);
+}
+.note-card-row1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.note-card-title {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.45;
+  flex: 1;
+  color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.note-cat-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.cat-general .note-cat-dot  { background: #67e8f9; }
+.cat-phase1  .note-cat-dot  { background: #c4b5fd; }
+.cat-phase2  .note-cat-dot  { background: #93c5fd; }
+.cat-phase3  .note-cat-dot  { background: #6ee7b7; }
+.cat-phase4  .note-cat-dot  { background: #fcd34d; }
+.cat-phase5  .note-cat-dot  { background: #fca5a5; }
+.note-card-preview {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 7px;
+}
+.note-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.note-card-date { font-size: 11px; color: rgba(148,163,184,0.55); }
+.note-cat-label {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.cat-general .note-cat-label  { background: rgba(6,182,212,0.12);  color: #67e8f9;  border: 1px solid rgba(6,182,212,0.25); }
+.cat-phase1  .note-cat-label  { background: rgba(124,58,237,0.12); color: #c4b5fd;  border: 1px solid rgba(124,58,237,0.25); }
+.cat-phase2  .note-cat-label  { background: rgba(37,99,235,0.12);  color: #93c5fd;  border: 1px solid rgba(37,99,235,0.25); }
+.cat-phase3  .note-cat-label  { background: rgba(5,150,105,0.12);  color: #6ee7b7;  border: 1px solid rgba(5,150,105,0.25); }
+.cat-phase4  .note-cat-label  { background: rgba(245,158,11,0.12); color: #fcd34d;  border: 1px solid rgba(245,158,11,0.25); }
+.cat-phase5  .note-cat-label  { background: rgba(239,68,68,0.12);  color: #fca5a5;  border: 1px solid rgba(239,68,68,0.25); }
+
+.note-del-btn {
+  position: absolute;
+  top: 9px; left: 9px;
+  width: 24px; height: 24px;
+  border-radius: 7px;
+  border: none;
+  background: rgba(239,68,68,0.1);
+  color: #fca5a5;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.2s;
+  display: none;
+}
+.note-card:hover .note-del-btn { display: flex; }
+.note-del-btn:hover { background: rgba(239,68,68,0.28); }
+
+/* ====== EMPTY STATES ====== */
+.empty-state {
+  text-align: center;
+  padding: 52px 20px;
+  color: var(--muted);
+}
+.empty-icon { font-size: 44px; margin-bottom: 12px; opacity: 0.45; }
+.empty-state h3 { font-size: 15px; font-weight: 800; margin-bottom: 7px; color: rgba(255,255,255,0.35); }
+.empty-state p  { font-size: 13px; line-height: 1.8; color: rgba(148,163,184,0.55); }
+
+/* ====== EDITOR AREA ====== */
+.editor-area {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(0,0,0,0.07);
+  min-height: 0;
+}
+
+/* ====== WELCOME STATE ====== */
+.welcome-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 52px 32px;
+}
+.welcome-icon { font-size: 68px; margin-bottom: 20px; opacity: 0.35; }
+.welcome-title { font-size: 24px; font-weight: 900; color: rgba(255,255,255,0.38); margin-bottom: 10px; }
+.welcome-sub   { font-size: 15px; line-height: 1.9; color: rgba(148,163,184,0.5); max-width: 400px; }
+.welcome-hint  {
+  margin-top: 28px;
+  padding: 18px 28px;
+  background: rgba(124,58,237,0.08);
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: 14px;
+  font-size: 13px;
+  color: rgba(196,181,253,0.65);
+  line-height: 1.9;
+  max-width: 360px;
+}
+kbd {
+  display: inline-block;
+  padding: 2px 7px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 5px;
+  font-size: 11px;
+  font-family: monospace;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ====== ACTIVE EDITOR ====== */
+.active-editor {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+.editor-toolbar {
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  background: rgba(0,0,0,0.06);
+}
+.note-title-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 21px;
+  font-weight: 900;
+  font-family: inherit;
+  outline: none;
+  min-width: 160px;
+  direction: rtl;
+}
+.note-title-input::placeholder { color: rgba(148,163,184,0.35); }
+.cat-select {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 8px 14px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  direction: rtl;
+  flex-shrink: 0;
+}
+.cat-select:focus { border-color: rgba(124,58,237,0.5); }
+.cat-select option { background: #7c2d12; }
+
+.toolbar-actions { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
+.icon-btn {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: all 0.2s;
+  font-family: inherit;
+  position: relative;
+}
+.icon-btn:hover { background: var(--hover-bg); color: var(--text); border-color: var(--border2); }
+.icon-btn.danger:hover { background: rgba(239,68,68,0.12); color: #fca5a5; border-color: rgba(239,68,68,0.3); }
+.icon-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 7px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+}
+
+.editor-meta {
+  padding: 7px 22px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  background: rgba(0,0,0,0.04);
+}
+.meta-item {
+  font-size: 12px;
+  color: rgba(148,163,184,0.55);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.meta-sep { color: rgba(255,255,255,0.1); font-size: 12px; }
+
+.editor-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 30px;
+  min-height: 0;
+}
+.note-textarea {
+  width: 100%;
+  min-height: 420px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 2;
+  outline: none;
+  resize: none;
+  direction: rtl;
+}
+.note-textarea::placeholder { color: rgba(148,163,184,0.28); }
+
+/* ====== DELETE CONFIRM MODAL ====== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s;
+}
+.modal-overlay.visible { opacity: 1; pointer-events: all; }
+.modal {
+  background: linear-gradient(160deg, #9a3412 0%, #7c2d12 100%);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 22px;
+  padding: 36px 32px;
+  max-width: 380px;
+  width: 92%;
+  text-align: center;
+  transform: translateY(14px) scale(0.97);
+  transition: transform 0.22s;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.modal-overlay.visible .modal { transform: translateY(0) scale(1); }
+.modal-icon  { font-size: 46px; margin-bottom: 14px; }
+.modal-title { font-size: 20px; font-weight: 900; margin-bottom: 8px; }
+.modal-desc  { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 26px; }
+.modal-actions { display: flex; gap: 10px; justify-content: center; }
+.modal-btn {
+  padding: 11px 26px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.modal-btn.cancel {
+  background: rgba(255,255,255,0.08);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.modal-btn.cancel:hover { background: rgba(255,255,255,0.14); color: #fff; }
+.modal-btn.del {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+}
+.modal-btn.del:hover { transform: translateY(-1px); box-shadow: 0 5px 16px rgba(239,68,68,0.45); }
+
+/* ====== TOAST ====== */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: rgba(10,12,28,0.96);
+  border: 1px solid var(--border2);
+  border-radius: 13px;
+  padding: 12px 26px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 2000;
+  opacity: 0;
+  transition: all 0.28s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast.success { border-color: rgba(16,185,129,0.45); }
+.toast.error   { border-color: rgba(239,68,68,0.45); }
+.toast.info    { border-color: rgba(6,182,212,0.45); }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  body { height: auto; overflow: auto; }
+  .app-layout { grid-template-columns: 1fr; height: auto; }
+  .sidebar { height: 45vh; min-height: 300px; border-left: none; border-bottom: 1px solid var(--border); }
+  .editor-area { height: 60vh; min-height: 400px; }
+  .note-textarea { min-height: 280px; }
+  .topbar { padding: 0 14px; }
+  .topbar-brand .brand-title { display: none; }
+  .save-status .save-label { display: none; }
+}
+@media (max-width: 480px) {
+  .new-note-btn .btn-label { display: none; }
+}
+
+/* ====== PRINT ====== */
+@media print {
+  body { background: #fff !important; color: #111 !important; height: auto; overflow: auto; }
+  .topbar, .sidebar, .toast, .modal-overlay { display: none !important; }
+  .app-layout { display: block; }
+  .editor-area { height: auto; overflow: visible; }
+  .note-textarea { border: 1px solid #e2e8f0 !important; min-height: 400px; color: #111 !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== TOP BAR ====== -->
+<header class="topbar">
+  <div class="topbar-right">
+    <a href="index.html" class="back-btn" title="العودة للخارطة الرئيسية">
+      ← <span>الخارطة</span>
+    </a>
+    <div class="topbar-brand">
+      <span class="brand-icon">📓</span>
+      <span class="brand-title">ملاحظاتي الدراسية</span>
+    </div>
+    <span class="notes-count-badge" id="countBadge">٠ ملاحظة</span>
+  </div>
+
+  <div class="topbar-left">
+    <span class="save-status" id="saveStatus">
+      <span class="save-dot"></span>
+      <span class="save-label">جاهز</span>
+    </span>
+    <button class="new-note-btn" onclick="createNewNote()" title="ملاحظة جديدة (Ctrl+N)">
+      <span>+</span>
+      <span class="btn-label">ملاحظة جديدة</span>
+    </button>
+  </div>
+</header>
+
+<!-- ====== MAIN LAYOUT ====== -->
+<div class="app-layout">
+
+  <!-- ====== SIDEBAR ====== -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="ابحث في ملاحظاتك..."
+          oninput="renderList()"
+          autocomplete="off"
+        >
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-cat="all"     onclick="setFilter('all')">الكل</button>
+        <button class="filter-tab"        data-cat="phase1"  onclick="setFilter('phase1')">م١</button>
+        <button class="filter-tab"        data-cat="phase2"  onclick="setFilter('phase2')">م٢</button>
+        <button class="filter-tab"        data-cat="phase3"  onclick="setFilter('phase3')">م٣</button>
+        <button class="filter-tab"        data-cat="phase4"  onclick="setFilter('phase4')">م٤</button>
+        <button class="filter-tab"        data-cat="phase5"  onclick="setFilter('phase5')">م٥</button>
+        <button class="filter-tab"        data-cat="general" onclick="setFilter('general')">عام</button>
+      </div>
+    </div>
+    <div class="notes-list" id="notesList"></div>
+  </aside>
+
+  <!-- ====== EDITOR ====== -->
+  <main class="editor-area">
+
+    <!-- Welcome (no note selected) -->
+    <div class="welcome-state" id="welcomeState">
+      <div class="welcome-icon">📝</div>
+      <div class="welcome-title">ملاحظاتك الدراسية</div>
+      <div class="welcome-sub">
+        اكتب ملاحظاتك وأفكارك لكل مرحلة من المسار.<br>
+        كل شيء يُحفظ تلقائيًا في متصفحك.
+      </div>
+      <div class="welcome-hint">
+        ابدأ بـ <strong>"+ ملاحظة جديدة"</strong> أعلى الصفحة<br>
+        أو اضغط <kbd>Ctrl</kbd> + <kbd>N</kbd>
+      </div>
+    </div>
+
+    <!-- Active editor -->
+    <div class="active-editor" id="activeEditor" style="display:none;">
+      <div class="editor-toolbar">
+        <input
+          type="text"
+          id="titleInput"
+          class="note-title-input"
+          placeholder="عنوان الملاحظة..."
+          oninput="scheduleAutoSave()"
+        >
+        <select id="catSelect" class="cat-select" onchange="scheduleAutoSave()">
+          <option value="general">📌 عام</option>
+          <option value="phase1">🟣 المرحلة ١ — التأسيس</option>
+          <option value="phase2">🔵 المرحلة ٢ — AI Core</option>
+          <option value="phase3">🟢 المرحلة ٣ — الأنظمة</option>
+          <option value="phase4">🟡 المرحلة ٤ — البناء</option>
+          <option value="phase5">🔴 المرحلة ٥ — الدخل</option>
+        </select>
+        <div class="toolbar-actions">
+          <button class="icon-btn" title="نسخ الملاحظة" onclick="copyNote()">📋</button>
+          <button class="icon-btn" title="طباعة" onclick="window.print()">🖨️</button>
+          <button class="icon-btn danger" title="حذف الملاحظة" onclick="openDeleteModal()">🗑️</button>
+        </div>
+      </div>
+
+      <div class="editor-meta">
+        <span class="meta-item">📅 أُنشئت: <span id="metaCreated">—</span></span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item">✏️ عُدِّلت: <span id="metaUpdated">—</span></span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item" id="metaStats">٠ كلمة</span>
+      </div>
+
+      <div class="editor-body">
+        <textarea
+          id="contentInput"
+          class="note-textarea"
+          placeholder="ابدأ الكتابة هنا...&#10;&#10;سجّل ما تعلمته، الأسئلة التي تخطر ببالك، الأكواد، الروابط — كل شيء في مكان واحد."
+          oninput="scheduleAutoSave(); updateStats()"
+        ></textarea>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ====== DELETE MODAL ====== -->
+<div class="modal-overlay" id="deleteModal" onclick="handleModalOverlayClick(event)">
+  <div class="modal">
+    <div class="modal-icon">🗑️</div>
+    <div class="modal-title">حذف الملاحظة؟</div>
+    <div class="modal-desc">
+      سيتم حذف هذه الملاحظة نهائيًا ولا يمكن استعادتها.
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" onclick="closeDeleteModal()">إلغاء</button>
+      <button class="modal-btn del"    onclick="confirmDelete()">حذف نهائيًا</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== TOAST ====== -->
+<div class="toast" id="toast"></div>
+
+<!-- ====== APP SCRIPT ====== -->
+<script>
+'use strict';
+
+// ─── Constants ───────────────────────────────────────────────────────────────
+const STORAGE_KEY = 'masterRoadmap_studyNotes_v1';
+
+const CAT_LABELS = {
+  all:     'الكل',
+  general: 'عام',
+  phase1:  'مرحلة ١',
+  phase2:  'مرحلة ٢',
+  phase3:  'مرحلة ٣',
+  phase4:  'مرحلة ٤',
+  phase5:  'مرحلة ٥',
+};
+
+// ─── State ───────────────────────────────────────────────────────────────────
+let notes        = [];
+let activeId     = null;
+let filterCat    = 'all';
+let saveTimer    = null;
+let pendingDelId = null;
+
+// ─── Storage ─────────────────────────────────────────────────────────────────
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    notes = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(notes)) notes = [];
+  } catch (_) {
+    notes = [];
+  }
+}
+
+function persistNotes() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+  } catch (_) {
+    toast('⚠️ لم يتمكن المتصفح من الحفظ — المساحة ممتلئة', 'error');
+  }
+}
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
+function uid() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+}
+
+function escHtml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function fmtDate(ts) {
+  return new Date(ts).toLocaleString('ar-SA', {
+    year: 'numeric', month: 'short', day: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+  });
+}
+
+function fmtRelative(ts) {
+  const diff = Date.now() - ts;
+  if (diff < 60_000)       return 'منذ لحظات';
+  if (diff < 3_600_000)    return `منذ ${Math.floor(diff / 60_000)} د`;
+  if (diff < 86_400_000)   return `منذ ${Math.floor(diff / 3_600_000)} س`;
+  if (diff < 2_592_000_000)return `منذ ${Math.floor(diff / 86_400_000)} يوم`;
+  return new Date(ts).toLocaleDateString('ar-SA', { month: 'short', day: 'numeric' });
+}
+
+function toArabicNums(n) {
+  return String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+}
+
+// ─── Rendering ────────────────────────────────────────────────────────────────
+function renderList() {
+  const query = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+
+  const visible = notes
+    .filter(n => {
+      const matchCat = filterCat === 'all' || n.category === filterCat;
+      const matchQ   = !query
+        || n.title.toLowerCase().includes(query)
+        || n.content.toLowerCase().includes(query);
+      return matchCat && matchQ;
+    })
+    .sort((a, b) => b.updatedAt - a.updatedAt);
+
+  // update badge
+  const badge = document.getElementById('countBadge');
+  badge.textContent = toArabicNums(notes.length) + ' ملاحظة';
+
+  const list = document.getElementById('notesList');
+
+  if (!visible.length) {
+    list.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">${query ? '🔍' : '📓'}</div>
+        <h3>${query ? 'لا توجد نتائج' : 'لا توجد ملاحظات هنا'}</h3>
+        <p>${query ? 'جرّب كلمات بحث مختلفة' : 'اضغط على "+ ملاحظة جديدة" للبدء'}</p>
+      </div>`;
+    return;
+  }
+
+  list.innerHTML = visible.map(n => `
+    <div class="note-card cat-${escHtml(n.category)} ${n.id === activeId ? 'active' : ''}"
+         onclick="selectNote('${escHtml(n.id)}')">
+      <div class="note-card-row1">
+        <div class="note-card-title">${escHtml(n.title) || 'بدون عنوان'}</div>
+        <div class="note-cat-dot"></div>
+      </div>
+      <div class="note-card-preview">${escHtml(n.content) || 'لا يوجد محتوى بعد…'}</div>
+      <div class="note-card-footer">
+        <span class="note-card-date">${fmtRelative(n.updatedAt)}</span>
+        <span class="note-cat-label">${escHtml(CAT_LABELS[n.category] || 'عام')}</span>
+      </div>
+      <button class="note-del-btn"
+              onclick="event.stopPropagation(); quickDelete('${escHtml(n.id)}')"
+              title="حذف">✕</button>
+    </div>
+  `).join('');
+}
+
+// ─── Select / Open Note ───────────────────────────────────────────────────────
+function selectNote(id) {
+  const note = notes.find(n => n.id === id);
+  if (!note) return;
+
+  activeId = id;
+
+  document.getElementById('welcomeState').style.display = 'none';
+  document.getElementById('activeEditor').style.display = 'flex';
+
+  document.getElementById('titleInput').value   = note.title;
+  document.getElementById('contentInput').value = note.content;
+  document.getElementById('catSelect').value    = note.category;
+  document.getElementById('metaCreated').textContent = fmtDate(note.createdAt);
+  document.getElementById('metaUpdated').textContent = fmtDate(note.updatedAt);
+  updateStats();
+  renderList();
+
+  // Focus on content area
+  setTimeout(() => document.getElementById('contentInput').focus(), 40);
+}
+
+// ─── Create Note ──────────────────────────────────────────────────────────────
+function createNewNote() {
+  const note = {
+    id:        uid(),
+    title:     '',
+    content:   '',
+    category:  filterCat !== 'all' ? filterCat : 'general',
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+  };
+  notes.unshift(note);
+  persistNotes();
+  renderList();
+  selectNote(note.id);
+  setTimeout(() => document.getElementById('titleInput').focus(), 60);
+}
+
+// ─── Auto-Save ────────────────────────────────────────────────────────────────
+function scheduleAutoSave() {
+  clearTimeout(saveTimer);
+  setSaveStatus('saving');
+  saveTimer = setTimeout(doSave, 700);
+}
+
+function doSave(silent = false) {
+  if (!activeId) return;
+  const note = notes.find(n => n.id === activeId);
+  if (!note) return;
+
+  note.title     = document.getElementById('titleInput').value;
+  note.content   = document.getElementById('contentInput').value;
+  note.category  = document.getElementById('catSelect').value;
+  note.updatedAt = Date.now();
+
+  persistNotes();
+  renderList();
+  setSaveStatus('saved');
+  document.getElementById('metaUpdated').textContent = fmtDate(note.updatedAt);
+
+  if (!silent) {
+    setTimeout(() => setSaveStatus('idle'), 2800);
+  }
+}
+
+function setSaveStatus(state) {
+  const el = document.getElementById('saveStatus');
+  el.className = 'save-status ' + (state === 'idle' ? '' : state);
+  const label = el.querySelector('.save-label');
+  if      (state === 'saving') label.textContent = 'جاري الحفظ…';
+  else if (state === 'saved')  label.textContent = 'تم الحفظ ✓';
+  else                         label.textContent = 'جاهز';
+}
+
+// ─── Stats ────────────────────────────────────────────────────────────────────
+function updateStats() {
+  const text  = document.getElementById('contentInput').value;
+  const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+  const chars = text.length;
+  document.getElementById('metaStats').textContent =
+    toArabicNums(words) + ' كلمة · ' + toArabicNums(chars) + ' حرف';
+}
+
+// ─── Filter ───────────────────────────────────────────────────────────────────
+function setFilter(cat) {
+  filterCat = cat;
+  document.querySelectorAll('.filter-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.cat === cat);
+  });
+  renderList();
+}
+
+// ─── Delete ───────────────────────────────────────────────────────────────────
+function quickDelete(id) {
+  pendingDelId = id;
+  openDeleteModal();
+}
+
+function openDeleteModal() {
+  if (!pendingDelId) pendingDelId = activeId;
+  if (!pendingDelId) return;
+  document.getElementById('deleteModal').classList.add('visible');
+}
+
+function closeDeleteModal() {
+  document.getElementById('deleteModal').classList.remove('visible');
+  pendingDelId = null;
+}
+
+function handleModalOverlayClick(e) {
+  if (e.target === document.getElementById('deleteModal')) closeDeleteModal();
+}
+
+function confirmDelete() {
+  const id = pendingDelId;
+  if (!id) return;
+
+  notes = notes.filter(n => n.id !== id);
+  persistNotes();
+  closeDeleteModal();
+
+  if (activeId === id) {
+    activeId = null;
+    document.getElementById('activeEditor').style.display = 'none';
+    document.getElementById('welcomeState').style.display = 'flex';
+  }
+
+  renderList();
+  toast('🗑️ تم حذف الملاحظة', 'success');
+}
+
+// ─── Copy ─────────────────────────────────────────────────────────────────────
+function copyNote() {
+  const title   = document.getElementById('titleInput').value;
+  const content = document.getElementById('contentInput').value;
+  const text    = title
+    ? `${title}\n${'─'.repeat(28)}\n${content}`
+    : content;
+
+  navigator.clipboard.writeText(text)
+    .then(() => toast('📋 تم نسخ الملاحظة', 'info'))
+    .catch(() => toast('⚠️ تعذّر النسخ', 'error'));
+}
+
+// ─── Toast ────────────────────────────────────────────────────────────────────
+let toastTimer;
+function toast(msg, type = '') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className   = `toast ${type} show`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3200);
+}
+
+// ─── Keyboard Shortcuts ───────────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  const ctrl = e.ctrlKey || e.metaKey;
+
+  if (ctrl && e.key === 'n') {
+    e.preventDefault();
+    createNewNote();
+    return;
+  }
+  if (ctrl && e.key === 's') {
+    e.preventDefault();
+    clearTimeout(saveTimer);
+    doSave();
+    toast('✅ تم الحفظ', 'success');
+    return;
+  }
+  if (e.key === 'Escape') {
+    closeDeleteModal();
+    return;
+  }
+});
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+loadFromStorage();
+renderList();
+</script>
+</body>
+</html>
