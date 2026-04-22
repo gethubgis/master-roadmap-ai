@@ -411,6 +411,49 @@ tr:hover td{background:rgba(255,255,255,0.025);}
   .phase-title{font-size:19px;}
 }
 
+/* ====== FLOATING NOTES BUTTON ====== */
+.notes-fab {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Cairo','Tajawal',sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 13px 22px;
+  border-radius: 100px;
+  box-shadow: 0 6px 28px rgba(124,58,237,0.45), 0 2px 8px rgba(0,0,0,0.3);
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.notes-fab:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 36px rgba(124,58,237,0.55), 0 4px 12px rgba(0,0,0,0.35);
+  color: #fff;
+  text-decoration: none;
+}
+.notes-fab:active { transform: translateY(-1px) scale(1.01); }
+.notes-fab .fab-icon { font-size: 20px; line-height: 1; }
+.notes-fab .fab-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 2px 9px;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+@media(max-width:480px) {
+  .notes-fab { bottom: 20px; left: 20px; padding: 12px 18px; font-size: 14px; }
+  .notes-fab .fab-text { display: none; }
+}
+
 /* ====== PRINT STYLES ====== */
 @media print{
   body{background:#fff!important;color:#111!important;font-size:13pt;line-height:1.8;}
@@ -495,6 +538,7 @@ tr:hover td{background:rgba(255,255,255,0.025);}
     <a href="#antisocial">🧠 منع التسويف</a>
     <a href="#mistakes">⚠️ أخطاء المبتدئين</a>
     <a href="#income">💰 خطة الدخل</a>
+    <a href="notes.html" style="color:#c4b5fd;border-bottom-color:rgba(124,58,237,0.5);">📓 ملاحظاتي</a>
   </div>
 </nav>
 
@@ -2223,5 +2267,12 @@ tr:hover td{background:rgba(255,255,255,0.025);}
 </div>
 
 </main>
+
+<!-- ====== FLOATING NOTES BUTTON ====== -->
+<a href="notes.html" class="notes-fab" title="افتح ملاحظاتي الدراسية">
+  <span class="fab-icon">📓</span>
+  <span class="fab-text">ملاحظاتي</span>
+</a>
+
 </body>
 </html>
