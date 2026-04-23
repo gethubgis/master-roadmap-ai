@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نظام المراجعة — Master Roadmap 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#16a34a;--surface:#15803d;--surface2:#166534;--surface3:#14532d;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.12);--accent:#e94560;--accent2:#0f3460;--purple:#7c3aed;--blue:#2563eb;--teal:#06b6d4;--green:#10b981;--gold:#f59e0b;--orange:#f97316;--red:#ef4444;--pink:#ec4899;--text:#ffffff;--muted:#94a3b8;--white:#ffffff;}
+html{scroll-behavior:smooth;}*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Cairo','Tajawal','Noto Naskh Arabic',sans-serif;background:var(--primary);color:var(--text);line-height:2.0;font-size:16px;}
+a{color:var(--teal);text-decoration:none;transition:color 0.2s;}a:hover{text-decoration:underline;color:#67e8f9;}
+.nav{background:rgba(21,128,61,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;position:sticky;top:0;z-index:200;overflow-x:auto;}
+.nav-inner{display:flex;gap:0;min-width:max-content;}
+.nav a{display:block;padding:18px 18px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.nav a:hover{color:#fff;border-color:var(--purple);}
+main{max-width:1200px;margin:0 auto;padding:0 32px 120px;}
+.section{padding:88px 0 72px;}
+.section-header{display:flex;align-items:center;gap:22px;margin-bottom:56px;}
+.section-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
+.section-title{font-size:32px;font-weight:900;letter-spacing:-0.3px;}
+.section-subtitle{font-size:16px;color:var(--muted);margin-top:7px;font-weight:500;}
+.info-box{padding:20px 26px;border-radius:16px;font-size:16px;line-height:1.9;margin:20px 0;}
+.info-box.tip{background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.25);color:rgba(255,255,255,0.85);}
+.info-box.warn{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:rgba(255,255,255,0.85);}
+.info-box.success{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);color:rgba(255,255,255,0.85);}
+.info-box.danger{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);color:rgba(255,255,255,0.85);}
+.info-box.purple{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.25);color:rgba(255,255,255,0.85);}
+.review-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;margin-bottom:24px;overflow:hidden;}
+.review-header{padding:22px 30px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:18px;}
+.review-month{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;flex-shrink:0;}
+.review-body{padding:24px 30px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:20px;}
+.kpi-item{padding:16px 20px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:14px;}
+.kpi-label{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;}
+.kpi-value{font-size:16px;color:rgba(255,255,255,0.9);font-weight:700;}
+.ready-checks{margin-top:16px;}
+.ready-check{font-size:15px;color:rgba(255,255,255,0.75);padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;gap:12px;align-items:flex-start;}
+.ready-check::before{content:'□';color:var(--teal);font-size:18px;line-height:1;flex-shrink:0;}
+.footer{text-align:center;padding:72px 0 52px;color:rgba(255,255,255,0.28);font-size:15px;line-height:2;}
+.footer-quote{font-size:24px;font-weight:900;color:rgba(255,255,255,0.55);margin-bottom:14px;background:linear-gradient(135deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.notes-fab{position:fixed;bottom:32px;left:32px;z-index:500;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 100%);color:#fff;text-decoration:none;font-family:'Cairo','Tajawal',sans-serif;font-size:15px;font-weight:800;padding:13px 22px;border-radius:100px;box-shadow:0 6px 28px rgba(124,58,237,0.45),0 2px 8px rgba(0,0,0,0.3);transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:1px solid rgba(255,255,255,0.15);}
+.notes-fab:hover{transform:translateY(-3px) scale(1.04);color:#fff;text-decoration:none;}
+.notes-fab .fab-icon{font-size:20px;line-height:1;}
+@media(max-width:768px){main{padding:0 18px 80px;}.section{padding:64px 0 52px;}}
+@media(max-width:480px){body{font-size:15px;}.section-title{font-size:26px;}.notes-fab{bottom:20px;left:20px;padding:12px 18px;font-size:14px;}.notes-fab .fab-text{display:none;}}
+@media print{.nav{display:none;}.review-card{background:#f8f9ff!important;border:1px solid #e2e8f0!important;break-inside:avoid;}.kpi-value{color:#1a1a2e!important;}.kpi-label{color:#64748b!important;}.ready-check{color:#334155!important;}.info-box.tip{background:#eff6ff!important;border-color:#bfdbfe!important;color:#1e40af!important;}.info-box.warn{background:#fffbeb!important;border-color:#fde68a!important;color:#92400e!important;}.info-box.success{background:#f0fdf4!important;border-color:#bbf7d0!important;color:#166534!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="phases.html">📍 المراحل</a>
+    <a href="execution.html">⚡ النظام التنفيذي</a>
+    <a href="review.html">📊 نظام المراجعة</a>
+    <a href="resources.html">📚 المصادر + الروابط</a>
+    <a href="dashboard.html">🗂 لوحة المتابعة</a>
+    <a href="learning.html">🛠 بيئة التعلم</a>
+    <a href="profit.html">💎 المشاريع الربحية</a>
+    <a href="antisocial.html">🧠 منع التسويف</a>
+    <a href="mistakes.html">⚠️ أخطاء المبتدئين</a>
+    <a href="income.html">💰 خطة الدخل</a>
+    <a href="tools.html" style="color:#6ee7b7;">🛠 الأدوات الداعمة</a>
+    <a href="notes.html" style="color:#c4b5fd;">📓 ملاحظاتي</a>
+  </div>
+</nav>
+
+<main>
+<section class="section" id="review">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(6,182,212,0.2);">📊</div>
+    <div>
+      <div class="section-title">ثالثًا: نظام المراجعة الشهرية</div>
+      <div class="section-subtitle">كيف تقيس تقدمك؟ متى تنتقل للمرحلة التالية؟ ما مؤشرات النجاح؟</div>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-month" style="background:rgba(124,58,237,0.2);color:#c4b5fd;">١-٣</div>
+      <div>
+        <div style="font-size:19px;font-weight:800;">مراجعة نهاية المرحلة الأولى</div>
+        <div style="font-size:15px;color:var(--muted);">الشهر الثالث — هل أنت جاهز للمرحلة الثانية؟</div>
+      </div>
+    </div>
+    <div class="review-body">
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="kpi-label">المشاريع المنجزة</div><div class="kpi-value">٣+ مشاريع على GitHub</div></div>
+        <div class="kpi-item"><div class="kpi-label">التمارين المكتملة</div><div class="kpi-value">٥٠+ تمرين Python</div></div>
+        <div class="kpi-item"><div class="kpi-label">المنتظم على GitHub</div><div class="kpi-value">Commit كل يوم عمل</div></div>
+        <div class="kpi-item"><div class="kpi-label">APIs استخدمتها</div><div class="kpi-value">٣+ APIs مختلفة</div></div>
+      </div>
+      <div class="ready-checks">
+        <div class="ready-check">أستطيع كتابة Function كاملة بـ Error Handling بدون مرجع</div>
+        <div class="ready-check">أستطيع استدعاء أي API وتحليل الـ Response خلال 20 دقيقة</div>
+        <div class="ready-check">لدي مشروع على GitHub بـ README واضح يشرح المشروع بالكامل</div>
+        <div class="ready-check">أفهم الفرق بين GET و POST و PUT و DELETE بشكل عملي</div>
+        <div class="ready-check">أستطيع قراءة أي error في Python وإيجاد الحل مستقلًا</div>
+      </div>
+      <div class="info-box warn" style="margin-top:14px;">
+        ⚠️ <strong>اختبار الانتقال:</strong> ابنِ "أداة بحث عن وظائف" تستدعي API، تفلتر النتائج، وتحفظها في JSON — في 3 ساعات. إذا أنجزتها: تقدّم. إذا لا: أسبوع آخر للتدريب.
+      </div>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-month" style="background:rgba(37,99,235,0.2);color:#93c5fd;">٤-٧</div>
+      <div>
+        <div style="font-size:19px;font-weight:800;">مراجعة نهاية المرحلة الثانية</div>
+        <div style="font-size:15px;color:var(--muted);">الشهر السابع — هل أول AI App حقيقي جاهز؟</div>
+      </div>
+    </div>
+    <div class="review-body">
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="kpi-label">Chatbots بُنيت</div><div class="kpi-value">٢+ chatbots مختلفة</div></div>
+        <div class="kpi-item"><div class="kpi-label">APIs نشرت</div><div class="kpi-value">١+ API على Railway</div></div>
+        <div class="kpi-item"><div class="kpi-label">n8n Workflows</div><div class="kpi-value">٥+ workflows تعمل</div></div>
+        <div class="kpi-item"><div class="kpi-label">DeepLearning كورسات</div><div class="kpi-value">٣+ short courses</div></div>
+      </div>
+      <div class="ready-checks">
+        <div class="ready-check">أستطيع بناء Chatbot API كامل بـ FastAPI في يوم واحد</div>
+        <div class="ready-check">أفهم كيف أدير Conversation History وأتجنب تجاوز الـ Token Limit</div>
+        <div class="ready-check">بنيت workflow n8n يعمل تلقائيًا وحده دون تدخل</div>
+        <div class="ready-check">جربت Gemini أو Claude API كبديل لـ OpenAI</div>
+        <div class="ready-check">API الخاص بي يعمل على الإنترنت ويمكن أي شخص استخدامه</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-header">
+      <div class="review-month" style="background:rgba(5,150,105,0.2);color:#6ee7b7;">٨-١٢</div>
+      <div>
+        <div style="font-size:19px;font-weight:800;">مراجعة نهاية المرحلة الثالثة</div>
+        <div style="font-size:15px;color:var(--muted);">الشهر الثاني عشر — هل أنت جاهز للبيع الحقيقي؟</div>
+      </div>
+    </div>
+    <div class="review-body">
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="kpi-label">RAG Systems</div><div class="kpi-value">١+ نظام كامل يعمل</div></div>
+        <div class="kpi-item"><div class="kpi-label">AI Agents</div><div class="kpi-value">١+ agent مع tools</div></div>
+        <div class="kpi-item"><div class="kpi-label">Docker Images</div><div class="kpi-value">نشرت app بـ Docker</div></div>
+        <div class="kpi-item"><div class="kpi-label">عملاء محتملون</div><div class="kpi-value">٣+ محادثات</div></div>
+      </div>
+      <div class="ready-checks">
+        <div class="ready-check">أستطيع بناء نظام RAG لأي بيانات خلال يومين</div>
+        <div class="ready-check">مشروعي الاحترافي موجود على GitHub بـ Demo وكل التفاصيل</div>
+        <div class="ready-check">نشرت مشروعًا على الإنترنت وشاركت رابطه مع ٣ أشخاص يحتاجونه</div>
+        <div class="ready-check">لدي Case Study واحدة على الأقل لعميل أو مستخدم حقيقي</div>
+      </div>
+      <div class="info-box success" style="margin-top:14px;">
+        🏆 <strong>مؤشر جاهزية للبيع:</strong> إذا استطعت شرح مشروعك لشخص عادي (غير تقني) وهو يفهم القيمة خلال 3 دقائق — أنت جاهز لكسب أول عميل.
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box tip">
+    📅 <strong>نظام المراجعة الأسبوعية (كل جمعة صباحًا — 30 دقيقة):</strong><br>
+    1. ما الذي تعلمته هذا الأسبوع فعليًا؟ (اكتبه بكلامك)<br>
+    2. ما الذي طبقته؟ هل كتبت كودًا؟<br>
+    3. ما الـ Deliverable الذي أنجزته؟<br>
+    4. ما العائق الرئيسي؟ ما الحل المقترح للأسبوع القادم؟<br>
+    5. هل أنجزت ما خططت له؟ نعم / لا — ولماذا؟
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-quote">العلم في الصغر كالنقش على الحجر</div>
+  <div>جزء من <a href="index.html">Master Roadmap 2026</a></div>
+</footer>
+
+<a href="notes.html" class="notes-fab" title="افتح ملاحظاتي الدراسية">
+  <span class="fab-icon">📓</span>
+  <span class="fab-text">ملاحظاتي</span>
+</a>
+</body>
+</html>

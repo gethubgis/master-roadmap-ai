@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المشاريع الربحية — Master Roadmap 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#16a34a;--surface:#15803d;--surface2:#166534;--surface3:#14532d;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.12);--accent:#e94560;--accent2:#0f3460;--purple:#7c3aed;--blue:#2563eb;--teal:#06b6d4;--green:#10b981;--gold:#f59e0b;--orange:#f97316;--red:#ef4444;--pink:#ec4899;--text:#ffffff;--muted:#94a3b8;--white:#ffffff;}
+html{scroll-behavior:smooth;}*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Cairo','Tajawal','Noto Naskh Arabic',sans-serif;background:var(--primary);color:var(--text);line-height:2.0;font-size:16px;}
+a{color:var(--teal);text-decoration:none;transition:color 0.2s;}a:hover{text-decoration:underline;color:#67e8f9;}
+.nav{background:rgba(21,128,61,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;position:sticky;top:0;z-index:200;overflow-x:auto;}
+.nav-inner{display:flex;gap:0;min-width:max-content;}
+.nav a{display:block;padding:18px 18px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.nav a:hover{color:#fff;border-color:var(--purple);}
+main{max-width:1200px;margin:0 auto;padding:0 32px 120px;}
+.section{padding:88px 0 72px;}
+.section-header{display:flex;align-items:center;gap:22px;margin-bottom:56px;}
+.section-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
+.section-title{font-size:32px;font-weight:900;letter-spacing:-0.3px;}
+.section-subtitle{font-size:16px;color:var(--muted);margin-top:7px;font-weight:500;}
+.info-box{padding:20px 26px;border-radius:16px;font-size:16px;line-height:1.9;margin:20px 0;}
+.info-box.tip{background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.25);color:rgba(255,255,255,0.85);}
+.info-box.warn{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:rgba(255,255,255,0.85);}
+.info-box.success{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);color:rgba(255,255,255,0.85);}
+.info-box.purple{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.25);color:rgba(255,255,255,0.85);}
+.profit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;}
+.profit-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:30px;position:relative;overflow:hidden;}
+.profit-type{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;padding:5px 16px;border-radius:100px;display:inline-block;margin-bottom:16px;}
+.type-saas{background:rgba(124,58,237,0.15);color:#c4b5fd;border:1px solid rgba(124,58,237,0.3);}
+.type-freelance{background:rgba(37,99,235,0.15);color:#93c5fd;border:1px solid rgba(37,99,235,0.3);}
+.type-automation{background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);}
+.type-agent{background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);}
+.profit-title{font-size:20px;font-weight:900;margin-bottom:10px;}
+.profit-desc{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:20px;}
+.profit-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+.metric{text-align:center;padding:12px 8px;background:rgba(255,255,255,0.035);border-radius:12px;border:1px solid rgba(255,255,255,0.07);}
+.metric-val{font-size:16px;font-weight:900;color:var(--gold);display:block;margin-bottom:3px;}
+.metric-lbl{font-size:11px;color:var(--muted);font-weight:700;}
+.profit-tech{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
+.tech-tag{font-size:12px;padding:4px 11px;border-radius:7px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.75);}
+.profit-price{font-size:14px;color:var(--green);font-weight:700;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);}
+.best-start{position:absolute;top:18px;left:18px;background:linear-gradient(135deg,#f59e0b,#ef4444);font-size:11px;font-weight:900;padding:4px 11px;border-radius:100px;color:#fff;}
+.footer{text-align:center;padding:72px 0 52px;color:rgba(255,255,255,0.28);font-size:15px;line-height:2;}
+.footer-quote{font-size:24px;font-weight:900;color:rgba(255,255,255,0.55);margin-bottom:14px;background:linear-gradient(135deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.notes-fab{position:fixed;bottom:32px;left:32px;z-index:500;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 100%);color:#fff;text-decoration:none;font-family:'Cairo','Tajawal',sans-serif;font-size:15px;font-weight:800;padding:13px 22px;border-radius:100px;box-shadow:0 6px 28px rgba(124,58,237,0.45),0 2px 8px rgba(0,0,0,0.3);transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:1px solid rgba(255,255,255,0.15);}
+.notes-fab:hover{transform:translateY(-3px) scale(1.04);color:#fff;text-decoration:none;}
+.notes-fab .fab-icon{font-size:20px;line-height:1;}
+@media(max-width:768px){main{padding:0 18px 80px;}.section{padding:64px 0 52px;}.profit-grid{grid-template-columns:1fr;}}
+@media(max-width:480px){body{font-size:15px;}.section-title{font-size:26px;}.notes-fab{bottom:20px;left:20px;padding:12px 18px;font-size:14px;}.notes-fab .fab-text{display:none;}}
+@media print{.nav{display:none;}.profit-card{background:#f8f9ff!important;border:1px solid #e2e8f0!important;break-inside:avoid;}.profit-desc{color:#475569!important;}.profit-price{color:#166534!important;}.info-box.success{background:#f0fdf4!important;border-color:#bbf7d0!important;color:#166534!important;}.info-box.purple{background:#f5f3ff!important;border-color:#ddd6fe!important;color:#5b21b6!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="phases.html">📍 المراحل</a>
+    <a href="execution.html">⚡ النظام التنفيذي</a>
+    <a href="review.html">📊 نظام المراجعة</a>
+    <a href="resources.html">📚 المصادر + الروابط</a>
+    <a href="dashboard.html">🗂 لوحة المتابعة</a>
+    <a href="learning.html">🛠 بيئة التعلم</a>
+    <a href="profit.html">💎 المشاريع الربحية</a>
+    <a href="antisocial.html">🧠 منع التسويف</a>
+    <a href="mistakes.html">⚠️ أخطاء المبتدئين</a>
+    <a href="income.html">💰 خطة الدخل</a>
+    <a href="tools.html" style="color:#6ee7b7;">🛠 الأدوات الداعمة</a>
+    <a href="notes.html" style="color:#c4b5fd;">📓 ملاحظاتي</a>
+  </div>
+</nav>
+
+<main>
+<section class="section" id="profit">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(245,158,11,0.2);">💎</div>
+    <div>
+      <div class="section-title">سابعًا: خارطة المشاريع الربحية</div>
+      <div class="section-subtitle">مشاريع SaaS + Freelancing + Automation + AI Agents — مع مستوى الصعوبة واحتمالية البيع</div>
+    </div>
+  </div>
+
+  <div class="info-box purple">
+    🎯 <strong>المبدأ:</strong> ابنِ المشروع أولًا لنفسك أو لشخص تعرفه مجانًا. احصل على Feedback. ثم بيعه للتالي بسعر منخفض. ثم ارفع السعر مع كل عميل. هذا هو المسار الواقعي.
+  </div>
+
+  <!-- SaaS Projects -->
+  <div style="font-size:19px;font-weight:800;margin:36px 0 20px;color:rgba(255,255,255,0.6);">🚀 مشاريع SaaS — اشتراكات شهرية متكررة</div>
+  <div class="profit-grid">
+
+    <div class="profit-card">
+      <div class="best-start">⭐ ابدأ بهذا</div>
+      <span class="profit-type type-saas">SaaS</span>
+      <div class="profit-title">أداة توليد محتوى تسويقي بالـ AI</div>
+      <div class="profit-desc">المستخدم يدخل اسم المنتج والجمهور المستهدف، الأداة تولّد: Caption، منشور LinkedIn، بريد تسويقي، توصيف منتج — كل شيء في ثوانٍ.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">95%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">2 أسابيع</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">FastAPI</span><span class="tech-tag">OpenAI API</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Stripe</span>
+      </div>
+      <div class="profit-price">💰 السعر: 9$–29$/شهر · هدف: 50 مشترك = 500-1500$/شهر</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-saas">SaaS</span>
+      <div class="profit-title">AI Chatbot Builder بدون كود</div>
+      <div class="profit-desc">منصة تمكّن أصحاب المتاجر والعيادات من رفع ملفاتهم وبناء Chatbot AI لموقعهم — بدون أي خبرة تقنية. هم يرفعون، أنت تعالج، الـ Chatbot يعمل على موقعهم.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">90%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">شهر</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangChain</span><span class="tech-tag">RAG</span><span class="tech-tag">Multi-tenant</span><span class="tech-tag">React</span>
+      </div>
+      <div class="profit-price">💰 السعر: 29$–99$/شهر · هدف: 30 عميل = 870-3000$/شهر</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-saas">SaaS</span>
+      <div class="profit-title">مساعد قانوني / طبي / تعليمي AI</div>
+      <div class="profit-desc">RAG system متخصص لمجال محدد: محامٍ يسأل عن قانون، طبيب عن دواء، طالب عن مادة. النموذج مدرّب على قاعدة بيانات متخصصة ويجيب بدقة مع المصدر.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">85%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">٦ أسابيع</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">RAG</span><span class="tech-tag">Domain Data</span><span class="tech-tag">FastAPI</span>
+      </div>
+      <div class="profit-price">💰 السعر: 49$–199$/شهر للمؤسسات · B2B = دخل أعلى</div>
+    </div>
+
+  </div>
+
+  <!-- Freelance Projects -->
+  <div style="font-size:19px;font-weight:800;margin:36px 0 20px;color:rgba(255,255,255,0.6);">🎯 مشاريع Freelancing — دخل فوري من الشهر الرابع</div>
+  <div class="profit-grid">
+
+    <div class="profit-card">
+      <span class="profit-type type-freelance">Freelance</span>
+      <div class="profit-title">Chatbot خدمة عملاء للشركات</div>
+      <div class="profit-desc">كل شركة لديها موقع ويحتاج Chatbot يجيب على أسئلة العملاء المتكررة. أنت تأخذ بيانات الشركة (PDFs، FAQs)، تبني RAG System، وتثبّته على موقعهم.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البيع</span></div>
+        <div class="metric"><span class="metric-val">300$–800$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">أسبوعان</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangChain</span><span class="tech-tag">ChromaDB</span><span class="tech-tag">FastAPI</span>
+      </div>
+      <div class="profit-price">💰 + صيانة شهرية: 50$-100$/شهر = دخل متكرر</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-freelance">Freelance</span>
+      <div class="profit-title">نظام RAG للمعرفة الداخلية للشركات</div>
+      <div class="profit-desc">شركة لديها مئات الوثائق والسياسات — موظفوها يضيعون وقتًا في البحث. أنت تبني نظامًا يتحدث مع وثائقهم ويجيب الموظفين فورًا. هذا مطلوب جدًا.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البيع</span></div>
+        <div class="metric"><span class="metric-val">500$–2500$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">٣-٤ أسابيع</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">RAG</span><span class="tech-tag">Pinecone</span><span class="tech-tag">LangChain</span><span class="tech-tag">React UI</span>
+      </div>
+      <div class="profit-price">💰 الذهب الحقيقي — الشركات تدفع بدون تردد</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-freelance">Freelance</span>
+      <div class="profit-title">إنشاء Portfolio AI لأصحاب الأعمال</div>
+      <div class="profit-desc">موقع بسيط يشرح عمل صاحب المهنة مع Chatbot يجيب على الزوار — يحجز مواعيد، يجيب على الأسئلة، يرسل معلومات. مطعم، عيادة، محل، فريلانسر.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البيع</span></div>
+        <div class="metric"><span class="metric-val">200$–500$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">أسبوع</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">OpenAI</span><span class="tech-tag">Next.js</span><span class="tech-tag">Vercel</span>
+      </div>
+      <div class="profit-price">💰 سهل البيع — كل عمل صغير يحتاجه</div>
+    </div>
+
+  </div>
+
+  <!-- Automation Projects -->
+  <div style="font-size:19px;font-weight:800;margin:36px 0 20px;color:rgba(255,255,255,0.6);">⚙️ مشاريع Automation — قابلة للبيع من الشهر الرابع</div>
+  <div class="profit-grid">
+
+    <div class="profit-card">
+      <span class="profit-type type-automation">Automation</span>
+      <div class="profit-title">أتمتة نشر محتوى السوشيال بالـ AI</div>
+      <div class="profit-desc">Workflow يولّد محتوى بالـ AI كل يوم ثم ينشره تلقائيًا على Instagram, Twitter, LinkedIn, Facebook. صاحب العمل يحدد الموضوعات فقط.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">150$-500$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">أسبوع</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">n8n</span><span class="tech-tag">OpenAI</span><span class="tech-tag">Buffer API</span>
+      </div>
+      <div class="profit-price">💰 + صيانة شهرية: 100$/شهر — سهل جدًا البناء والبيع</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-automation">Automation</span>
+      <div class="profit-title">نظام تلخيص ومعالجة الإيميلات</div>
+      <div class="profit-desc">يقرأ الإيميلات الواردة، يصنّفها، يلخّصها، يرسل إشعارات للـ priority emails، ويرد تلقائيًا على الأسئلة المتكررة. يوفر ساعتين يوميًا لأصحاب الأعمال.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">200$-600$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">أسبوعان</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">n8n</span><span class="tech-tag">Gmail API</span><span class="tech-tag">OpenAI</span>
+      </div>
+      <div class="profit-price">💰 كل صاحب عمل يحتاجه — ألمهم الكبير</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-automation">Automation</span>
+      <div class="profit-title">أتمتة كتابة تقارير البيانات</div>
+      <div class="profit-desc">يستقبل بيانات من Excel أو قاعدة بيانات، يحللها بالـ AI، ويكتب تقريرًا مكتوبًا بالكامل بالعربي أو الإنجليزي — تلقائيًا كل أسبوع أو شهر.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">300$-1000$</span><span class="metric-lbl">سعر المشروع</span></div>
+        <div class="metric"><span class="metric-val">٣ أسابيع</span><span class="metric-lbl">وقت التنفيذ</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">OpenAI</span><span class="tech-tag">n8n</span>
+      </div>
+      <div class="profit-price">💰 الشركات المتوسطة تدفع جيدًا — B2B</div>
+    </div>
+
+  </div>
+
+  <!-- AI Agents -->
+  <div style="font-size:19px;font-weight:800;margin:36px 0 20px;color:rgba(255,255,255,0.6);">🕵️ مشاريع AI Agents — الأعلى سعرًا في 2026</div>
+  <div class="profit-grid">
+
+    <div class="profit-card">
+      <span class="profit-type type-agent">AI Agent</span>
+      <div class="profit-title">AI Sales Prospecting Agent</div>
+      <div class="profit-desc">Agent يبحث في LinkedIn والإنترنت عن عملاء محتملين، يجمع معلوماتهم، يكتب رسائل تواصل مخصصة لكل شخص، ويرسلها تلقائيًا. يوفر 80% من وقت المبيعات.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">98%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">شهر</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangGraph</span><span class="tech-tag">Browser Tools</span><span class="tech-tag">OpenAI</span>
+      </div>
+      <div class="profit-price">💰 سعر المشروع: 500$-2000$ · أو اشتراك: 100$+/شهر</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-agent">AI Agent</span>
+      <div class="profit-title">Market Research Agent</div>
+      <div class="profit-desc">Agent متخصص في البحث: يدخل موضوعًا، يبحث في عشرات المصادر، يقرأ المقالات، يحلل المنافسين، ويكتب تقريرًا شاملًا في 10 دقائق. يستبدل ساعات من البحث اليدوي.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">90%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">٣ أسابيع</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangChain</span><span class="tech-tag">Web Search</span><span class="tech-tag">Tavily</span>
+      </div>
+      <div class="profit-price">💰 للشركات والاستشاريين: 300$-1500$ للمشروع</div>
+    </div>
+
+    <div class="profit-card">
+      <span class="profit-type type-agent">AI Agent</span>
+      <div class="profit-title">Customer Support Agent كامل</div>
+      <div class="profit-desc">Agent يدير دعم العملاء: يقرأ التذاكر، يبحث في قاعدة المعرفة، يرد تلقائيًا، يُصعّد ما لا يستطيع حله للإنسان، ويتعلم من الإجابات الجديدة.</div>
+      <div class="profit-metrics">
+        <div class="metric"><span class="metric-val">⭐⭐</span><span class="metric-lbl">سهولة البناء</span></div>
+        <div class="metric"><span class="metric-val">95%</span><span class="metric-lbl">احتمالية البيع</span></div>
+        <div class="metric"><span class="metric-val">٦ أسابيع</span><span class="metric-lbl">وقت البناء</span></div>
+      </div>
+      <div class="profit-tech">
+        <span class="tech-tag">LangGraph</span><span class="tech-tag">RAG</span><span class="tech-tag">Memory</span><span class="tech-tag">APIs</span>
+      </div>
+      <div class="profit-price">💰 للشركات المتوسطة: 1000$-3000$ + صيانة شهرية</div>
+    </div>
+
+  </div>
+
+  <div class="info-box success" style="margin-top:16px;">
+    🏆 <strong>أفضل مشروع للبدء إطلاقًا:</strong> "أداة توليد محتوى تسويقي" — يمكن بناؤها بـ FastAPI + OpenAI في أسبوعين، قابلة للعرض كـ Demo فوري، ولديها سوق ضخم (كل صاحب متجر). هذا أول مشروع مثالي للـ Portfolio والدخل.
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-quote">العلم في الصغر كالنقش على الحجر</div>
+  <div>جزء من <a href="index.html">Master Roadmap 2026</a></div>
+</footer>
+
+<a href="notes.html" class="notes-fab" title="افتح ملاحظاتي الدراسية">
+  <span class="fab-icon">📓</span>
+  <span class="fab-text">ملاحظاتي</span>
+</a>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أخطاء المبتدئين — Master Roadmap 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#16a34a;--surface:#15803d;--surface2:#166534;--surface3:#14532d;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.12);--accent:#e94560;--accent2:#0f3460;--purple:#7c3aed;--blue:#2563eb;--teal:#06b6d4;--green:#10b981;--gold:#f59e0b;--orange:#f97316;--red:#ef4444;--pink:#ec4899;--text:#ffffff;--muted:#94a3b8;--white:#ffffff;}
+html{scroll-behavior:smooth;}*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Cairo','Tajawal','Noto Naskh Arabic',sans-serif;background:var(--primary);color:var(--text);line-height:2.0;font-size:16px;}
+a{color:var(--teal);text-decoration:none;transition:color 0.2s;}a:hover{text-decoration:underline;color:#67e8f9;}
+.nav{background:rgba(21,128,61,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;position:sticky;top:0;z-index:200;overflow-x:auto;}
+.nav-inner{display:flex;gap:0;min-width:max-content;}
+.nav a{display:block;padding:18px 18px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.nav a:hover{color:#fff;border-color:var(--purple);}
+main{max-width:1200px;margin:0 auto;padding:0 32px 120px;}
+.section{padding:88px 0 72px;}
+.section-header{display:flex;align-items:center;gap:22px;margin-bottom:56px;}
+.section-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
+.section-title{font-size:32px;font-weight:900;letter-spacing:-0.3px;}
+.section-subtitle{font-size:16px;color:var(--muted);margin-top:7px;font-weight:500;}
+.mistake-grid{display:grid;gap:16px;}
+.mistake-card{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.18);border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;}
+.mistake-ico{width:56px;height:56px;background:rgba(239,68,68,0.12);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;}
+.mistake-title{font-size:17px;font-weight:800;color:#fca5a5;margin-bottom:8px;}
+.mistake-desc{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;}
+.mistake-fix{font-size:14px;color:var(--green);margin-top:12px;font-weight:700;line-height:1.7;}
+.footer{text-align:center;padding:72px 0 52px;color:rgba(255,255,255,0.28);font-size:15px;line-height:2;}
+.footer-quote{font-size:24px;font-weight:900;color:rgba(255,255,255,0.55);margin-bottom:14px;background:linear-gradient(135deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.notes-fab{position:fixed;bottom:32px;left:32px;z-index:500;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 100%);color:#fff;text-decoration:none;font-family:'Cairo','Tajawal',sans-serif;font-size:15px;font-weight:800;padding:13px 22px;border-radius:100px;box-shadow:0 6px 28px rgba(124,58,237,0.45),0 2px 8px rgba(0,0,0,0.3);transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:1px solid rgba(255,255,255,0.15);}
+.notes-fab:hover{transform:translateY(-3px) scale(1.04);color:#fff;text-decoration:none;}
+.notes-fab .fab-icon{font-size:20px;line-height:1;}
+@media(max-width:768px){main{padding:0 18px 80px;}.section{padding:64px 0 52px;}.mistake-card{grid-template-columns:1fr;}}
+@media(max-width:480px){body{font-size:15px;}.section-title{font-size:26px;}.notes-fab{bottom:20px;left:20px;padding:12px 18px;font-size:14px;}.notes-fab .fab-text{display:none;}}
+@media print{.nav{display:none;}.mistake-card{background:#fef2f2!important;border:1px solid #fecaca!important;break-inside:avoid;}.mistake-title{color:#991b1b!important;}.mistake-desc{color:#475569!important;}.mistake-fix{color:#166534!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="phases.html">📍 المراحل</a>
+    <a href="execution.html">⚡ النظام التنفيذي</a>
+    <a href="review.html">📊 نظام المراجعة</a>
+    <a href="resources.html">📚 المصادر + الروابط</a>
+    <a href="dashboard.html">🗂 لوحة المتابعة</a>
+    <a href="learning.html">🛠 بيئة التعلم</a>
+    <a href="profit.html">💎 المشاريع الربحية</a>
+    <a href="antisocial.html">🧠 منع التسويف</a>
+    <a href="mistakes.html">⚠️ أخطاء المبتدئين</a>
+    <a href="income.html">💰 خطة الدخل</a>
+    <a href="tools.html" style="color:#6ee7b7;">🛠 الأدوات الداعمة</a>
+    <a href="notes.html" style="color:#c4b5fd;">📓 ملاحظاتي</a>
+  </div>
+</nav>
+
+<main>
+<section class="section" id="mistakes">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(239,68,68,0.2);">⚠️</div>
+    <div>
+      <div class="section-title">تاسعًا: أخطاء المبتدئين التي تُضيّع السنوات</div>
+      <div class="section-subtitle">احفظ هذه الأخطاء — تجنّبها يوفر 12 شهرًا من حياتك</div>
+    </div>
+  </div>
+
+  <div class="mistake-grid">
+    <div class="mistake-card">
+      <div class="mistake-ico">🌊</div>
+      <div>
+        <div class="mistake-title">التشتت بين التقنيات</div>
+        <div class="mistake-desc">Python أسبوع، JavaScript أسبوع، LangChain بدون أسس. النتيجة: لا تتقن شيئًا بعد سنة.</div>
+        <div class="mistake-fix">✅ الحل: قاعدة التقنية الواحدة — أُتقن ما أنا فيه قبل النظر لأي شيء جديد. الخطة هي المرجع.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">📺</div>
+      <div>
+        <div class="mistake-title">إدمان المشاهدة بدون تطبيق "Tutorial Hell"</div>
+        <div class="mistake-desc">تشاهد ساعات وتشعر بالتقدم، لكن لو أُغلق الفيديو لن تكتب سطرًا واحدًا.</div>
+        <div class="mistake-fix">✅ قاعدة 30/70: 30% مشاهدة + 70% كود. بعد كل 10 دقائق: اغلق الفيديو واكتب من الذاكرة.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">🏃</div>
+      <div>
+        <div class="mistake-title">القفز لـ AI بدون أسس Python</div>
+        <div class="mistake-desc">ترى "Chatbot في 5 دقائق" وتقفز. تنسخ الكود ويعمل، لكن لا تفهم ما يحدث. أي خطأ يوقفك.</div>
+        <div class="mistake-fix">✅ الحل: شهر واحد على Python الأساسيات قبل لمس أي LLM. يجعل كل ما يليه أسهل 10 مرات.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">📖</div>
+      <div>
+        <div class="mistake-title">تجنب التوثيق الرسمي والبحث عن شرح عربي فقط</div>
+        <div class="mistake-desc">تبقى تعتمد على شروح الآخرين — تصبح متعلمًا دائمًا لا محترفًا مستقلًا.</div>
+        <div class="mistake-fix">✅ الحل: من الأسبوع الأول، تدرّب على قراءة Docs الرسمية. هذه مهارة المحترف الحقيقي.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">⏰</div>
+      <div>
+        <div class="mistake-title">الدراسة العشوائية بلا انتظام</div>
+        <div class="mistake-desc">3 ساعات يومًا، يومان غياب، أسبوع كامل بلا دراسة. لا تبني مهارة حقيقية.</div>
+        <div class="mistake-fix">✅ 3 ساعات منتظمة كل يوم أفضل من 20 ساعة متقطعة. الانتظام هو السر الوحيد.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">🏗</div>
+      <div>
+        <div class="mistake-title">تأجيل بناء المشاريع "حتى أصبح جاهزًا"</div>
+        <div class="mistake-desc">لن تصبح جاهزًا أبدًا بهذا المنطق. الجاهزية تأتي من بناء المشاريع، لا من انتظارها.</div>
+        <div class="mistake-fix">✅ ابنِ مشروعًا كسيرًا من الأسبوع الأول. المشاريع الصغيرة العاملة أفضل من التكامل المؤجل.</div>
+      </div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-ico">🤖</div>
+      <div>
+        <div class="mistake-title">الاعتماد الكامل على ChatGPT لكتابة الكود</div>
+        <div class="mistake-desc">تنسخ كل كود من GPT بدون فهم. عند أول مشكلة حقيقية تقف عاجزًا لأنك لا تفهم ما أمامك.</div>
+        <div class="mistake-fix">✅ استخدم AI كـ Mentor لا كـ Copy Machine. اكتب الكود بنفسك أولًا، ثم استخدم AI للمراجعة والتحسين.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-quote">العلم في الصغر كالنقش على الحجر</div>
+  <div>جزء من <a href="index.html">Master Roadmap 2026</a></div>
+</footer>
+
+<a href="notes.html" class="notes-fab" title="افتح ملاحظاتي الدراسية">
+  <span class="fab-icon">📓</span>
+  <span class="fab-text">ملاحظاتي</span>
+</a>
+</body>
+</html>
