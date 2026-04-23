@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>النظام التنفيذي — Master Roadmap 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#16a34a;--surface:#15803d;--surface2:#166534;--surface3:#14532d;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.12);--accent:#e94560;--accent2:#0f3460;--purple:#7c3aed;--blue:#2563eb;--teal:#06b6d4;--green:#10b981;--gold:#f59e0b;--orange:#f97316;--red:#ef4444;--pink:#ec4899;--text:#ffffff;--muted:#94a3b8;--white:#ffffff;}
+html{scroll-behavior:smooth;}*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Cairo','Tajawal','Noto Naskh Arabic',sans-serif;background:var(--primary);color:var(--text);line-height:2.0;font-size:16px;}
+a{color:var(--teal);text-decoration:none;transition:color 0.2s;}a:hover{text-decoration:underline;color:#67e8f9;}
+.nav{background:rgba(21,128,61,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;position:sticky;top:0;z-index:200;overflow-x:auto;}
+.nav-inner{display:flex;gap:0;min-width:max-content;}
+.nav a{display:block;padding:18px 18px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.nav a:hover{color:#fff;border-color:var(--purple);}
+main{max-width:1200px;margin:0 auto;padding:0 32px 120px;}
+.section{padding:88px 0 72px;}
+.section-header{display:flex;align-items:center;gap:22px;margin-bottom:56px;}
+.section-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
+.section-title{font-size:32px;font-weight:900;letter-spacing:-0.3px;}
+.section-subtitle{font-size:16px;color:var(--muted);margin-top:7px;font-weight:500;}
+.info-box{padding:20px 26px;border-radius:16px;font-size:16px;line-height:1.9;margin:20px 0;}
+.info-box.tip{background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.25);color:rgba(255,255,255,0.85);}
+.info-box.warn{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:rgba(255,255,255,0.85);}
+.info-box.success{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);color:rgba(255,255,255,0.85);}
+.info-box.danger{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);color:rgba(255,255,255,0.85);}
+.info-box.purple{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.25);color:rgba(255,255,255,0.85);}
+.week-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;margin-bottom:28px;overflow:hidden;}
+.week-header{padding:24px 32px;background:rgba(255,255,255,0.035);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.week-num{font-size:14px;font-weight:900;padding:6px 18px;border-radius:100px;background:rgba(124,58,237,0.15);color:#c4b5fd;border:1px solid rgba(124,58,237,0.3);white-space:nowrap;}
+.week-title{font-size:19px;font-weight:800;}
+.week-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;}
+.week-col{padding:22px 26px;border-left:1px solid rgba(255,255,255,0.06);}
+.week-col:last-child{border-left:none;}
+.week-col-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);margin-bottom:12px;}
+.week-col-content{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.9;}
+.week-col-content strong{color:#fff;display:block;margin-bottom:5px;}
+.deliverable-tag{display:inline-block;font-size:12px;font-weight:700;padding:4px 13px;border-radius:7px;margin-top:8px;background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3);}
+.project-tag{display:inline-block;font-size:12px;font-weight:700;padding:4px 13px;border-radius:7px;margin-top:8px;background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.3);}
+.footer{text-align:center;padding:72px 0 52px;color:rgba(255,255,255,0.28);font-size:15px;line-height:2;}
+.footer-quote{font-size:24px;font-weight:900;color:rgba(255,255,255,0.55);margin-bottom:14px;background:linear-gradient(135deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.notes-fab{position:fixed;bottom:32px;left:32px;z-index:500;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 100%);color:#fff;text-decoration:none;font-family:'Cairo','Tajawal',sans-serif;font-size:15px;font-weight:800;padding:13px 22px;border-radius:100px;box-shadow:0 6px 28px rgba(124,58,237,0.45),0 2px 8px rgba(0,0,0,0.3);transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:1px solid rgba(255,255,255,0.15);}
+.notes-fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 10px 36px rgba(124,58,237,0.55),0 4px 12px rgba(0,0,0,0.35);color:#fff;text-decoration:none;}
+.notes-fab .fab-icon{font-size:20px;line-height:1;}
+@media(max-width:768px){.week-body{grid-template-columns:1fr;}main{padding:0 18px 80px;}.section{padding:64px 0 52px;}}
+@media(max-width:480px){body{font-size:15px;}.section-title{font-size:26px;}.notes-fab{bottom:20px;left:20px;padding:12px 18px;font-size:14px;}.notes-fab .fab-text{display:none;}}
+@media print{.nav{display:none;}.week-card{background:#f8f9ff!important;border:1px solid #e2e8f0!important;break-inside:avoid;}.week-title{color:#1a1a2e!important;}.week-col-content{color:#334155!important;}.week-col-title{color:#64748b!important;}.info-box.warn{background:#fffbeb!important;border-color:#fde68a!important;color:#92400e!important;}.info-box.success{background:#f0fdf4!important;border-color:#bbf7d0!important;color:#166534!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="phases.html">📍 المراحل</a>
+    <a href="execution.html">⚡ النظام التنفيذي</a>
+    <a href="review.html">📊 نظام المراجعة</a>
+    <a href="resources.html">📚 المصادر + الروابط</a>
+    <a href="dashboard.html">🗂 لوحة المتابعة</a>
+    <a href="learning.html">🛠 بيئة التعلم</a>
+    <a href="profit.html">💎 المشاريع الربحية</a>
+    <a href="antisocial.html">🧠 منع التسويف</a>
+    <a href="mistakes.html">⚠️ أخطاء المبتدئين</a>
+    <a href="income.html">💰 خطة الدخل</a>
+    <a href="tools.html" style="color:#6ee7b7;">🛠 الأدوات الداعمة</a>
+    <a href="notes.html" style="color:#c4b5fd;">📓 ملاحظاتي</a>
+  </div>
+</nav>
+
+<main>
+<section class="section" id="execution">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(245,158,11,0.2);">⚡</div>
+    <div>
+      <div class="section-title">ثانيًا: النظام التنفيذي الأسبوعي</div>
+      <div class="section-subtitle">ماذا تدرس؟ ماذا تطبق؟ ما الـ Deliverable؟ — لكل أسبوع خطة واضحة</div>
+    </div>
+  </div>
+
+  <div class="info-box warn">
+    ⚡ <strong>قاعدة 30/70:</strong> 30% دراسة نظرية + 70% تطبيق عملي. بعد كل فيديو أو مقال، اغلقه واكتب الكود من الذاكرة. الكود المكتوب من الذاكرة = تعلم حقيقي.
+  </div>
+
+  <!-- PHASE 1 WEEKS -->
+  <div style="font-size:20px;font-weight:800;margin:44px 0 24px;color:#c4b5fd;display:flex;align-items:center;gap:12px;">
+    <span style="width:9px;height:9px;background:#7c3aed;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+    المرحلة الأولى — التأسيس التقني (الشهر ١-٣)
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ١-٢</span>
+      <span class="week-title">Python الأساسيات — المتغيرات، الدوال، القوائم، الملفات</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Variables, Data Types, Functions, Loops, Lists, Dicts, File I/O, Error Handling
+          <br><br>مصدرك: <a href="https://www.youtube.com/c/ElzeroInfo" target="_blank">Elzero Web School</a> + <a href="https://docs.python.org/3/tutorial" target="_blank">Python Docs الرسمي</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          بعد كل مفهوم: 5 تمارين على <a href="https://exercism.org/tracks/python" target="_blank">Exercism.org</a>
+          <br>واكتب كل الأمثلة بنفسك في VS Code — لا نسخ ولصق
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ سكريبت Expense Tracker</span><br>
+          يقرأ ويكتب مصاريف من JSON، يحسب مجموع يومي وشهري، يعرض تقريرًا نصيًا
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          اكتب دالة من الذاكرة تقرأ ملف JSON، تصفي البيانات، وتعيد قائمة مرتبة — بدون فتح أي مرجع
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٣-٤</span>
+      <span class="week-title">Git & GitHub — حفظ العمل ونشره احترافيًا</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          init, add, commit, push, pull, branches, merge, .gitignore, README.md
+          <br><br>مصدرك: <a href="https://learngitbranching.js.org" target="_blank">learngitbranching.js.org</a> (تفاعلي ممتاز)
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ارفع مشروع الأسبوع السابق على GitHub مع README احترافي يشرح: ما هو المشروع؟ كيف تشغله؟ لقطة شاشة.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ أول Repo على GitHub</span><br>
+          مشروع Expense Tracker محمل مع README + .gitignore صحيح
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          أنشئ branch جديد، عدّل ملف، commit، ثم merge مع main — بدون استخدام GitHub Desktop
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٥-٨</span>
+      <span class="week-title">APIs & HTTP & JSON — كيف تتواصل البرامج مع العالم</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          HTTP Methods, Status Codes, Headers, Authentication (API Keys, Bearer Tokens), JSON parsing, requests library
+          <br><br>مصدرك: <a href="https://learning.postman.com/docs/getting-started/overview/" target="_blank">Postman Learning Center</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          جرّب 3 APIs مختلفة من <a href="https://publicapis.dev" target="_blank">publicapis.dev</a> باستخدام Postman أولًا، ثم Python. الغرض: تعتاد على قراءة Documentation.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Weather Dashboard</span><br>
+          سكريبت يسحب طقس 5 مدن من <a href="https://openweathermap.org/api" target="_blank">OpenWeather API</a> ويعرض تقريرًا جميلًا
+          <span class="project-tag">📌 مشروع GitHub</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          اقرأ documentation لـ API جديد لأول مرة واستخدمه في 30 دقيقة بدون مساعدة
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 WEEKS -->
+  <div style="font-size:20px;font-weight:800;margin:52px 0 24px;color:#93c5fd;display:flex;align-items:center;gap:12px;">
+    <span style="width:9px;height:9px;background:#2563eb;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+    المرحلة الثانية — الذكاء الاصطناعي الأساسي (الشهر ٤-٧)
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٩-١٠</span>
+      <span class="week-title">Prompt Engineering — فن التحكم في سلوك النماذج</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          System Prompts, Few-shot, Chain of Thought, Role Playing, Output Formatting, Temperature, Max Tokens
+          <br><br>مصدرك: <a href="https://www.promptingguide.ai/ar" target="_blank">PromptingGuide.ai (عربي)</a> + <a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank">DeepLearning.AI (مجاني)</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          استخدم <a href="https://platform.openai.com/playground" target="_blank">OpenAI Playground</a> أو <a href="https://console.anthropic.com" target="_blank">Anthropic Console</a> وجرّب 10 prompts مختلفة لنفس المهمة — لاحظ الفرق في النتائج.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Prompt Library</span><br>
+          Notion أو GitHub Repo فيه 20+ prompt مُختبر لحالات استخدام مختلفة (تلخيص، كتابة، تحليل، ترجمة)
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          اكتب prompt يجعل النموذج يرفض أي سؤال خارج موضوع محدد — ويرد بأسلوب معين
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ١١-١٥</span>
+      <span class="week-title">OpenAI API + FastAPI — بناء أول تطبيق AI حقيقي</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Chat Completions API, Streaming, Function Calling, FastAPI basics, Pydantic Models, Async/Await, CORS
+          <br><br>مصادر: <a href="https://platform.openai.com/docs" target="_blank">OpenAI Docs</a> · <a href="https://fastapi.tiangolo.com" target="_blank">FastAPI Docs</a> · <a href="https://www.youtube.com/@TechWithTim" target="_blank">@TechWithTim</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ابنِ API endpoint يقبل رسالة ويعيد رد من GPT. ثم أضف Conversation History. ثم أضف System Prompt. كل خطوة = Commit منفصل.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Chatbot API حقيقي</span><br>
+          FastAPI + OpenAI + Memory + Personality. منشور على <a href="https://railway.app" target="_blank">Railway.app</a> مجانًا.
+          <span class="project-tag">📌 Portfolio Project</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          أضف endpoint جديد للـ API يلخص أي نص بـ 3 نقاط — بدون الرجوع للـ tutorial
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ١٦-٢٠</span>
+      <span class="week-title">n8n Automation — بناء أنظمة تعمل وحدها</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Nodes, Workflows, Triggers, Webhooks, HTTP Request Node, OpenAI Node, Expressions, Error Handling
+          <br><br>مصادر: <a href="https://docs.n8n.io" target="_blank">n8n Docs</a> · <a href="https://www.youtube.com/@NetworkChuck" target="_blank">@NetworkChuck</a> · <a href="https://n8n.io/workflows/" target="_blank">n8n Templates</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ابدأ بـ <a href="https://app.n8n.cloud" target="_blank">n8n Cloud</a> مجانًا. ابنِ 5 workflows: 1) إرسال بريد تلقائي، 2) توليد محتوى بـ AI، 3) نشر على تويتر، 4) جمع بيانات من موقع، 5) إشعار تلقائي على WhatsApp.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Content Automation Pipeline</span><br>
+          يولد موضوعًا كل يوم بالـ AI ثم ينشره تلقائيًا. Workflow كامل يعمل وحده.
+          <span class="project-tag">💰 قابل للبيع: 150$-300$</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          ابنِ Workflow يقرأ بريد وارد، يلخصه بـ AI، ويرسل ملخصًا يوميًا على تيليغرام — من الصفر
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 WEEKS -->
+  <div style="font-size:20px;font-weight:800;margin:52px 0 24px;color:#6ee7b7;display:flex;align-items:center;gap:12px;">
+    <span style="width:9px;height:9px;background:#059669;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+    المرحلة الثالثة — RAG & AI Agents (الشهر ٨-١٢)
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٢١-٢٥</span>
+      <span class="week-title">LangChain & Vector Databases — أنظمة الذاكرة الذكية</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Embeddings, Similarity Search, ChromaDB, Pinecone, Document Loaders, Text Splitters, LangChain Chains
+          <br><br>مصادر: <a href="https://python.langchain.com/docs/get_started/introduction" target="_blank">LangChain Docs</a> · <a href="https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/" target="_blank">DeepLearning.AI LangChain</a> · <a href="https://docs.trychroma.com" target="_blank">Chroma Docs</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ابنِ نظامًا يقرأ 5 PDFs، يحولها لـ vectors في ChromaDB، ثم يجيب على أسئلة من محتواها بدقة مع إظهار المصدر.
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ Chat With Your Docs</span><br>
+          نظام RAG كامل: Upload PDF → Vectorize → Ask → Answer with Source
+          <span class="project-tag">💰 قابل للبيع: 500$-2000$</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          أضف لقاعدة البيانات مستنداً جديدًا بدون حذف القديم، وتأكد من أن النظام يبحث في الاثنين
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-num">الأسبوع ٢٦-٣٢</span>
+      <span class="week-title">AI Agents & Tool Calling — وكلاء يعملون باستقلالية</span>
+    </div>
+    <div class="week-body">
+      <div class="week-col">
+        <div class="week-col-title">📖 ماذا تدرس</div>
+        <div class="week-col-content">
+          Function Calling, Tool Use, ReAct Pattern, LangGraph, Multi-Agent Systems, Memory Types
+          <br><br>مصادر: <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a> · <a href="https://langchain-ai.github.io/langgraph/" target="_blank">LangGraph Docs</a>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">💻 ماذا تطبق</div>
+        <div class="week-col-content">
+          ابنِ Agent يملك 3 tools: بحث على الإنترنت، قراءة ملف، حفظ ملاحظات. ثم أعطه مهمة: "ابحث عن أحدث أخبار AI واكتب ملخصًا وحفظه".
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🎯 الـ Deliverable</div>
+        <div class="week-col-content">
+          <span class="deliverable-tag">✓ AI Research Agent</span><br>
+          Agent يبحث في الإنترنت ويكتب تقريرًا كاملًا من 5 مصادر — تشغيله بأمر واحد
+          <span class="project-tag">📌 Portfolio Project</span>
+        </div>
+      </div>
+      <div class="week-col">
+        <div class="week-col-title">🔬 اختبار الفهم</div>
+        <div class="week-col-content">
+          أضف Tool جديد للـ Agent يرسل إيميل — الـ Agent يقرر متى يستخدمه بنفسه
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box success">
+    🎯 <strong>الجدول اليومي الثابت للمراحل الجميع:</strong><br>
+    <strong>5:00–6:30 صباحًا:</strong> تعلم نظري — فيديو أو قراءة docs أو كورس &nbsp;|&nbsp;
+    <strong>3:00–4:30 مساءً:</strong> تطبيق عملي — كود أو مشروع أو تمارين &nbsp;|&nbsp;
+    <strong>الجمعة عصرًا:</strong> راحة تامة — لا دراسة مهما حدث
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-quote">العلم في الصغر كالنقش على الحجر</div>
+  <div>جزء من <a href="index.html">Master Roadmap 2026</a></div>
+</footer>
+
+<a href="notes.html" class="notes-fab" title="افتح ملاحظاتي الدراسية">
+  <span class="fab-icon">📓</span>
+  <span class="fab-text">ملاحظاتي</span>
+</a>
+</body>
+</html>

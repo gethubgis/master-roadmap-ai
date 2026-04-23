@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة الدخل — Master Roadmap 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#16a34a;--surface:#15803d;--surface2:#166534;--surface3:#14532d;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.12);--accent:#e94560;--accent2:#0f3460;--purple:#7c3aed;--blue:#2563eb;--teal:#06b6d4;--green:#10b981;--gold:#f59e0b;--orange:#f97316;--red:#ef4444;--pink:#ec4899;--text:#ffffff;--muted:#94a3b8;--white:#ffffff;}
+html{scroll-behavior:smooth;}*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Cairo','Tajawal','Noto Naskh Arabic',sans-serif;background:var(--primary);color:var(--text);line-height:2.0;font-size:16px;}
+a{color:var(--teal);text-decoration:none;transition:color 0.2s;}a:hover{text-decoration:underline;color:#67e8f9;}
+.nav{background:rgba(21,128,61,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;position:sticky;top:0;z-index:200;overflow-x:auto;}
+.nav-inner{display:flex;gap:0;min-width:max-content;}
+.nav a{display:block;padding:18px 18px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.nav a:hover{color:#fff;border-color:var(--purple);}
+.nav a.active{color:#fff;border-bottom-color:var(--gold);}
+main{max-width:1200px;margin:0 auto;padding:0 32px 120px;}
+.section{padding:88px 0 72px;}
+.section-header{display:flex;align-items:center;gap:22px;margin-bottom:56px;}
+.section-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
+.section-title{font-size:32px;font-weight:900;letter-spacing:-0.3px;}
+.section-subtitle{font-size:16px;color:var(--muted);margin-top:7px;font-weight:500;}
+.info-box{padding:20px 26px;border-radius:16px;font-size:16px;line-height:1.9;margin:20px 0;}
+.info-box.success{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);color:rgba(255,255,255,0.85);}
+.info-box.tip{background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.25);color:rgba(255,255,255,0.85);}
+.income-steps{display:grid;gap:16px;}
+.income-step{display:grid;grid-template-columns:100px 1fr;gap:24px;padding:26px;background:var(--surface);border:1px solid var(--border);border-radius:18px;}
+.income-period{text-align:center;}
+.income-month{font-size:26px;font-weight:900;color:var(--gold);}
+.income-period-lbl{font-size:12px;color:var(--muted);font-weight:700;margin-top:2px;}
+.income-title{font-size:18px;font-weight:800;margin-bottom:10px;}
+.income-desc{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:14px;}
+.income-actions{display:grid;gap:8px;}
+.income-action{font-size:14px;padding:10px 14px;background:rgba(255,255,255,0.035);border-radius:10px;border:1px solid rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);line-height:1.7;}
+.income-action::before{content:'→ ';color:var(--teal);font-weight:700;}
+.divider{height:1px;background:rgba(255,255,255,0.07);margin:44px 0;}
+.table-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:15px;}
+th{background:rgba(255,255,255,0.05);padding:16px 20px;text-align:right;font-weight:800;color:rgba(255,255,255,0.7);font-size:13px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);vertical-align:top;line-height:1.8;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,0.025);}
+.footer{text-align:center;padding:72px 0 52px;color:rgba(255,255,255,0.28);font-size:15px;line-height:2;}
+.footer-quote{font-size:24px;font-weight:900;color:rgba(255,255,255,0.55);margin-bottom:14px;background:linear-gradient(135deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.notes-fab{position:fixed;bottom:32px;left:32px;z-index:500;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 100%);color:#fff;text-decoration:none;font-family:'Cairo','Tajawal',sans-serif;font-size:15px;font-weight:800;padding:13px 22px;border-radius:100px;box-shadow:0 6px 28px rgba(124,58,237,0.45),0 2px 8px rgba(0,0,0,0.3);transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:1px solid rgba(255,255,255,0.15);}
+.notes-fab:hover{transform:translateY(-3px) scale(1.04);color:#fff;text-decoration:none;}
+.notes-fab .fab-icon{font-size:20px;line-height:1;}
+@media(max-width:768px){main{padding:0 18px 80px;}.section{padding:64px 0 52px;}.income-step{grid-template-columns:1fr;}.income-period{text-align:right;}}
+@media(max-width:480px){body{font-size:15px;}.section-title{font-size:26px;}.notes-fab{bottom:20px;left:20px;padding:12px 18px;font-size:14px;}.notes-fab .fab-text{display:none;}}
+@media print{.nav{display:none;}.income-step{background:#f8f9ff!important;border:1px solid #e2e8f0!important;break-inside:avoid;}.income-month{color:#d97706!important;}.income-title{color:#1a1a2e!important;}.income-desc{color:#475569!important;}.income-action{background:#f1f5f9!important;border-color:#e2e8f0!important;color:#334155!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="phases.html">📍 المراحل</a>
+    <a href="execution.html">⚡ النظام التنفيذي</a>
+    <a href="review.html">📊 نظام المراجعة</a>
+    <a href="resources.html">📚 المصادر + الروابط</a>
+    <a href="dashboard.html">🗂 لوحة المتابعة</a>
+    <a href="learning.html">🛠 بيئة التعلم</a>
+    <a href="profit.html">💎 المشاريع الربحية</a>
+    <a href="antisocial.html">🧠 منع التسويف</a>
+    <a href="mistakes.html">⚠️ أخطاء المبتدئين</a>
+    <a href="income.html" class="active">💰 خطة الدخل</a>
+    <a href="tools.html" style="color:#6ee7b7;">🛠 الأدوات الداعمة</a>
+    <a href="notes.html" style="color:#c4b5fd;">📓 ملاحظاتي</a>
+  </div>
+</nav>
+
+<main>
+<section class="section" id="income">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(16,185,129,0.2);">💰</div>
+    <div>
+      <div class="section-title">عاشرًا: خطة الوصول إلى أول دخل</div>
+      <div class="section-subtitle">متى وكيف وكم — خارطة دقيقة لتحويل مهاراتك إلى دخل حقيقي</div>
+    </div>
+  </div>
+
+  <div class="info-box success">
+    💡 <strong>مبدأ أساسي:</strong> ابدأ ببناء الحضور الرقمي من الشهر الأول — GitHub Activity + LinkedIn Posts. هذا يختصر 6 أشهر من وقت الحصول على عملاء.
+  </div>
+
+  <div class="income-steps" style="margin-top:24px;">
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">١-٣</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">📚 مرحلة الاستثمار — بناء الحضور الرقمي</div>
+        <div class="income-desc">لا تفكر في الدخل الآن — استثمر كل دقيقة في التعلم والبناء. لكن ابدأ بوضع اللبنات الأساسية لمستقبلك المهني.</div>
+        <div class="income-actions">
+          <div class="income-action">أنشئ GitHub وارفع كل مشروع صغير مع README احترافي</div>
+          <div class="income-action">أنشئ LinkedIn: "AI Application Developer — Building & Learning" — انشر تقدمك أسبوعيًا</div>
+          <div class="income-action">تعلّم n8n بجدية — هي أسرع طريق للدخل في الأشهر القادمة</div>
+          <div class="income-action">شارك 1 Post أسبوعيًا عما تتعلمه — يبني الجمهور قبل أن تحتاجه</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">٤-٦</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">🎯 خدمات n8n Automation — أول دخل حقيقي</div>
+        <div class="income-desc">n8n لا تحتاج كودًا معقدًا — تعلمتها في أسابيع ويمكن بيعها الآن. هذا أسرع دخل في المسار كله.</div>
+        <div class="income-actions">
+          <div class="income-action">أنشئ حساب Upwork + Mostaql تخصص "AI Workflow Automation"</div>
+          <div class="income-action">اعرض خدمة أتمتة السوشيال بـ AI: 150$-300$ للمشروع</div>
+          <div class="income-action">تواصل مع أصحاب المتاجر المحلية — مشكلتهم في إنشاء المحتوى اليومي</div>
+          <div class="income-action">الهدف: أول عميل ولو بـ 50$ لبناء الثقة والمراجعة الأولى</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">٧-١٠</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">🤖 خدمات Chatbot ومحتوى AI — ارتفاع الأسعار</div>
+        <div class="income-desc">الآن لديك Chatbot APIs وقاعدة RAG. هذه منتجات تدفع عليها الشركات بسعر حقيقي.</div>
+        <div class="income-actions">
+          <div class="income-action">اعرض خدمة "Chatbot لخدمة عملاء موقعك": 300$-800$ + 50$/شهر صيانة</div>
+          <div class="income-action">اعرض خدمة "أتمتة توليد محتوى تسويقي": 200$-500$/شهر</div>
+          <div class="income-action">استهدف العيادات، المطاعم، المتاجر الإلكترونية — حاجتهم واضحة</div>
+          <div class="income-action">منصات عربية: <a href="https://khamsat.com" target="_blank">Khamsat.com</a> · <a href="https://mostaql.com" target="_blank">Mostaql.com</a> · LinkedIn عربي</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">١١-١٤</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">🏆 خدمات RAG للشركات — الدخل الجدي</div>
+        <div class="income-desc">هذا هو الذهب الحقيقي. RAG Systems للشركات يدفعون من 500$ إلى 3000$. وهم يدفعون بسعادة لأنهم يرون القيمة فورًا.</div>
+        <div class="income-actions">
+          <div class="income-action">استهدف الشركات المتوسطة: عيادات، مكاتب محاسبة، شركات توزيع، شركات تدريب</div>
+          <div class="income-action">اعرض حلًا متكاملًا: RAG + واجهة + تدريب فريق + دعم = 1000$-2500$</div>
+          <div class="income-action">أنشئ Case Study لكل مشروع منجز: المشكلة + الحل + النتيجة + الوقت المُوفَّر</div>
+          <div class="income-action">منصة دولية: <a href="https://www.upwork.com" target="_blank">Upwork.com</a> · <a href="https://www.toptal.com" target="_blank">Toptal.com</a> للخبراء</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="income-step">
+      <div class="income-period"><div class="income-month">١٥-١٨</div><div class="income-period-lbl">أشهر</div></div>
+      <div>
+        <div class="income-title">🚀 إطلاق SaaS أو عمل مستقل كامل</div>
+        <div class="income-desc">الآن لديك: المهارة + Portfolio + عملاء سابقون + شبكة علاقات. الخطوة الكبيرة: SaaS بسيط أو Retainer clients.</div>
+        <div class="income-actions">
+          <div class="income-action">أطلق SaaS بسيط: أداة توليد محتوى AI بـ 19$-29$/شهر على <a href="https://www.producthunt.com" target="_blank">ProductHunt</a></div>
+          <div class="income-action">استهدف Retainer Clients: 3-5 شركات بـ 300$-500$/شهر صيانة ودعم = 1500$+ ثابت</div>
+          <div class="income-action">قرر المسار: وظيفة + عمل حر؟ أم استقلال كامل؟ الأرقام الآن تُجيب</div>
+          <div class="income-action">بنِ قائمة بريدية من العملاء السابقين للإطلاق القادم</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="font-size:22px;font-weight:900;margin-bottom:24px;">كيف تبني Portfolio يجذب العملاء</div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>العنصر</th><th>الوصف الاحترافي</th><th>لماذا مهم</th><th>متى تبدأ</th></tr>
+      <tr><td><strong>GitHub منظم</strong></td><td>4-6 مشاريع + README احترافي + Demo link</td><td>أول ما يراه العميل التقني</td><td>الشهر الأول</td></tr>
+      <tr><td><strong>موقع Portfolio</strong></td><td>من أنا + خدماتي + مشاريعي + تواصل</td><td>يعطي مصداقية فورية</td><td>الشهر السادس</td></tr>
+      <tr><td><strong>LinkedIn نشط</strong></td><td>Post أسبوعي عن مشاريعك وتعلّمك</td><td>معظم العملاء يأتون منه</td><td>الشهر الأول</td></tr>
+      <tr><td><strong>Case Studies</strong></td><td>المشكلة + الحل + النتيجة + التقنيات</td><td>هذا ما يُقنع بالدفع</td><td>من أول عميل</td></tr>
+      <tr><td><strong>Demo Videos</strong></td><td>2-3 دقائق لكل مشروع وهو يعمل فعلًا</td><td>العميل يريد يرى لا يقرأ</td><td>مع كل مشروع</td></tr>
+      <tr><td><strong>شهادات معتمدة</strong></td><td><a href="https://www.deeplearning.ai" target="_blank">DeepLearning.AI</a> · Google AI · Coursera</td><td>تضيف مصداقية أكاديمية</td><td>الشهر الرابع</td></tr>
+    </table>
+  </div>
+
+</section>
+</main>
+
+<div class="footer">
+  <div class="footer-quote">الانتظام × الصبر × التطبيق = الاحتراف</div>
+  <div>جزء من <a href="index.html">Master Roadmap 2026</a></div>
+</div>
+
+<a href="notes.html" class="notes-fab" title="افتح ملاحظاتي الدراسية">
+  <span class="fab-icon">📓</span>
+  <span class="fab-text">ملاحظاتي</span>
+</a>
+</body>
+</html>

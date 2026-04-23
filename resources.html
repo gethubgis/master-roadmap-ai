@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المصادر + الروابط — Master Roadmap 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#16a34a;--surface:#15803d;--surface2:#166534;--surface3:#14532d;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.12);--accent:#e94560;--accent2:#0f3460;--purple:#7c3aed;--blue:#2563eb;--teal:#06b6d4;--green:#10b981;--gold:#f59e0b;--orange:#f97316;--red:#ef4444;--pink:#ec4899;--text:#ffffff;--muted:#94a3b8;--white:#ffffff;}
+html{scroll-behavior:smooth;}*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Cairo','Tajawal','Noto Naskh Arabic',sans-serif;background:var(--primary);color:var(--text);line-height:2.0;font-size:16px;}
+a{color:var(--teal);text-decoration:none;transition:color 0.2s;}a:hover{text-decoration:underline;color:#67e8f9;}
+.nav{background:rgba(21,128,61,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 24px;position:sticky;top:0;z-index:200;overflow-x:auto;}
+.nav-inner{display:flex;gap:0;min-width:max-content;}
+.nav a{display:block;padding:18px 18px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.5);text-decoration:none;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.nav a:hover{color:#fff;border-color:var(--purple);}
+main{max-width:1200px;margin:0 auto;padding:0 32px 120px;}
+.section{padding:88px 0 72px;}
+.section-header{display:flex;align-items:center;gap:22px;margin-bottom:56px;}
+.section-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
+.section-title{font-size:32px;font-weight:900;letter-spacing:-0.3px;}
+.section-subtitle{font-size:16px;color:var(--muted);margin-top:7px;font-weight:500;}
+.info-box{padding:20px 26px;border-radius:16px;font-size:16px;line-height:1.9;margin:20px 0;}
+.info-box.tip{background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.25);color:rgba(255,255,255,0.85);}
+.info-box.warn{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:rgba(255,255,255,0.85);}
+.info-box.success{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);color:rgba(255,255,255,0.85);}
+.info-box.danger{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);color:rgba(255,255,255,0.85);}
+.info-box.purple{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.25);color:rgba(255,255,255,0.85);}
+.resource-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;margin-bottom:28px;overflow:hidden;}
+.resource-header{padding:22px 30px;display:flex;align-items:center;gap:18px;border-bottom:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.025);}
+.resource-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.resource-skill-name{font-size:19px;font-weight:900;}
+.resource-phase{font-size:13px;color:var(--muted);font-weight:600;margin-top:2px;}
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.resource-item{padding:18px 24px;border-left:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.04);}
+.resource-item:nth-child(odd){background:rgba(255,255,255,0.015);}
+.resource-type{font-size:11px;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:7px;}
+.resource-name{font-size:15px;color:rgba(255,255,255,0.9);margin-bottom:6px;font-weight:600;}
+.resource-link{font-size:13px;}
+.resource-link a{color:rgba(103,232,249,0.85);}
+.resource-link a:hover{color:var(--teal);}
+.resource-note{font-size:13px;color:var(--muted);margin-top:5px;font-style:italic;line-height:1.7;}
+.footer{text-align:center;padding:72px 0 52px;color:rgba(255,255,255,0.28);font-size:15px;line-height:2;}
+.footer-quote{font-size:24px;font-weight:900;color:rgba(255,255,255,0.55);margin-bottom:14px;background:linear-gradient(135deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.notes-fab{position:fixed;bottom:32px;left:32px;z-index:500;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 100%);color:#fff;text-decoration:none;font-family:'Cairo','Tajawal',sans-serif;font-size:15px;font-weight:800;padding:13px 22px;border-radius:100px;box-shadow:0 6px 28px rgba(124,58,237,0.45),0 2px 8px rgba(0,0,0,0.3);transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);border:1px solid rgba(255,255,255,0.15);}
+.notes-fab:hover{transform:translateY(-3px) scale(1.04);color:#fff;text-decoration:none;}
+.notes-fab .fab-icon{font-size:20px;line-height:1;}
+@media(max-width:768px){main{padding:0 18px 80px;}.section{padding:64px 0 52px;}}
+@media(max-width:480px){body{font-size:15px;}.section-title{font-size:26px;}.notes-fab{bottom:20px;left:20px;padding:12px 18px;font-size:14px;}.notes-fab .fab-text{display:none;}}
+@media print{.nav{display:none;}.resource-card{background:#f8f9ff!important;border:1px solid #e2e8f0!important;break-inside:avoid;}.resource-name{color:#1a1a2e!important;}.resource-note{color:#64748b!important;}a{color:#2563eb!important;}.info-box.success{background:#f0fdf4!important;border-color:#bbf7d0!important;color:#166534!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="phases.html">📍 المراحل</a>
+    <a href="execution.html">⚡ النظام التنفيذي</a>
+    <a href="review.html">📊 نظام المراجعة</a>
+    <a href="resources.html">📚 المصادر + الروابط</a>
+    <a href="dashboard.html">🗂 لوحة المتابعة</a>
+    <a href="learning.html">🛠 بيئة التعلم</a>
+    <a href="profit.html">💎 المشاريع الربحية</a>
+    <a href="antisocial.html">🧠 منع التسويف</a>
+    <a href="mistakes.html">⚠️ أخطاء المبتدئين</a>
+    <a href="income.html">💰 خطة الدخل</a>
+    <a href="tools.html" style="color:#6ee7b7;">🛠 الأدوات الداعمة</a>
+    <a href="notes.html" style="color:#c4b5fd;">📓 ملاحظاتي</a>
+  </div>
+</nav>
+
+<main>
+<section class="section" id="resources">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(16,185,129,0.2);">📚</div>
+    <div>
+      <div class="section-title">رابعًا: المصادر الكاملة — روابط حقيقية مباشرة</div>
+      <div class="section-subtitle">لكل مهارة: أفضل كورس مجاني + يوتيوب + تطبيق عملي + مشروع</div>
+    </div>
+  </div>
+
+  <!-- Python -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(124,58,237,0.2);">🐍</div>
+      <div>
+        <div class="resource-skill-name">Python — اللغة الأساسية</div>
+        <div class="resource-phase">المرحلة ١ · الأولوية القصوى · ٣-٤ أسابيع</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🇸🇦 يوتيوب عربي #١</div>
+        <div class="resource-name">Elzero Web School — Python</div>
+        <div class="resource-link"><a href="https://www.youtube.com/c/ElzeroInfo" target="_blank">youtube.com/c/ElzeroInfo</a></div>
+        <div class="resource-note">أفضل قناة عربية للمبتدئين — شرح واضح ومنظم</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب أجنبي #١</div>
+        <div class="resource-name">Tech With Tim — Python Full Course</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@TechWithTim" target="_blank">youtube.com/@TechWithTim</a></div>
+        <div class="resource-note">مشاريع عملية — يبني أشياء حقيقية مع كل شرح</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني معتمد</div>
+        <div class="resource-name">freeCodeCamp — Scientific Computing Python</div>
+        <div class="resource-link"><a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" target="_blank">freecodecamp.org/learn</a></div>
+        <div class="resource-note">شهادة مجانية + مشاريع عملية خمسة</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">Python.org Official Tutorial</div>
+        <div class="resource-link"><a href="https://docs.python.org/3/tutorial/index.html" target="_blank">docs.python.org/3/tutorial</a></div>
+        <div class="resource-note">اعتد على قراءة الـ Docs الرسمي — مهارة المحترفين</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">⚡ تمارين تفاعلية</div>
+        <div class="resource-name">Exercism — Python Track</div>
+        <div class="resource-link"><a href="https://exercism.org/tracks/python" target="_blank">exercism.org/tracks/python</a></div>
+        <div class="resource-note">١٣٠+ تمرين مع mentorship مجاني</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 بيئة تطبيق مجانية</div>
+        <div class="resource-name">Google Colab</div>
+        <div class="resource-link"><a href="https://colab.research.google.com" target="_blank">colab.research.google.com</a></div>
+        <div class="resource-note">لا تنصيب — Python جاهز فورًا في المتصفح</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Git -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(245,158,11,0.2);">🌿</div>
+      <div>
+        <div class="resource-skill-name">Git & GitHub — حفظ العمل ونشره</div>
+        <div class="resource-phase">المرحلة ١ · أولوية عالية · أسبوع واحد</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🇸🇦 يوتيوب عربي</div>
+        <div class="resource-name">Elzero — Git & GitHub بالعربي</div>
+        <div class="resource-link"><a href="https://www.youtube.com/playlist?list=PLDoPjvoNmBAw4eOj58MZPakHjaO3frVMF" target="_blank">playlist Git عربي</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب أجنبي</div>
+        <div class="resource-name">Fireship — Git in 100 Seconds</div>
+        <div class="resource-link"><a href="https://www.youtube.com/watch?v=hwP7WQkmECE" target="_blank">youtu.be/hwP7WQkmECE</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">⚡ تعلم تفاعلي (الأفضل)</div>
+        <div class="resource-name">Learn Git Branching</div>
+        <div class="resource-link"><a href="https://learngitbranching.js.org/?locale=ar" target="_blank">learngitbranching.js.org</a></div>
+        <div class="resource-note">تعلّم بالبصريات — الأفضل لفهم البراننشات</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 مرجع شامل مجاني</div>
+        <div class="resource-name">Pro Git Book</div>
+        <div class="resource-link"><a href="https://git-scm.com/book/en/v2" target="_blank">git-scm.com/book/en/v2</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس Microsoft</div>
+        <div class="resource-name">Microsoft Learn — Intro to Git</div>
+        <div class="resource-link"><a href="https://learn.microsoft.com/en-us/training/modules/intro-to-git/" target="_blank">learn.microsoft.com</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📚 GitHub Skills</div>
+        <div class="resource-name">GitHub Skills — Interactive Learning</div>
+        <div class="resource-link"><a href="https://skills.github.com" target="_blank">skills.github.com</a></div>
+        <div class="resource-note">تعلّم GitHub مباشرة من GitHub</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APIs -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(6,182,212,0.2);">🔗</div>
+      <div>
+        <div class="resource-skill-name">APIs & HTTP & REST — كيف تتحدث البرامج</div>
+        <div class="resource-phase">المرحلة ١ · أساسي جدًا · أسبوعان</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🇸🇦 يوتيوب عربي</div>
+        <div class="resource-name">Codezilla — شرح APIs بالعربي</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@Codezilla" target="_blank">youtube.com/@Codezilla</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب أجنبي</div>
+        <div class="resource-name">Traversy Media — REST APIs Crash Course</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@TraversyMedia" target="_blank">youtube.com/@TraversyMedia</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني</div>
+        <div class="resource-name">Postman Learning Center</div>
+        <div class="resource-link"><a href="https://learning.postman.com/docs/getting-started/overview/" target="_blank">learning.postman.com</a></div>
+        <div class="resource-note">تعلم APIs ورات باستخدام أحسن أداة</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">⚡ ممارسة عملية</div>
+        <div class="resource-name">Public APIs Directory</div>
+        <div class="resource-link"><a href="https://publicapis.dev" target="_blank">publicapis.dev</a></div>
+        <div class="resource-note">مئات APIs مجانية لاختبار ما تعلمته</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 Sandbox تجريبي</div>
+        <div class="resource-name">Reqres.in — Fake REST API</div>
+        <div class="resource-link"><a href="https://reqres.in" target="_blank">reqres.in</a></div>
+        <div class="resource-note">API جاهز للتدريب — لا تسجيل مطلوب</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 مرجع HTTP</div>
+        <div class="resource-name">MDN HTTP Reference</div>
+        <div class="resource-link"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank">developer.mozilla.org</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prompt Engineering -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(233,69,96,0.2);">💬</div>
+      <div>
+        <div class="resource-skill-name">Prompt Engineering — فن التحدث مع النماذج</div>
+        <div class="resource-phase">المرحلة ٢ · مهارة مستقلة · أسبوعان</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني — الأفضل</div>
+        <div class="resource-name">DeepLearning.AI — ChatGPT Prompt Engineering</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank">deeplearning.ai → Short Courses</a></div>
+        <div class="resource-note">بـ Andrew Ng — مجاني وممتاز للمطورين</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 دليل شامل (عربي ✓)</div>
+        <div class="resource-name">PromptingGuide.ai</div>
+        <div class="resource-link"><a href="https://www.promptingguide.ai/ar" target="_blank">promptingguide.ai/ar</a></div>
+        <div class="resource-note">نسخة عربية كاملة — Chain of Thought, Few-shot, RAG</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 دليل Anthropic</div>
+        <div class="resource-name">Anthropic Prompt Engineering Guide</div>
+        <div class="resource-link"><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank">docs.anthropic.com</a></div>
+        <div class="resource-note">أفضل توثيق للـ prompting — من صانعي Claude</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">⚡ تطبيق عملي</div>
+        <div class="resource-name">OpenAI Playground</div>
+        <div class="resource-link"><a href="https://platform.openai.com/playground" target="_blank">platform.openai.com/playground</a></div>
+        <div class="resource-note">جرّب Prompts تفاعليًا — مباشرة</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">AI Jason — Prompt Engineering</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@AIJasonZ" target="_blank">youtube.com/@AIJasonZ</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📚 مكتبة Prompts</div>
+        <div class="resource-name">Awesome Prompts — GitHub</div>
+        <div class="resource-link"><a href="https://github.com/f/awesome-chatgpt-prompts" target="_blank">github.com/f/awesome-chatgpt-prompts</a></div>
+        <div class="resource-note">١٠٠+ prompt جاهز للاستلهام</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OpenAI API -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(16,185,129,0.2);">🤖</div>
+      <div>
+        <div class="resource-skill-name">OpenAI API & LLMs — قلب تطبيقات AI</div>
+        <div class="resource-phase">المرحلة ٢ · جوهري · شهر كامل</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">OpenAI API Documentation</div>
+        <div class="resource-link"><a href="https://platform.openai.com/docs/overview" target="_blank">platform.openai.com/docs</a></div>
+        <div class="resource-note">المصدر الأول والأهم — اقرأه كاملًا</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني</div>
+        <div class="resource-name">DeepLearning.AI — Building LLM Apps</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/" target="_blank">deeplearning.ai → Building Systems</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">Sentdex — Python + OpenAI</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@sentdex" target="_blank">youtube.com/@sentdex</a></div>
+        <div class="resource-note">مشاريع Python + AI من مبتدئ لمتقدم</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 Anthropic Claude API</div>
+        <div class="resource-name">Anthropic API Docs</div>
+        <div class="resource-link"><a href="https://docs.anthropic.com/en/api/getting-started" target="_blank">docs.anthropic.com/en/api</a></div>
+        <div class="resource-note">تعلّم أكثر من API — زيادة في خياراتك</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">💡 Google Gemini API</div>
+        <div class="resource-name">Google AI Studio + Gemini Docs</div>
+        <div class="resource-link"><a href="https://ai.google.dev/gemini-api/docs" target="_blank">ai.google.dev/gemini-api</a></div>
+        <div class="resource-note">مجاني جدًا للتجريب — Gemini 1.5 Flash</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 Hugging Face</div>
+        <div class="resource-name">Hugging Face Inference API</div>
+        <div class="resource-link"><a href="https://huggingface.co/inference-api" target="_blank">huggingface.co/inference-api</a></div>
+        <div class="resource-note">مئات النماذج المجانية — بديل ممتاز</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FastAPI -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(6,182,212,0.2);">⚡</div>
+      <div>
+        <div class="resource-skill-name">FastAPI — بناء Backend APIs بـ Python</div>
+        <div class="resource-phase">المرحلة ٢ · أساسي للـ Production · أسبوعان</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي (الأفضل)</div>
+        <div class="resource-name">FastAPI Official Documentation</div>
+        <div class="resource-link"><a href="https://fastapi.tiangolo.com" target="_blank">fastapi.tiangolo.com</a></div>
+        <div class="resource-note">توثيق رائع بأمثلة عملية — يكفي وحده</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">Amigoscode — FastAPI Crash Course</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@amigoscode" target="_blank">youtube.com/@amigoscode</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني</div>
+        <div class="resource-name">TestDriven.io — FastAPI Tutorial</div>
+        <div class="resource-link"><a href="https://testdriven.io/blog/fastapi-crud/" target="_blank">testdriven.io/blog/fastapi</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 بيئة تجريب</div>
+        <div class="resource-name">Replit — Python/FastAPI online</div>
+        <div class="resource-link"><a href="https://replit.com/languages/python3" target="_blank">replit.com</a></div>
+        <div class="resource-note">شغّل FastAPI مباشرة في المتصفح</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- n8n -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(245,158,11,0.2);">⚙️</div>
+      <div>
+        <div class="resource-skill-name">n8n Automation — أتمتة كل شيء</div>
+        <div class="resource-phase">المرحلة ٢ · فرصة دخل مبكرة · ٣ أسابيع</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">n8n Official Docs</div>
+        <div class="resource-link"><a href="https://docs.n8n.io" target="_blank">docs.n8n.io</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🚀 ابدأ مجانًا الآن</div>
+        <div class="resource-name">n8n Cloud — Free Trial</div>
+        <div class="resource-link"><a href="https://app.n8n.cloud/register" target="_blank">app.n8n.cloud/register</a></div>
+        <div class="resource-note">لا تنصيب — ابدأ فورًا</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📚 Templates جاهزة</div>
+        <div class="resource-name">n8n Workflow Templates</div>
+        <div class="resource-link"><a href="https://n8n.io/workflows/" target="_blank">n8n.io/workflows</a></div>
+        <div class="resource-note">مئات workflows جاهزة للتعديل والاستخدام</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">NetworkChuck — n8n AI Automation</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@NetworkChuck" target="_blank">youtube.com/@NetworkChuck</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">💬 مجتمع</div>
+        <div class="resource-name">n8n Community Forum</div>
+        <div class="resource-link"><a href="https://community.n8n.io" target="_blank">community.n8n.io</a></div>
+        <div class="resource-note">اسأل أي سؤال — الناس متجاوبون جدًا</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 Self-hosted مجاني</div>
+        <div class="resource-name">n8n على Railway.app</div>
+        <div class="resource-link"><a href="https://railway.app/template/n8n" target="_blank">railway.app/template/n8n</a></div>
+        <div class="resource-note">Deploy n8n مجانًا على سيرفرك</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LangChain & RAG -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(83,52,131,0.3);">⛓️</div>
+      <div>
+        <div class="resource-skill-name">LangChain & RAG Systems — المنتج الأكثر طلبًا</div>
+        <div class="resource-phase">المرحلة ٣ · ذهب خالص · شهر ونصف</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">LangChain Python Docs</div>
+        <div class="resource-link"><a href="https://python.langchain.com/docs/introduction/" target="_blank">python.langchain.com/docs</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني (ذهبي)</div>
+        <div class="resource-name">DeepLearning.AI — LangChain for LLM Dev</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/" target="_blank">deeplearning.ai</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس RAG</div>
+        <div class="resource-name">DeepLearning.AI — Building RAG Apps</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/building-and-evaluating-advanced-rag/" target="_blank">deeplearning.ai → RAG</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">💾 Vector DB — مجاني سهل</div>
+        <div class="resource-name">Chroma DB Documentation</div>
+        <div class="resource-link"><a href="https://docs.trychroma.com" target="_blank">docs.trychroma.com</a></div>
+        <div class="resource-note">أبسط Vector DB للبدء — local و cloud</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">💾 Vector DB — Production</div>
+        <div class="resource-name">Pinecone — Free Tier</div>
+        <div class="resource-link"><a href="https://docs.pinecone.io/guides/get-started/quickstart" target="_blank">docs.pinecone.io</a></div>
+        <div class="resource-note">Production-ready — الأفضل للعملاء الحقيقيين</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">Rabbitmetrics — RAG Full Tutorial</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@rabbitmetrics" target="_blank">youtube.com/@rabbitmetrics</a></div>
+        <div class="resource-note">مشاريع RAG كاملة من البداية للنهاية</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Agents -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(245,158,11,0.2);">🕵️</div>
+      <div>
+        <div class="resource-skill-name">AI Agents & Tool Calling — مستقبل الصناعة</div>
+        <div class="resource-phase">المرحلة ٣ · الأكثر طلبًا في 2026 · شهر كامل</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">🎓 كورس مجاني</div>
+        <div class="resource-name">DeepLearning.AI — AI Agents in LangGraph</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">deeplearning.ai → AI Agents</a></div>
+        <div class="resource-note">الكورس الأفضل لـ Agents في 2026</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">📖 LangGraph Docs</div>
+        <div class="resource-name">LangGraph Official Documentation</div>
+        <div class="resource-link"><a href="https://langchain-ai.github.io/langgraph/" target="_blank">langchain-ai.github.io/langgraph</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🎓 Multi-Agent</div>
+        <div class="resource-name">DeepLearning.AI — Multi AI Agent Systems</div>
+        <div class="resource-link"><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/" target="_blank">deeplearning.ai → CrewAI</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">Andrej Karpathy — AI Agents Explained</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@AndrejKarpathy" target="_blank">youtube.com/@AndrejKarpathy</a></div>
+        <div class="resource-note">أعمق فهم للـ AI — للمتحمسين</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 تطبيق عملي</div>
+        <div class="resource-name">Hugging Face Spaces — Agent Demos</div>
+        <div class="resource-link"><a href="https://huggingface.co/spaces" target="_blank">huggingface.co/spaces</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🔧 أداة جاهزة</div>
+        <div class="resource-name">CrewAI Framework</div>
+        <div class="resource-link"><a href="https://docs.crewai.com" target="_blank">docs.crewai.com</a></div>
+        <div class="resource-note">بناء Multi-Agent Teams بسهولة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Docker & Deployment -->
+  <div class="resource-card">
+    <div class="resource-header">
+      <div class="resource-icon" style="background:rgba(37,99,235,0.2);">🐳</div>
+      <div>
+        <div class="resource-skill-name">Docker & Deployment — نشر تطبيقاتك للعالم</div>
+        <div class="resource-phase">المرحلة ٣ · لازم للتسليم · أسبوعان</div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-type">📖 التوثيق الرسمي</div>
+        <div class="resource-name">Docker Get Started Guide</div>
+        <div class="resource-link"><a href="https://docs.docker.com/get-started/" target="_blank">docs.docker.com/get-started</a></div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌍 يوتيوب</div>
+        <div class="resource-name">TechWorld with Nana — Docker Tutorial</div>
+        <div class="resource-link"><a href="https://www.youtube.com/@TechWorldwithNana" target="_blank">youtube.com/@TechWorldwithNana</a></div>
+        <div class="resource-note">أفضل شرح Docker من الصفر للإتقان</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🚀 نشر مجاني (الأفضل)</div>
+        <div class="resource-name">Railway.app</div>
+        <div class="resource-link"><a href="https://railway.app" target="_blank">railway.app</a></div>
+        <div class="resource-note">أسهل طريقة لنشر Python APIs مجانًا</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🌐 Frontend مجاني</div>
+        <div class="resource-name">Vercel</div>
+        <div class="resource-link"><a href="https://vercel.com" target="_blank">vercel.com</a></div>
+        <div class="resource-note">أفضل لنشر Frontend — سريع ومجاني</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">☁️ بديل قوي</div>
+        <div class="resource-name">Render.com</div>
+        <div class="resource-link"><a href="https://render.com" target="_blank">render.com</a></div>
+        <div class="resource-note">مجاني + Docker support + databases</div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-type">🖥 GitHub Codespaces</div>
+        <div class="resource-name">GitHub Codespaces — Dev Environment</div>
+        <div class="resource-link"><a href="https://github.com/features/codespaces" target="_blank">github.com/features/codespaces</a></div>
+        <div class="resource-note">بيئة تطوير كاملة في المتصفح</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box success" style="margin-top:8px;">
+    🏆 <strong>المصدر الذهبي الوحيد الذي يكفي للنسف: </strong>
+    <a href="https://www.deeplearning.ai/short-courses/" target="_blank">DeepLearning.AI Short Courses</a> —
+    أكثر من 60 كورس مجاني قصير من Andrew Ng وخبراء الصناعة. يغطي 70% من الخطة. الأول الذي تفتحه.
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-quote">العلم في الصغر كالنقش على الحجر</div>
+  <div>جزء من <a href="index.html">Master Roadmap 2026</a></div>
+</footer>
+
+<a href="notes.html" class="notes-fab" title="افتح ملاحظاتي الدراسية">
+  <span class="fab-icon">📓</span>
+  <span class="fab-text">ملاحظاتي</span>
+</a>
+</body>
+</html>
